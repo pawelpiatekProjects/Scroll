@@ -15,7 +15,7 @@ transform: translateX(${props=>props.show ? 0 : -100}%);
 
 const backdrop = (props)=>{
     return(
-        <Backdrop show={props.show}/>
+        <Backdrop show={props.show} onClick={props.hide}/>
 
 
     );

@@ -97,9 +97,24 @@ class Controlcontainer extends Component{
 
 
     render() {
+        let tasksList;
+        if(this.state.tasks.length === 0){
+            tasksList = <p>Your tasks list is empty</p>
+        }else{
+            tasksList = this.state.tasks.map(task=>(
+
+                <Task
+                    id={task._id}
+                    title = {task.title}
+                    deadline = {task.deadline}
+                    content = {task.content}
+                    delete = {this.onDeleteHandler}
+                />
+            ) )
+        }
         return(
             <Tasks>
-                <Backdrop submit={this.onPostHandler} show={this.state.showModal}/>
+                <Backdrop submit={this.onPostHandler} show={this.state.showModal} hide={()=>{this.setState({showModal:false})}}/>
                 <Modal submit={this.onPostHandler} show={this.state.showModal}/>
                 <GlobalStyle/>
                 <section>
@@ -107,16 +122,8 @@ class Controlcontainer extends Component{
                     <button  onClick={this.onShowModalHandler}>Add</button>
                 </section>
                 <section>
-                    {this.state.tasks.map(task=>(
 
-                        <Task
-                            id={task._id}
-                            title = {task.title}
-                            deadline = {task.deadline}
-                            content = {task.content}
-                            delete = {this.onDeleteHandler}
-                        />
-                    ) )}
+                    {tasksList}
                 </section>
             </Tasks>
 
