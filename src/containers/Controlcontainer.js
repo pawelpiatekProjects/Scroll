@@ -72,6 +72,10 @@ class Controlcontainer extends Component{
             .catch(err=>console.log(err))
     }
 
+    onDeleteHandler = ()=>{
+        alert('Deleted');
+    }
+
     render() {
         return(
             <Tasks>
@@ -87,6 +91,7 @@ class Controlcontainer extends Component{
                             title = {task.title}
                             deadline = {task.deadline}
                             content = {task.content}
+                            delete = {this.onDeleteHandler}
                         />
                     ) )}
                 </section>
