@@ -1,6 +1,28 @@
 import React, {Component} from 'react';
-
 import axios from 'axios';
+import styled,{createGlobalStyle} from 'styled-components';
+
+import Form from '../components/Form/Form';
+
+const GlobalStyle = createGlobalStyle`
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+body{
+  box-sizing: border-box;
+  padding: 3rem;
+}
+`;
+
+const Tasks = styled.div`
+
+`;
+
+
 
 
 class Controlcontainer extends Component{
@@ -51,10 +73,11 @@ class Controlcontainer extends Component{
 
     render() {
         return(
-            <div>
-                <section onSubmit={this.onPostHandler}>
+            <Tasks>
+                <GlobalStyle/>
+                <section>
                     <h1>Container with fetching and posting tasks (test)</h1>
-                    <form>
+                    <form onSubmit={this.onPostHandler}>
                         <label>Title: </label>
                         <input id='title' type="text"/>
                         <label>Date: </label>
@@ -76,7 +99,7 @@ class Controlcontainer extends Component{
                         </div>
                     ) )}
                 </section>
-            </div>
+            </Tasks>
 
         )
     }
