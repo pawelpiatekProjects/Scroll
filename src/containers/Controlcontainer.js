@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import styled,{createGlobalStyle} from 'styled-components';
 
-import Form from '../components/Form/Form';
+import Form from './Form/Form';
+import Task from '../components/Task/Task';
 
 const GlobalStyle = createGlobalStyle`
 *,
@@ -50,7 +51,7 @@ class Controlcontainer extends Component{
 
     onPostHandler = (e)=>{
         // alert('Test')
-        e.preventDefault();
+
         const form={
             title: e.target.title.value,
             date: e.target.date.value,
@@ -77,26 +78,16 @@ class Controlcontainer extends Component{
                 <GlobalStyle/>
                 <section>
                     <h1>Container with fetching and posting tasks (test)</h1>
-                    <form onSubmit={this.onPostHandler}>
-                        <label>Title: </label>
-                        <input id='title' type="text"/>
-                        <label>Date: </label>
-                        <input id='date' type="date"/>
-                        <label>Content: </label>
-                        <textarea cols="30" rows="10" id='content'></textarea>
-                        <button type="submit">Create</button>
-                    </form>
+                    <Form submit={this.onPostHandler}/>
                 </section>
                 <section>
                     {this.state.tasks.map(task=>(
-                        <div key={task.id}>
-                            <p>Delete</p>
-                            <ul>
-                                <li>{task.title}</li>
-                                <li>{task.deadline}</li>
-                                <li>{task.content}</li>
-                            </ul>
-                        </div>
+
+                        <Task
+                            title = {task.title}
+                            deadline = {task.deadline}
+                            content = {task.content}
+                        />
                     ) )}
                 </section>
             </Tasks>
