@@ -2,8 +2,8 @@ import React ,{Component} from 'react';
 import styled from 'styled-components';
 
 const FormWrapper = styled.form`
-  width: 50%;
-  margin: 10rem auto;
+  
+  margin: 0 auto;
   
   input,
   textarea
@@ -31,7 +31,8 @@ class Form extends Component{
     state={
         title:'',
         date:'',
-        content:''
+        content:'',
+        show: false
     }
     onChangeTitle=(event)=>{
         this.setState({title:event.target.value});

@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import styled,{createGlobalStyle} from 'styled-components';
 
-import Form from './Form/Form';
+import Modal from '../components/Modal/AddTask';
+import Backdrop from '../components/Backdrop/Backdrop';
+
 import Task from '../components/Task/Task';
 
 const GlobalStyle = createGlobalStyle`
@@ -15,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
 }
 body{
   box-sizing: border-box;
-  padding: 3rem;
+ 
 }
 `;
 
@@ -36,7 +38,8 @@ class Controlcontainer extends Component{
         },
         formIsValid: false,
         imagePreview: null,
-        tasks:[]
+        tasks:[],
+        showModal: false
     };
 
     componentDidMount() {
@@ -55,14 +58,14 @@ class Controlcontainer extends Component{
 
     onPostHandler = (e)=>{
         // alert('Test')
-
         const form={
             title: e.target.title.value,
             date: e.target.date.value,
             content: e.target.content.value
         };
         this.setState({
-            postForm: form
+            postForm: form,
+            showModal: false
         });
         axios.post('http://localhost:8080/tasks/createTask',{
             title:form.title,
@@ -88,13 +91,20 @@ class Controlcontainer extends Component{
             .catch(err=>console.log(err))
     };
 
+    onShowModalHandler = ()=>{
+        this.setState({showModal:true})
+    }
+
+
     render() {
         return(
             <Tasks>
+                <Backdrop submit={this.onPostHandler} show={this.state.showModal}/>
+                <Modal submit={this.onPostHandler} show={this.state.showModal}/>
                 <GlobalStyle/>
                 <section>
                     <h1>Container with fetching and posting tasks (test)</h1>
-                    <Form submit={this.onPostHandler}/>
+                    <button  onClick={this.onShowModalHandler}>Add</button>
                 </section>
                 <section>
                     {this.state.tasks.map(task=>(
