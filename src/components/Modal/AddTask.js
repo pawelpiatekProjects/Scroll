@@ -6,7 +6,7 @@ import Form from '../../containers/Form/Form';
 const Modal = styled.div`
  background: #eee;
  width: 50%;
-
+padding: .5rem;
  margin: 0 auto;
  height: 60vh;
  position: fixed;
@@ -20,9 +20,14 @@ const Modal = styled.div`
  transition: all .3s ease-out;
 `;
 
+const Header = styled.h1`
+font-weight: normal;
+`;
+
 const modal = (props)=>{
     return(
         <Modal show={props.show}>
+            <Header>Add New Task</Header>
             <Form submit={props.submit}/>
         </Modal>
 

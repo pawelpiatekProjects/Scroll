@@ -4,7 +4,7 @@ import styled,{createGlobalStyle} from 'styled-components';
 
 import Modal from '../components/Modal/AddTask';
 import Backdrop from '../components/Backdrop/Backdrop';
-
+import TaskNav from '../components/TasksNav/TasksNav';
 import Task from '../components/Task/Task';
 
 const GlobalStyle = createGlobalStyle`
@@ -22,6 +22,15 @@ body{
 `;
 
 const Tasks = styled.div`
+
+`;
+
+const TaskList = styled.div`
+width: 80%;
+margin: 3rem auto;
+box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.75);
+background: #eee;
+padding-bottom: 1.5rem;
 
 `;
 
@@ -119,12 +128,11 @@ class Controlcontainer extends Component{
                 <GlobalStyle/>
                 <section>
                     <h1>Container with fetching and posting tasks (test)</h1>
-                    <button  onClick={this.onShowModalHandler}>Add</button>
                 </section>
-                <section>
-
+                <TaskList>
+                    <TaskNav click={this.onShowModalHandler}/>
                     {tasksList}
-                </section>
+                </TaskList>
             </Tasks>
 
         )

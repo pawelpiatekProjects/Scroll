@@ -12,7 +12,16 @@ const FormWrapper = styled.form`
   width: 50%;
   margin: 1rem auto;
   padding: .5rem;
-  text-align: center;
+  border: none;
+  
+  }
+  
+  label{
+  width: 50%;
+  display: inline-block;
+  text-align: left;
+  padding: .5rem;
+  transform: translateY(3rem);
   }
   
   button{
@@ -46,6 +55,7 @@ class Form extends Component{
     render(){
         return(
             <FormWrapper onSubmit={this.props.submit}>
+
                 <input id='title' type="text"
                        value={this.state.title}
                        onChange={this.onChangeTitle}/>
