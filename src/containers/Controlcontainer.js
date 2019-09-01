@@ -40,6 +40,10 @@ class Controlcontainer extends Component{
     };
 
     componentDidMount() {
+        this.onGetTaskHandler();
+    }
+
+    onGetTaskHandler = ()=>{
         axios.get('http://localhost:8080/tasks/fetchTasks')
             .then(tasksData=>{
                 const tasks = tasksData.data.tasks;
@@ -72,9 +76,17 @@ class Controlcontainer extends Component{
             .catch(err=>console.log(err))
     }
 
-    onDeleteHandler = ()=>{
-        alert('Deleted');
-    }
+    onDeleteHandler = (taskId)=>{
+
+        fetch('http://localhost:8080/tasks/task/'+ taskId,{
+            method: 'DELETE'
+        })
+            .then(res=>{
+                console.log(res);
+                this.onGetTaskHandler()
+            })
+            .catch(err=>console.log(err))
+    };
 
     render() {
         return(
@@ -88,6 +100,7 @@ class Controlcontainer extends Component{
                     {this.state.tasks.map(task=>(
 
                         <Task
+                            id={task._id}
                             title = {task.title}
                             deadline = {task.deadline}
                             content = {task.content}

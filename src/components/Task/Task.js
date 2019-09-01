@@ -48,7 +48,7 @@ cursor: pointer;
 const task = (props)=>{
     return(
         <Task>
-            <Cross onClick={props.delete}/>
+            <Cross onClick={()=>{props.delete(props.id)}}/>
             <H1>{props.title}</H1>
             <Deadline>{props.deadline}</Deadline>
             <Content>{props.content}</Content>
