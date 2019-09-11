@@ -4,7 +4,11 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTasks, faClipboardList, faCodeBranch, faHeart, faClock, faHistory, faCogs} from "@fortawesome/free-solid-svg-icons";
 
 const Nav = styled.nav`
-height: 100%;
+
+position: sticky;
+top: 0;
+z-index: 9999;
+height: 100vh;
 padding: 0 1rem;
 
   border: 1px solid #eee;
@@ -20,7 +24,7 @@ const NavItems = styled.ul`
     li{
     margin: 1rem 0;
     transition: all .2s;
-    font-size: 1.4rem;
+   
     &:hover{
       color: #8EC06C;
       cursor: pointer;

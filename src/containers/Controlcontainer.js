@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
 }
 body{
   box-sizing: border-box;
- font-family: 'Roboto Condensed', sans-serif;
+ font-family: 'Open Sans', sans-serif;
 }
 `;
 
