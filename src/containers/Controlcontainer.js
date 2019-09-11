@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import styled,{createGlobalStyle} from 'styled-components';
 
+import SideNav from '../components/SideNavigation/SideNavigation';
 import Modal from '../components/Modal/AddTask';
 import Backdrop from '../components/Backdrop/Backdrop';
 import TaskNav from '../components/TasksNav/TasksNav';
@@ -19,6 +20,10 @@ body{
   box-sizing: border-box;
  
 }
+`;
+
+const TasksWrapper = styled.div`
+display: flex;
 `;
 
 const Tasks = styled.div`
@@ -126,13 +131,15 @@ class Controlcontainer extends Component{
                 <Backdrop submit={this.onPostHandler} show={this.state.showModal} hide={()=>{this.setState({showModal:false})}}/>
                 <Modal submit={this.onPostHandler} show={this.state.showModal}/>
                 <GlobalStyle/>
-                <section>
-                    <h1>Container with fetching and posting tasks (test)</h1>
-                </section>
-                <TaskList>
-                    <TaskNav click={this.onShowModalHandler}/>
-                    {tasksList}
-                </TaskList>
+                <TasksWrapper>
+                    <SideNav/>
+                    <TaskList>
+                        <TaskNav click={this.onShowModalHandler}/>
+                        {tasksList}
+                    </TaskList>
+                </TasksWrapper>
+
+
             </Tasks>
 
         )
