@@ -7,7 +7,7 @@ const Nav = styled.nav`
 height: 100%;
 padding: 0 1rem;
 
-  
+  border: 1px solid #eee;
 
 `;
 
@@ -20,6 +20,7 @@ const NavItems = styled.ul`
     li{
     margin: 1rem 0;
     transition: all .2s;
+    font-size: 1.4rem;
     &:hover{
       color: #8EC06C;
       cursor: pointer;
@@ -39,6 +40,11 @@ const NavItems = styled.ul`
 const DynamicContent = styled.div`
  h3{
  margin-top: 3rem;
+ font-size: 1.6rem;
+ font-weight: 400;
+ color: #8EC06C;
+ text-align: left;
+ padding: 0 3rem;
  }
 `;
 

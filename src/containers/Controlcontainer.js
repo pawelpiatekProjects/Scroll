@@ -6,6 +6,7 @@ import SideNav from '../components/SideNavigation/SideNavigation';
 import Modal from '../components/Modal/AddTask';
 import Backdrop from '../components/Backdrop/Backdrop';
 import TaskNav from '../components/TasksNav/TasksNav';
+import TaskList from '../components/TaskList/TaskList';
 import Task from '../components/Task/Task';
 
 const GlobalStyle = createGlobalStyle`
@@ -18,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
 }
 body{
   box-sizing: border-box;
- 
+ font-family: 'Roboto Condensed', sans-serif;
 }
 `;
 
@@ -30,14 +31,6 @@ const Tasks = styled.div`
 
 `;
 
-const TaskList = styled.div`
-width: 80%;
-margin: 3rem auto;
-box-shadow: 0px 0px 5px -1px rgba(0,0,0,0.75);
-background: #eee;
-padding-bottom: 1.5rem;
-
-`;
 
 
 
@@ -133,10 +126,7 @@ class Controlcontainer extends Component{
                 <GlobalStyle/>
                 <TasksWrapper>
                     <SideNav/>
-                    <TaskList>
-                        <TaskNav click={this.onShowModalHandler}/>
-                        {tasksList}
-                    </TaskList>
+                    <TaskList taskList = {tasksList} click={this.onShowModalHandler}/>
                 </TasksWrapper>
 
 
