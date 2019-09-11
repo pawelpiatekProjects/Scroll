@@ -56,6 +56,11 @@ const Settings = styled.div`
 
 `;
 
+const CopyRight = styled.p`
+margin-top: 1rem;
+color: #8EC06C;
+`;
+
 
 const sideNavigation = () => {
     return (
@@ -75,10 +80,14 @@ const sideNavigation = () => {
                 </NavItems>
             </DynamicContent>
             <Settings>
-                <NavItems>
+                <NavItems border='true'>
                     <li><FontAwesomeIcon icon={faCogs}/> <p>Settings</p></li>
                 </NavItems>
             </Settings>
+            <CopyRight>
+                2019 Notes App
+            </CopyRight>
+
         </Nav>
     )
 };

@@ -17,7 +17,7 @@ align-items: center;
 
 
 background: #FCFCFC;
-margin: 1rem;
+margin: 2rem 1rem;
 padding: 1rem 3rem 3rem 3rem;
 position: relative;
 border-radius: .5rem;
