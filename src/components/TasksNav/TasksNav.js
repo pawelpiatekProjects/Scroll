@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faPlus} from "@fortawesome/free-solid-svg-icons";
+import {faPlus, faCaretDown} from "@fortawesome/free-solid-svg-icons";
 
 const Nav = styled.div`
 
@@ -52,6 +52,7 @@ const SortButton = styled.button`
   position: relative;
   justify-self: center;
   
+  
   &:hover,
   &:focus{
   outline: none;
@@ -60,31 +61,36 @@ const SortButton = styled.button`
   
   }
   
-  &:hover:before{
-  cursor: pointer;
-  border-top: 10px solid #8EC06C;
-  }
-  
-  
-  &::before{
-  content: '';
+  p{
   display: inline-block;
-  position: absolute;
-  top: 1rem;
-  left: 3.5rem;
-  width: 0; 
-  height: 0; 
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid #000;
+  margin-right: .5rem;
   }
+  
+  //&:hover:before{
+  //cursor: pointer;
+  //border-top: 10px solid #8EC06C;
+  //}
+  
+  
+  //&::before{
+  //content: '';
+  //display: inline-block;
+  //position: absolute;
+  //top: 1rem;
+  //left: 3.5rem;
+  //width: 0; 
+  //height: 0; 
+  //border-left: 10px solid transparent;
+  //border-right: 10px solid transparent;
+  //border-top: 10px solid #000;
+  //}
 `
 
 const taskNav = (props)=>{
     return(
         <Nav>
             <AddButton onClick={props.click}><FontAwesomeIcon icon={faPlus}/></AddButton>
-            <SortButton><p>Sort</p></SortButton>
+            <SortButton><p>Sort</p><FontAwesomeIcon icon={faCaretDown}/></SortButton>
         </Nav>
     )
 };

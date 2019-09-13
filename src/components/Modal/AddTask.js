@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import TaskAddForm from '../Forms/TaskAddForm';
 
 const Modal = styled.div`
+height: 100%;
  background: #fff;
  border-radius: 1.5rem;
  width: 25%;
@@ -26,6 +27,7 @@ const Header = styled.h1`
 font-weight: bold;
 text-align: left;
 color: #8EC06C;
+margin-bottom: 2rem;
 `;
 
 const modal = (props)=>{
