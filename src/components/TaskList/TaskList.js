@@ -36,6 +36,10 @@ const Posts = styled.div`
 `;
 
 const taskList = (props)=>{
+
+    const tasks = props.taskList;
+    console.log(tasks.typeOf)
+
   return(
       <TaskListWrapper>
           <TaskActions>
@@ -44,7 +48,8 @@ const taskList = (props)=>{
           </TaskActions>
           <TaskNav click={props.click}/>
           <Posts>
-              {props.taskList}
+
+              {tasks}
           </Posts>
 
       </TaskListWrapper>

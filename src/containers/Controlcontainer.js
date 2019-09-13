@@ -52,7 +52,9 @@ class Controlcontainer extends Component{
             .then(tasksData=>{
                 const tasks = tasksData.data.tasks;
                 console.log(tasks);
-                this.setState({tasks:tasks})
+                const reverse = [...tasks].reverse();
+                console.log(reverse)
+                this.setState({tasks:reverse})
             })
             .catch(err=>console.log(err))
     }
@@ -100,7 +102,7 @@ class Controlcontainer extends Component{
                 <Task
                     id={task._id}
                     title = {task.title}
-                    deadline = {task.deadline}
+                    deadline = {task.deadline.slice(0,10)}
                     content = {task.content}
                     delete = {this.onDeleteHandler}
                 />

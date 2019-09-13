@@ -84,7 +84,7 @@ const task = (props)=>{
     return(
         <Task>
             <Title>{props.title}</Title>
-            <Deadline><span>Deadline: </span>{props.deadline.slice(0,10)}</Deadline>
+            <Deadline><span>Deadline: </span>{props.deadline}</Deadline>
             <Left><span>Left: </span> 4 days</Left>
             <Controlls>
                 <Control color='#FF6C5F'>
