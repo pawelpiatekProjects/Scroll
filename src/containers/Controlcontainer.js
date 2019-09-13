@@ -50,11 +50,8 @@ class Controlcontainer extends Component{
     onGetTaskHandler = ()=>{
         axios.get('http://localhost:8080/tasks/fetchTasks')
             .then(tasksData=>{
-                const tasks = tasksData.data.tasks;
-                console.log(tasks);
-                const reverse = [...tasks].reverse();
-                console.log(reverse)
-                this.setState({tasks:reverse})
+                const tasks = tasksData.data.tasks.reverse();
+                this.setState({tasks:tasks})
             })
             .catch(err=>console.log(err))
     }
@@ -91,6 +88,16 @@ class Controlcontainer extends Component{
         this.setState({showModal:true})
     }
 
+    onAddToImportantHandler = (taskId)=>{
+        axios.get('http://localhost:8080/tasks/fetchTask/'+ taskId)
+            .then(res=>{
+                this.onGetTaskHandler();
+            })
+            .catch(err=>{
+                console.log(err);
+            });
+    }
+
 
     render() {
         let tasksList;
@@ -104,7 +111,9 @@ class Controlcontainer extends Component{
                     title = {task.title}
                     deadline = {task.deadline.slice(0,10)}
                     content = {task.content}
+                    important = {task.important}
                     delete = {this.onDeleteHandler}
+                    importantAdd = {this.onAddToImportantHandler}
                 />
             ) )
         }

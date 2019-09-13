@@ -74,30 +74,31 @@ const Content = styled.p`
 grid-column: 1/ -1;
 grid-row: 2/span 1;
 text-align: left;
-border-top: 2px solid #8EC06C ;
+border-top: 2px solid ${props=>props.important ?'#FF6C5F': '#8EC06C'} ;
 padding: 2rem 0;
 width: 100%;
 `;
 
 
 const task = (props)=>{
+    //todo: change heart color when task is important
     return(
         <Task>
             <Title>{props.title}</Title>
             <Deadline><span>Deadline: </span>{props.deadline}</Deadline>
             <Left><span>Left: </span> 4 days</Left>
             <Controlls>
-                <Control color='#FF6C5F'>
+                <Control color='#FF6C5F' onClick={()=>{props.importantAdd(props.id)}}>
                     <FontAwesomeIcon icon={faHeart}/>
                 </Control>
-                <Control color='#8EC06C' onClick={()=>{props.delete(props.id)}}>
+                <Control color='#8EC06C' onClick={()=>{props.delete(props.id)}} important={props.important}>
                     <FontAwesomeIcon icon={faCheck}/>
                 </Control>
                 <Control color='#FFCC2F'>
                     <FontAwesomeIcon icon={faInfo}/>
                 </Control>
             </Controlls>
-            <Content>{props.content}</Content>
+            <Content important={props.important}>{props.content}</Content>
         </Task>
     );
 };
