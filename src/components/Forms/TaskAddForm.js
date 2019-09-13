@@ -86,10 +86,6 @@ color: #FF6C5F;
 `;
 
 
-
-
-
-
 const SignupSchema = Yup.object().shape({
     title: Yup.string()
         .min(2, 'Too Short')
@@ -101,57 +97,56 @@ const SignupSchema = Yup.object().shape({
         .required('Content is required')
 });
 
-const CustomDate = ({
-                        field,
-                        form:{touched,errors},
-                        ...props
-                    })=>{
-    return(
+const CustomDate = ({field, form: {touched, errors}, ...props}) => {
+    return (
         <input type='date' {...field}{...props}/>
     )
-}
+};
 
-const taskAddForm = (props)=>{
-    return(
+
+
+const taskAddForm = (props) => {
+    return (
         <Formik
 
             initialValues={{
                 title: '',
-                deadline:'',
+                deadline: '',
                 content: ''
             }}
 
             validationSchema={SignupSchema}
 
-            onSubmit={(values)=>{
-                 console.log(values)
+            onSubmit={(values) => {
+                console.log(values)
                 props.submit(values)
             }}>
-            {({errors,touched})=>(
+            {({errors, touched}) => (
                 <Form>
                     <FieldWrapperTitle>
                         <Field name='title' placeholder='Title'/>
                     </FieldWrapperTitle>
                     {errors.title && touched.title ? (
                         <ErrorTitle>{errors.title}</ErrorTitle>
-                    ):<ErrorTitle></ErrorTitle>}
+                    ) : <ErrorTitle></ErrorTitle>}
                     <FieldWrapperDeadline>
                         <Field name='deadline' component={CustomDate}/>
                         {/*date didn't work*/}
                     </FieldWrapperDeadline>
                     {errors.deadline && touched.deadline ? (
                         <ErrorDeadline>{errors.deadline}</ErrorDeadline>
-                    ):<ErrorDeadline></ErrorDeadline>}
+                    ) : <ErrorDeadline></ErrorDeadline>}
 
                     <FieldWrapperContent>
                         <Field name='content' placeholder='Content' component='textarea'/>
                     </FieldWrapperContent>
                     {errors.content && touched.content ? (
                         <ErrorContent>{errors.content}</ErrorContent>
-                    ):<ErrorContent></ErrorContent>}
+                    ) : <ErrorContent></ErrorContent>}
 
 
-                    <AddButton type='submit' right='2' bottom='2' fontSize='1.4'><FontAwesomeIcon icon={faPlus}/></AddButton>
+                    <AddButton type='submit' right='2' bottom='2' fontSize='1.4'><FontAwesomeIcon
+                        icon={faPlus}/></AddButton>
                 </Form>
             )}
         </Formik>

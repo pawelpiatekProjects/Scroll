@@ -34,7 +34,7 @@ const modal = (props)=>{
     return(
         <Modal show={props.show}>
             <Header>Add Task</Header>
-            <TaskAddForm submit={props.submit}/>
+            <TaskAddForm submit={props.submit} showModall={props.show}/>
         </Modal>
 
     );

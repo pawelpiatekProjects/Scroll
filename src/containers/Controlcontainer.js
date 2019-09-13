@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import styled,{createGlobalStyle} from 'styled-components';
+import {Route, Switch, withRouter} from "react-router";
 
 import SideNav from '../components/SideNavigation/SideNavigation';
 import Modal from '../components/Modal/AddTask';
 import Backdrop from '../components/Backdrop/Backdrop';
 import TaskList from '../components/TaskList/TaskList';
+import ImportantTasks from '../components/ImportantTasks/ImportantTasks';
 import Task from '../components/Task/Task';
 
 const GlobalStyle = createGlobalStyle`
@@ -37,13 +39,6 @@ const Tasks = styled.div`
 class Controlcontainer extends Component{
 
     state = {
-        postForm: {
-            title:'',
-            deadline:'',
-            content: ''
-        },
-        formIsValid: false,
-        imagePreview: null,
         tasks:[],
         showModal: false
     };
@@ -70,8 +65,10 @@ class Controlcontainer extends Component{
             content: values.content
         })
             .then(response=>{
-                console.log(response)
+                console.log(response);
+
                 this.onGetTaskHandler();
+                this.setState({showModal:false});
             })
             .catch(err=>console.log(err))
     }
@@ -116,7 +113,11 @@ class Controlcontainer extends Component{
                 <GlobalStyle/>
                 <TasksWrapper>
                     <SideNav/>
-                    <TaskList taskList = {tasksList} click={this.onShowModalHandler}/>
+                    <Switch>
+                        <Route path="/tasks" component={()=><TaskList taskList = {tasksList} click={this.onShowModalHandler}/>}/>
+                        <Route path="/important-tasks" component={()=><ImportantTasks/>}/>
+                    </Switch>
+                    {/*<TaskList taskList = {tasksList} click={this.onShowModalHandler}/>*/}
                 </TasksWrapper>
 
 

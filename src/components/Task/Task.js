@@ -15,9 +15,9 @@ justify-items: center;
 align-items: center;
 
 
-
+width: 80%;
 background: #FCFCFC;
-margin: 2rem 4rem;
+margin: 2rem auto;
 padding: 1rem 3rem 3rem 3rem;
 position: relative;
 border-radius: .5rem;

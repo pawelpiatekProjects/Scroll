@@ -5,7 +5,7 @@ import {faPlus, faCaretDown} from "@fortawesome/free-solid-svg-icons";
 
 const Nav = styled.div`
 
-
+width: 80%;
 display: grid;
 grid-template-columns: repeat(6,1fr);
 align-items: center;
@@ -13,7 +13,7 @@ justify-items: center;
 align-items: center;
 padding-bottom: .5rem;
  text-align: left;
- margin: 1rem 4rem;
+ margin: 1rem auto;
  border-bottom: 1px solid #eee;
 
  
