@@ -5,7 +5,6 @@ import styled,{createGlobalStyle} from 'styled-components';
 import SideNav from '../components/SideNavigation/SideNavigation';
 import Modal from '../components/Modal/AddTask';
 import Backdrop from '../components/Backdrop/Backdrop';
-import TaskNav from '../components/TasksNav/TasksNav';
 import TaskList from '../components/TaskList/TaskList';
 import Task from '../components/Task/Task';
 
@@ -63,25 +62,16 @@ class Controlcontainer extends Component{
             .catch(err=>console.log(err))
     }
 
-    onPostHandler = (e)=>{
-        // alert('Test')
-        const form={
-            title: e.target.title.value,
-            date: e.target.date.value,
-            content: e.target.content.value
-        };
-        this.setState({
-            postForm: form,
-            showModal: false
-        });
-        axios.post('http://localhost:8080/tasks/createTask',{
-            title:form.title,
-            deadline: form.date,
-            content: form.content
+    onPostHandler = (values)=>{
 
+        axios.post('http://localhost:8080/tasks/createTask',{
+            title:values.title,
+            deadline: values.deadline,
+            content: values.content
         })
             .then(response=>{
                 console.log(response)
+                this.onGetTaskHandler();
             })
             .catch(err=>console.log(err))
     }

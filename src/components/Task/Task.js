@@ -17,7 +17,7 @@ align-items: center;
 
 
 background: #FCFCFC;
-margin: 2rem 1rem;
+margin: 2rem 4rem;
 padding: 1rem 3rem 3rem 3rem;
 position: relative;
 border-radius: .5rem;
@@ -76,6 +76,7 @@ grid-row: 2/span 1;
 text-align: left;
 border-top: 2px solid #8EC06C ;
 padding: 2rem 0;
+width: 100%;
 `;
 
 

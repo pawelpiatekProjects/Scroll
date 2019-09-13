@@ -1,17 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Form from '../../containers/Form/Form';
+import TaskAddForm from '../Forms/TaskAddForm';
 
 const Modal = styled.div`
- background: #eee;
- width: 50%;
-padding: .5rem;
+ background: #fff;
+ border-radius: 1.5rem;
+ width: 25%;
+padding: 2rem;
  margin: 0 auto;
  height: 60vh;
  position: fixed;
  top: 50%;
  left: 50%;
+ 
  //transform: translate(-50%,-50%);
  z-index: 11;
  // opacity: ${props=>props.show ? 1 : 0};
@@ -21,14 +23,16 @@ padding: .5rem;
 `;
 
 const Header = styled.h1`
-font-weight: normal;
+font-weight: bold;
+text-align: left;
+color: #8EC06C;
 `;
 
 const modal = (props)=>{
     return(
         <Modal show={props.show}>
-            <Header>Add New Task</Header>
-            <Form submit={props.submit}/>
+            <Header>Add Task</Header>
+            <TaskAddForm submit={props.submit}/>
         </Modal>
 
     );

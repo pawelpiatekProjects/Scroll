@@ -13,7 +13,7 @@ justify-items: center;
 align-items: center;
 padding-bottom: .5rem;
  text-align: left;
- margin: 1rem;
+ margin: 1rem 4rem;
  border-bottom: 1px solid #eee;
 
  

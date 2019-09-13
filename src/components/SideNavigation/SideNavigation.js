@@ -7,10 +7,10 @@ const Nav = styled.nav`
 
 position: sticky;
 top: 0;
-z-index: 9999;
+z-index: 9;
 height: 100vh;
 padding: 0 1rem;
-
+background: #fcfcfc;
   border: 1px solid #eee;
 
 `;
