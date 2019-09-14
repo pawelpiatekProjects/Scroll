@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Task from '../Task/Task';
+
 const TaskListWrapper = styled.div`
   width: 80%;
 
@@ -33,6 +35,17 @@ const Posts = styled.div`
 `;
 
 const importantTasks = (props) =>{
+    const taskList = props.taskList;
+    let importantTasks = [];
+    for(let i=0;i<taskList.length;i++){
+
+        if(taskList[i].important){
+            importantTasks.push(taskList[i]);
+        }
+    }
+    console.log(importantTasks)
+
+
     return(
         <TaskListWrapper>
             <TaskActions>
@@ -40,7 +53,17 @@ const importantTasks = (props) =>{
                 <li>Notes</li>
             </TaskActions>
             <Posts>
-                {props.taskList}
+                {importantTasks.map(task=>(
+                    <Task
+                        id={task._id}
+                        title = {task.title}
+                        deadline = {task.deadline.slice(0,10)}
+                        content = {task.content}
+                        important = {task.important}
+                        // delete = {this.onDeleteHandler}
+                        // importantAdd = {this.onAddToImportantHandler}
+                    />
+                ))}
             </Posts>
         </TaskListWrapper>
     )

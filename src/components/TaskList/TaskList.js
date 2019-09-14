@@ -38,7 +38,6 @@ const Posts = styled.div`
 const taskList = (props)=>{
 
     const tasks = props.taskList;
-    console.log(tasks.typeOf)
 
   return(
       <TaskListWrapper>

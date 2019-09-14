@@ -70,6 +70,26 @@ const Control = styled.button`
   }
 `;
 
+const ControlHeart = styled.button`
+padding: .5rem;
+  width: 3rem;
+  border: none;
+  border-radius: 2rem;
+  color: ${props=>props.important ? '#FF6C5F' : '#fff'};
+  background: ${props=>props.important ? '#fff' : '#FF6C5F'};
+  border: 1px solid #FF6C5F;
+  margin: 0 .25rem;
+  
+  &:hover,
+  &:focus{
+  cursor: ${props=>props.important ? 'not-allowed' : 'pointer'};
+  background: #fff;
+  border: 1px solid #FF6C5F;
+  color: #FF6C5F;
+  outline: none;
+  }
+`;
+
 const Content = styled.p`
 grid-column: 1/ -1;
 grid-row: 2/span 1;
@@ -88,9 +108,9 @@ const task = (props)=>{
             <Deadline><span>Deadline: </span>{props.deadline}</Deadline>
             <Left><span>Left: </span> 4 days</Left>
             <Controlls>
-                <Control color='#FF6C5F' onClick={()=>{props.importantAdd(props.id)}}>
+                <ControlHeart  important={props.important} onClick={()=>{props.importantAdd(props.id)}}>
                     <FontAwesomeIcon icon={faHeart}/>
-                </Control>
+                </ControlHeart>
                 <Control color='#8EC06C' onClick={()=>{props.delete(props.id)}} important={props.important}>
                     <FontAwesomeIcon icon={faCheck}/>
                 </Control>

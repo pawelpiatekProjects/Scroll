@@ -97,6 +97,16 @@ class Controlcontainer extends Component{
                 console.log(err);
             });
     }
+    //todo: add Removing from important
+    // onRemoveImportantHandler = (taskId)=>{
+    //     axios.get('http://localhost:8080/tasks/fetchTask/'+ taskId)
+    //         .then(res=>{
+    //             this.onGetTaskHandler();
+    //         })
+    //         .catch(err=>{
+    //             console.log(err);
+    //         });
+    // }
 
 
     render() {
@@ -126,7 +136,7 @@ class Controlcontainer extends Component{
                     <SideNav/>
                     <Switch>
                         <Route path="/tasks" component={()=><TaskList taskList = {tasksList} click={this.onShowModalHandler}/>}/>
-                        <Route path="/important-tasks" component={()=><ImportantTasks/>}/>
+                        <Route path="/important-tasks" component={()=><ImportantTasks taskList = {this.state.tasks} delete = {this.onDeleteHandler} importantAdd = {this.onAddToImportantHandler}/>}/>
                     </Switch>
                     {/*<TaskList taskList = {tasksList} click={this.onShowModalHandler}/>*/}
                 </TasksWrapper>
