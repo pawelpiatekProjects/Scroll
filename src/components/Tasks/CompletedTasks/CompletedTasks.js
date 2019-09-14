@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import CompletedTask from './CompletedTask/CompletedTask';
+
 
 
 
@@ -34,33 +36,31 @@ const Posts = styled.div`
 
 `;
 
-const importantTasks = (props) =>{
-    // const taskList = props.taskList;
-    // let importantTasks = [];
-    // for(let i=0;i<taskList.length;i++){
-    //
-    //     if(taskList[i].important){
-    //         importantTasks.push(taskList[i]);
-    //     }
-    // }
-    // console.log(importantTasks)
-    // let list;
-    //
-    // if(importantTasks.length <=0){
-    //     list = 'No important tasks';
-    // }else{
-    //     list = importantTasks.map(task=>(
-    //         <ImportantTask
-    //             id={task._id}
-    //             title = {task.title}
-    //             deadline = {task.deadline.slice(0,10)}
-    //             content = {task.content}
-    //             important = {task.important}
-    //             // delete = {this.onDeleteHandler}
-    //             importantRemove = {props.importantRemove}
-    //         />
-    //     ));
-    // }
+const completedTasks = (props) =>{
+
+    const taskList = props.taskList;
+    let completed = [];
+    for(let i=0;i<taskList.length;i++){
+
+        if(taskList[i].completed){
+            completed.push(taskList[i]);
+        }
+    }
+    let list;
+
+    if(completed.length <=0){
+        list = 'No completed tasks';
+    }else{
+        list = completed.map(task=>(
+            <CompletedTask
+                id={task._id}
+                title = {task.title}
+                deadline = {task.deadline.slice(0,10)}
+                content = {task.content}
+                important = {task.important}
+            />
+        ));
+    }
     return(
         <TaskListWrapper>
             <TaskActions>
@@ -68,10 +68,10 @@ const importantTasks = (props) =>{
                 <li>Notes</li>
             </TaskActions>
             <Posts>
-               Completed Tasks
+                {list}
             </Posts>
         </TaskListWrapper>
     )
 };
 
-export default importantTasks;
+export default completedTasks;

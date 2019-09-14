@@ -43,7 +43,7 @@ const upcomingTask = (props) =>{
     let upcomingTasks = [];
     for(let i=0;i<taskList.length;i++){
         const isInWeek = Math.round((  new Date(taskList[i].deadline)- new Date())/86400000)
-        if(isInWeek > 0 && isInWeek<=7){
+        if(isInWeek > 0 && isInWeek<=7 && !taskList[i].completed){
             upcomingTasks.push(taskList[i]);
         }
     }
