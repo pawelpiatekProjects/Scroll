@@ -145,7 +145,13 @@ class Controlcontainer extends Component{
                                 delete = {this.onDeleteHandler}
                                 importantRemove = {this.onRemoveImportantHandler}/>}
                         />
-                        <Route path="/upcoming-tasks" component={()=><UpcomingTasks taskList = {this.state.tasks}/>}/>
+                        <Route
+                            path="/upcoming-tasks"
+                            component={()=><UpcomingTasks
+                                delete = {this.onDeleteHandler}
+                                importantAdd = {this.onAddImportantHandler}
+                                taskList = {this.state.tasks}/>}
+                        />
                     </Switch>
                     {/*<TaskList taskList = {tasksList} click={this.onShowModalHandler}/>*/}
                 </TasksWrapper>

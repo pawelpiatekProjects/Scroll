@@ -60,7 +60,8 @@ const upcomingTask = (props) =>{
                 deadline = {task.deadline.slice(0,10)}
                 content = {task.content}
                 important = {task.important}
-
+                delete = {props.delete}
+                importantAdd = {props.importantAdd}
             />
         ));
     }
