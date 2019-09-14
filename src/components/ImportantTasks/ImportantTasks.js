@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Task from '../Task/Task';
+import ImportantTask from './ImportantTask/ImportantTask';
 
 const TaskListWrapper = styled.div`
   width: 80%;
@@ -54,14 +54,14 @@ const importantTasks = (props) =>{
             </TaskActions>
             <Posts>
                 {importantTasks.map(task=>(
-                    <Task
+                    <ImportantTask
                         id={task._id}
                         title = {task.title}
                         deadline = {task.deadline.slice(0,10)}
                         content = {task.content}
                         important = {task.important}
                         // delete = {this.onDeleteHandler}
-                        // importantAdd = {this.onAddToImportantHandler}
+                        importantRemove = {props.importantRemove}
                     />
                 ))}
             </Posts>

@@ -88,25 +88,26 @@ class Controlcontainer extends Component{
         this.setState({showModal:true})
     }
 
-    onAddToImportantHandler = (taskId)=>{
-        axios.get('http://localhost:8080/tasks/fetchTask/'+ taskId)
+    onAddImportantHandler = (taskId)=>{
+
+            axios.get('http://localhost:8080/tasks/fetchTask/'+ taskId)
+                .then(res=>{
+                    this.onGetTaskHandler();
+                })
+                .catch(err=>{
+                    console.log(err);
+                });
+    }
+
+    onRemoveImportantHandler = (taskId)=>{
+        axios.get('http://localhost:8080/tasks/task/importantRemove/'+taskId)
             .then(res=>{
                 this.onGetTaskHandler();
             })
             .catch(err=>{
                 console.log(err);
             });
-    }
-    //todo: add Removing from important
-    // onRemoveImportantHandler = (taskId)=>{
-    //     axios.get('http://localhost:8080/tasks/fetchTask/'+ taskId)
-    //         .then(res=>{
-    //             this.onGetTaskHandler();
-    //         })
-    //         .catch(err=>{
-    //             console.log(err);
-    //         });
-    // }
+    };
 
 
     render() {
@@ -123,7 +124,7 @@ class Controlcontainer extends Component{
                     content = {task.content}
                     important = {task.important}
                     delete = {this.onDeleteHandler}
-                    importantAdd = {this.onAddToImportantHandler}
+                    importantAdd = {this.onAddImportantHandler}
                 />
             ) )
         }
@@ -136,7 +137,13 @@ class Controlcontainer extends Component{
                     <SideNav/>
                     <Switch>
                         <Route path="/tasks" component={()=><TaskList taskList = {tasksList} click={this.onShowModalHandler}/>}/>
-                        <Route path="/important-tasks" component={()=><ImportantTasks taskList = {this.state.tasks} delete = {this.onDeleteHandler} importantAdd = {this.onAddToImportantHandler}/>}/>
+                        <Route
+                            path="/important-tasks"
+                            component={()=><ImportantTasks
+                                taskList = {this.state.tasks}
+                                delete = {this.onDeleteHandler}
+                                importantRemove = {this.onRemoveImportantHandler}/>}
+                        />
                     </Switch>
                     {/*<TaskList taskList = {tasksList} click={this.onShowModalHandler}/>*/}
                 </TasksWrapper>

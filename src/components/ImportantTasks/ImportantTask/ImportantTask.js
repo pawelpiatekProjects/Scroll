@@ -82,10 +82,10 @@ padding: .5rem;
   
   &:hover,
   &:focus{
-  cursor: ${props=>props.important ? 'not-allowed' : 'pointer'};
-  background: #fff;
+  cursor: pointer;
+  background: #FF6C5F;
   border: 1px solid #FF6C5F;
-  color: #FF6C5F;
+  color: #fff;
   outline: none;
   }
 `;
@@ -100,7 +100,7 @@ width: 100%;
 `;
 
 
-const task = (props)=>{
+const importantTask = (props)=>{
 
 
     return(
@@ -109,7 +109,7 @@ const task = (props)=>{
             <Deadline><span>Deadline: </span>{props.deadline}</Deadline>
             <Left><span>Left: </span> 4 days</Left>
             <Controlls>
-                <ControlHeart  important={props.important} onClick={()=>{props.importantAdd(props.id)}}>
+                <ControlHeart  important={props.important} onClick={()=>{props.importantRemove(props.id)}}>
                     <FontAwesomeIcon icon={faHeart}/>
                 </ControlHeart>
                 <Control color='#8EC06C' onClick={()=>{props.delete(props.id)}} important={props.important}>
@@ -124,4 +124,4 @@ const task = (props)=>{
     );
 };
 
-export default task;
+export default importantTask;
