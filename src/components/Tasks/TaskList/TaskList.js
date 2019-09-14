@@ -59,6 +59,7 @@ const taskList = (props)=>{
                 content = {task.content}
                 important = {task.important}
                 delete={props.delete}
+                importantAdd={props.importantAdd}
             />
         ));
     }
