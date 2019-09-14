@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Task from '../Task/Task';
+
 
 
 const TaskListWrapper = styled.div`
@@ -37,32 +39,31 @@ const Posts = styled.div`
 const upcomingTask = (props) =>{
     //Logic to change
     //-------------------------
-    // const taskList = props.taskList;
-    // let importantTasks = [];
-    // for(let i=0;i<taskList.length;i++){
-    //
-    //     if(taskList[i].important){
-    //         importantTasks.push(taskList[i]);
-    //     }
-    // }
-    // console.log(importantTasks)
-    // let list;
-    //
-    // if(importantTasks.length <=0){
-    //     list = 'No important tasks';
-    // }else{
-    //     list = importantTasks.map(task=>(
-    //         <ImportantTask
-    //             id={task._id}
-    //             title = {task.title}
-    //             deadline = {task.deadline.slice(0,10)}
-    //             content = {task.content}
-    //             important = {task.important}
-    //             // delete = {this.onDeleteHandler}
-    //             importantRemove = {props.importantRemove}
-    //         />
-    //     ));
-    // }
+    const taskList = props.taskList;
+    let upcomingTasks = [];
+    for(let i=0;i<taskList.length;i++){
+        const isInWeek = Math.round((  new Date(taskList[i].deadline)- new Date())/86400000)
+        if(isInWeek > 0 && isInWeek<=7){
+            upcomingTasks.push(taskList[i]);
+        }
+    }
+    console.log(upcomingTasks)
+    let list;
+
+    if(upcomingTasks.length <=0){
+        list = 'Nothing to do in this week';
+    }else{
+        list = upcomingTasks.map(task=>(
+            <Task
+                id={task._id}
+                title = {task.title}
+                deadline = {task.deadline.slice(0,10)}
+                content = {task.content}
+                important = {task.important}
+
+            />
+        ));
+    }
     return(
         <TaskListWrapper>
             <TaskActions>
@@ -70,7 +71,7 @@ const upcomingTask = (props) =>{
                 <li>Notes</li>
             </TaskActions>
             <Posts>
-                Upcoming Tasks
+                {list}
             </Posts>
         </TaskListWrapper>
     )
