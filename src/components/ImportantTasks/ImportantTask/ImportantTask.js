@@ -13,7 +13,7 @@ justify-content: center;
 align-content: center;
 justify-items: center;
 align-items: center;
-
+opacity: ${props=>props.passed ? '.6' : '1'};
 
 width: 80%;
 background: #FCFCFC;
@@ -43,6 +43,7 @@ const Left = styled.div`
 grid-column: 3/ span 1;
 grid-row: 1/ span 1;
 font-size: 1.2rem;
+color: ${props=>props.passed ? '#FF6C5F' : '#000'};
 span{
 font-weight: bold;
 }
@@ -76,7 +77,7 @@ padding: .5rem;
   border: none;
   border-radius: 2rem;
   color: ${props=>props.important ? '#FF6C5F' : '#fff'};
-  background: ${props=>props.important ? '#fff' : '#FF6C5F'};
+  background: ${props=>props.important ? '#eee' : '#FF6C5F'};
   border: 1px solid #FF6C5F;
   margin: 0 .25rem;
   
@@ -100,14 +101,24 @@ width: 100%;
 `;
 
 
+
 const importantTask = (props)=>{
 
+    let left;
+    let passed;
+    if(Math.round((  new Date(props.deadline)- new Date())/86400000) > 0){
+        left = Math.round((  new Date(props.deadline)- new Date())/86400000).toString() + ' days';
+        passed = false;
+    }else{
+        left='Deadline has passed';
+        passed = true;
+    }
 
     return(
-        <Task>
+        <Task passed={passed}>
             <Title>{props.title}</Title>
             <Deadline><span>Deadline: </span>{props.deadline}</Deadline>
-            <Left><span>Left: </span> 4 days</Left>
+            <Left passed={passed}><span>{passed ? '' : 'Left: '}</span> {left}</Left>
             <Controlls>
                 <ControlHeart  important={props.important} onClick={()=>{props.importantRemove(props.id)}}>
                     <FontAwesomeIcon icon={faHeart}/>

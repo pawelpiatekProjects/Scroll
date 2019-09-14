@@ -44,8 +44,23 @@ const importantTasks = (props) =>{
         }
     }
     console.log(importantTasks)
+    let list;
 
-
+    if(importantTasks.length <=0){
+        list = 'No important tasks';
+    }else{
+        list = importantTasks.map(task=>(
+            <ImportantTask
+                id={task._id}
+                title = {task.title}
+                deadline = {task.deadline.slice(0,10)}
+                content = {task.content}
+                important = {task.important}
+                // delete = {this.onDeleteHandler}
+                importantRemove = {props.importantRemove}
+            />
+        ));
+    }
     return(
         <TaskListWrapper>
             <TaskActions>
@@ -53,17 +68,7 @@ const importantTasks = (props) =>{
                 <li>Notes</li>
             </TaskActions>
             <Posts>
-                {importantTasks.map(task=>(
-                    <ImportantTask
-                        id={task._id}
-                        title = {task.title}
-                        deadline = {task.deadline.slice(0,10)}
-                        content = {task.content}
-                        important = {task.important}
-                        // delete = {this.onDeleteHandler}
-                        importantRemove = {props.importantRemove}
-                    />
-                ))}
+                {list}
             </Posts>
         </TaskListWrapper>
     )
