@@ -84,7 +84,7 @@ const sideNavigation = () => {
                 <NavItems border='true'>
                     <li><NavLink to='important-tasks'><FontAwesomeIcon icon={faHeart}/> <p>Important</p></NavLink></li>
                     <li><NavLink to='upcoming-tasks'><FontAwesomeIcon icon={faStar}/> <p>This week</p></NavLink></li>
-                    <li><FontAwesomeIcon icon={faHistory}/> <p>Recent</p></li>
+                    <li><NavLink to='completed-tasks'><FontAwesomeIcon icon={faHistory}/> <p>Completed</p></NavLink></li>
                 </NavItems>
             </DynamicContent>
             <Settings>

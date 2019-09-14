@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
+import Task from '../Task/Task';
 import TaskNav from '../TasksNav/TasksNav';
+import ImportantTask from "../ImportantTasks/ImportantTasks";
 
 const TaskListWrapper = styled.div`
   width: 80%;
@@ -37,7 +38,30 @@ const Posts = styled.div`
 
 const taskList = (props)=>{
 
-    const tasks = props.taskList;
+    const taskList = props.taskList;
+    let tasks = [];
+    for(let i=0;i<taskList.length;i++){
+
+        if(!taskList[i].completed){
+            tasks.push(taskList[i]);
+        }
+    }
+    let list;
+
+    if(tasks.length <=0){
+        list = 'No important tasks';
+    }else{
+        list = tasks.map(task=>(
+            <Task
+                id={task._id}
+                title = {task.title}
+                deadline = {task.deadline.slice(0,10)}
+                content = {task.content}
+                important = {task.important}
+                delete={props.delete}
+            />
+        ));
+    }
 
   return(
       <TaskListWrapper>
@@ -48,7 +72,7 @@ const taskList = (props)=>{
           <TaskNav click={props.click}/>
           <Posts>
 
-              {tasks}
+              {list}
           </Posts>
 
       </TaskListWrapper>

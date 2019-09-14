@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e14ece76-6aa8-4bda-bb70-57ab59ecfae1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/Tasks/UpcomingTasks/UpcomingTasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tasks/UpcomingTasks/UpcomingTasks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Tasks/CompletedTasks/CompletedTasks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SideNavigation/SideNavigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SideNavigation/SideNavigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tasks/TaskList/TaskList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tasks/TaskList/TaskList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Controlcontainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Controlcontainer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,8 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/Controlcontainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="127" column="32" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="32" />
+            <state>
+              <caret line="126" column="12" lean-forward="true" selection-start-line="126" selection-start-column="12" selection-end-line="126" selection-end-column="12" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -41,18 +44,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Modal/AddTask.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="925">
-              <caret line="40" column="2" selection-start-line="40" selection-start-column="2" selection-end-line="40" selection-end-column="2" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/AddButton.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="350">
@@ -64,7 +55,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/SideNavigation/SideNavigation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
+            <state relative-caret-position="498">
               <caret line="88" column="29" lean-forward="true" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -85,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Tasks/TaskList/TaskList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="43" column="23" lean-forward="true" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+            <state relative-caret-position="500">
+              <caret line="56" column="36" lean-forward="true" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -100,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTasks.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1198">
-              <caret line="76" column="23" lean-forward="true" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
+            <state relative-caret-position="400">
+              <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="62" selection-end-column="5" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -112,8 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTask/ImportantTask.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="108" column="7" selection-start-line="108" selection-start-column="7" selection-end-line="108" selection-end-column="68" />
+            <state relative-caret-position="400">
+              <caret line="16" lean-forward="true" selection-end-line="137" selection-end-column="29" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -121,11 +112,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Tasks/UpcomingTasks/UpcomingTasks.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="63" column="50" selection-start-line="63" selection-start-column="50" selection-end-line="63" selection-end-column="50" />
+            <state relative-caret-position="625">
+              <caret line="73" column="19" lean-forward="true" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Tasks/CompletedTasks/CompletedTasks.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="550">
+              <caret line="67" column="30" lean-forward="true" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -157,10 +160,11 @@
         <option value="$PROJECT_DIR$/src/components/Task/Task.js" />
         <option value="$PROJECT_DIR$/src/components/ImportantTasks/ImportantTask/ImportantTask.js" />
         <option value="$PROJECT_DIR$/src/components/ImportantTasks/ImportantTasks.js" />
-        <option value="$PROJECT_DIR$/src/components/Tasks/TaskList/TaskList.js" />
+        <option value="$PROJECT_DIR$/src/components/Tasks/UpcomingTasks/UpcomingTasks.js" />
+        <option value="$PROJECT_DIR$/src/components/Tasks/CompletedTasks/CompletedTasks.js" />
         <option value="$PROJECT_DIR$/src/components/SideNavigation/SideNavigation.js" />
         <option value="$PROJECT_DIR$/src/containers/Controlcontainer.js" />
-        <option value="$PROJECT_DIR$/src/components/Tasks/UpcomingTasks/UpcomingTasks.js" />
+        <option value="$PROJECT_DIR$/src/components/Tasks/TaskList/TaskList.js" />
       </list>
     </option>
   </component>
@@ -231,6 +235,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Tasks" type="462c0819:PsiDirectoryNode" />
+              <item name="CompletedTasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="reminder-v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reminder-v2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Tasks" type="462c0819:PsiDirectoryNode" />
               <item name="ImportantTasks" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -256,7 +268,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Tasks" type="462c0819:PsiDirectoryNode" />
-              <item name="UpcomingTasks" type="462c0819:PsiDirectoryNode" />
+              <item name="TaskList" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="reminder-v2" type="b2602c69:ProjectViewProjectNode" />
@@ -321,12 +333,12 @@
       <workItem from="1568294921915" duration="620000" />
       <workItem from="1568365377946" duration="11207000" />
       <workItem from="1568410806480" duration="5118000" />
-      <workItem from="1568486978153" duration="6338000" />
+      <workItem from="1568486978153" duration="7521000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54185000" />
+    <option name="totallyTimeSpent" value="55368000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -445,46 +457,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Tasks/TaskList/TaskList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="43" column="23" lean-forward="true" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SideNavigation/SideNavigation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="88" column="29" lean-forward="true" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTasks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1198">
-          <caret line="76" column="23" lean-forward="true" selection-start-line="76" selection-start-column="23" selection-end-line="76" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTask/ImportantTask.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="108" column="7" selection-start-line="108" selection-start-column="7" selection-end-line="108" selection-end-column="68" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Tasks/Task/Task.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
@@ -495,20 +467,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Tasks/UpcomingTasks/UpcomingTasks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="73" column="19" lean-forward="true" selection-start-line="73" selection-start-column="19" selection-end-line="73" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTask/ImportantTask.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" lean-forward="true" selection-end-line="137" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Tasks/CompletedTasks/CompletedTasks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="67" column="30" lean-forward="true" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SideNavigation/SideNavigation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="88" column="29" lean-forward="true" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTasks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="62" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Controlcontainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="127" column="32" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="32" />
+        <state>
+          <caret line="126" column="12" lean-forward="true" selection-start-line="126" selection-start-column="12" selection-end-line="126" selection-end-column="12" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Tasks/UpcomingTasks/UpcomingTasks.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Tasks/TaskList/TaskList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="63" column="50" selection-start-line="63" selection-start-column="50" selection-end-line="63" selection-end-column="50" />
+        <state relative-caret-position="500">
+          <caret line="56" column="36" lean-forward="true" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
