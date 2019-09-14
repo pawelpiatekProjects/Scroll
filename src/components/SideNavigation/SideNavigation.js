@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 import styled from 'styled-components';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faTasks, faClipboardList, faCodeBranch, faHeart, faClock, faHistory, faCogs} from "@fortawesome/free-solid-svg-icons";
+import {faTasks, faClipboardList, faCodeBranch, faHeart, faStar, faHistory, faCogs} from "@fortawesome/free-solid-svg-icons";
 
 const Nav = styled.nav`
 
@@ -83,7 +83,7 @@ const sideNavigation = () => {
                 <h3>Tasks</h3>
                 <NavItems border='true'>
                     <li><NavLink to='important-tasks'><FontAwesomeIcon icon={faHeart}/> <p>Important</p></NavLink></li>
-                    <li><FontAwesomeIcon icon={faClock}/> <p>Upcoming</p></li>
+                    <li><NavLink to='upcoming-tasks'><FontAwesomeIcon icon={faStar}/> <p>This week</p></NavLink></li>
                     <li><FontAwesomeIcon icon={faHistory}/> <p>Recent</p></li>
                 </NavItems>
             </DynamicContent>

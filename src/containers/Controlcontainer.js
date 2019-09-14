@@ -6,9 +6,10 @@ import {Route, Switch, withRouter} from "react-router";
 import SideNav from '../components/SideNavigation/SideNavigation';
 import Modal from '../components/Modal/AddTask';
 import Backdrop from '../components/Backdrop/Backdrop';
-import TaskList from '../components/TaskList/TaskList';
-import ImportantTasks from '../components/ImportantTasks/ImportantTasks';
-import Task from '../components/Task/Task';
+import TaskList from '../components/Tasks/TaskList/TaskList';
+import ImportantTasks from '../components/Tasks/ImportantTasks/ImportantTasks';
+ import UpcomingTasks from '../components/Tasks/UpcomingTasks/UpcomingTasks';
+import Task from '../components/Tasks/Task/Task';
 
 const GlobalStyle = createGlobalStyle`
 *,
@@ -144,6 +145,7 @@ class Controlcontainer extends Component{
                                 delete = {this.onDeleteHandler}
                                 importantRemove = {this.onRemoveImportantHandler}/>}
                         />
+                        <Route path="/upcoming-tasks" component={()=><UpcomingTasks taskList = {this.state.tasks}/>}/>
                     </Switch>
                     {/*<TaskList taskList = {tasksList} click={this.onShowModalHandler}/>*/}
                 </TasksWrapper>
