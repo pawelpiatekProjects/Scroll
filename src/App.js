@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Switch, withRouter} from "react-router";
 
-import TopNav from './components/Navigation/TopNav/TopNav';
+import IntroPage from './components/IntroPage/ItroPage';
 import ControlContainer from './containers/Controlcontainer';
 import WelcomePage from './containers/WelcomePage/WelcomePage';
 
@@ -14,6 +14,7 @@ function App() {
             <Switch>
                 <Route path='/dashboard' component={ControlContainer}/>
                 <Route path='/welcomePage' exact  component={WelcomePage}/>
+                <Route path='/' component={IntroPage}/>
             </Switch>
         </div>
     );
