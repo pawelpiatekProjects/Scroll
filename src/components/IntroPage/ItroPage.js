@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import SignIn from '../Forms/SignIn';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faUserAstronaut, faScroll} from "@fortawesome/free-solid-svg-icons";
+import {faScroll} from "@fortawesome/free-solid-svg-icons";
 
 import img from '../../assets/images/cristina-gottardi-R4y_E5ZQDPg-unsplash.jpg';
 
@@ -77,6 +78,7 @@ const introPage = () => {
                     <span>Scroll</span>
                 </Logo>
             </LogoWrapper>
+            <SignIn/>
         </IntroPage>
     )
 };
