@@ -22,7 +22,8 @@ const GlobalStyle = createGlobalStyle`
 }
 body{
   box-sizing: border-box;
- font-family: 'Open Sans', sans-serif;
+ font-family: 'Roboto', sans-serif;
+
 }
 `;
 
