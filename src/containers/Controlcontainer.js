@@ -4,13 +4,14 @@ import styled, {createGlobalStyle} from 'styled-components';
 import {Route, Switch, withRouter} from "react-router";
 
 import SideNav from '../components/Navigation/SideNavigation/SideNavigation';
+import TopNav from '../components/Navigation/TopNav/TopNav';
 import Modal from '../components/Modal/AddTask';
 import Backdrop from '../components/Backdrop/Backdrop';
 import TaskList from '../components/Tasks/TaskList/TaskList';
 import ImportantTasks from '../components/Tasks/ImportantTasks/ImportantTasks';
 import UpcomingTasks from '../components/Tasks/UpcomingTasks/UpcomingTasks';
 import CompletedTask from '../components/Tasks/CompletedTasks/CompletedTasks';
-import Task from '../components/Tasks/Task/Task';
+
 
 const GlobalStyle = createGlobalStyle`
 *,
@@ -28,11 +29,24 @@ body{
 `;
 
 const TasksWrapper = styled.div`
-display: flex;
+display: grid;
+grid-template-columns: repeat(6,1fr);
 `;
 
 const Tasks = styled.div`
 
+`;
+
+const TaskListWrapper = styled.div`
+grid-column: 2/-1;
+`;
+
+const Sidebar = styled.div`
+
+`;
+
+const Topnav = styled.div`
+grid-column: 1/-1;
 `;
 
 
@@ -134,36 +148,43 @@ class Controlcontainer extends Component {
                 <Modal submit={this.onPostHandler} show={this.state.showModal}/>
                 <GlobalStyle/>
                 <TasksWrapper>
-                    <SideNav/>
-                    <Switch>
-                        <Route path="/tasks"
-                               component={() => <TaskList
-                                   taskList={this.state.tasks}
-                                   delete={this.onDeleteHandler}
-                                   importantAdd={this.onAddImportantHandler}
-                                   click={this.onShowModalHandler}/>}
-                        />
-                        <Route
-                            path="/important-tasks"
-                            component={() => <ImportantTasks
-                                taskList={this.state.tasks}
-                                delete={this.onDeleteHandler}
-                                importantRemove={this.onRemoveImportantHandler}/>}
-                        />
-                        <Route
-                            path="/upcoming-tasks"
-                            component={() => <UpcomingTasks
-                                delete={this.onDeleteHandler}
-                                importantAdd={this.onAddImportantHandler}
-                                taskList={this.state.tasks}/>}
-                        />
-                        <Route
-                            path="/completed-tasks"
-                            component={() => <CompletedTask
-                                taskList={this.state.tasks}/>}
-                        />
-                    </Switch>
-                    {/*<TaskList taskList = {tasksList} click={this.onShowModalHandler}/>*/}
+                    <Topnav>
+                        <TopNav/>
+                    </Topnav>
+                    <Sidebar>
+                        <SideNav/>
+                    </Sidebar>
+                    <TaskListWrapper>
+                        <Switch>
+                            <Route path="/dashboard/tasks"
+                                   component={() => <TaskList
+                                       taskList={this.state.tasks}
+                                       delete={this.onDeleteHandler}
+                                       importantAdd={this.onAddImportantHandler}
+                                       click={this.onShowModalHandler}/>}
+                            />
+                            <Route
+                                path="/dashboard/important-tasks"
+                                component={() => <ImportantTasks
+                                    taskList={this.state.tasks}
+                                    delete={this.onDeleteHandler}
+                                    importantRemove={this.onRemoveImportantHandler}/>}
+                            />
+                            <Route
+                                path="/dashboard/upcoming-tasks"
+                                component={() => <UpcomingTasks
+                                    delete={this.onDeleteHandler}
+                                    importantAdd={this.onAddImportantHandler}
+                                    taskList={this.state.tasks}/>}
+                            />
+                            <Route
+                                path="/dashboard/completed-tasks"
+                                component={() => <CompletedTask
+                                    taskList={this.state.tasks}/>}
+                            />
+                        </Switch>
+                    </TaskListWrapper>
+
                 </TasksWrapper>
 
 

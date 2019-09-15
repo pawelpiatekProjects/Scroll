@@ -15,7 +15,9 @@ justify-items: start;
 align-items: center;
 opacity: ${props=>props.passed ? '.6' : '1'};
 
-width: 80%;
+
+
+
 background: #FCFCFC;
 margin: 2rem auto;
 padding: 1rem 3rem 3rem 3rem;

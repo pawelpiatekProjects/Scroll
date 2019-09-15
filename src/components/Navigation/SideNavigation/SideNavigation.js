@@ -20,7 +20,7 @@ const NavItems = styled.ul`
   list-style: none;
   text-align: left;
   border-bottom: ${props=>props.border ? '1px solid #eee' : 'none' };
-  padding: 3rem;
+  padding:3rem 2rem;
   
     li{
     margin: 1rem 0;
@@ -58,7 +58,7 @@ const DynamicContent = styled.div`
  font-weight: 400;
  color: #8EC06C;
  text-align: left;
- padding: 0 3rem;
+ padding: 0 2rem;
  }
 `;
 
@@ -76,7 +76,7 @@ const sideNavigation = () => {
     return (
         <Nav>
             <NavItems border='true'>
-                <li><NavLink to='/tasks'><FontAwesomeIcon icon={faTasks}/><p>Tasks</p></NavLink></li>
+                <li><NavLink to='/dashboard/tasks'><FontAwesomeIcon icon={faTasks}/><p>Tasks</p></NavLink></li>
                 <li><FontAwesomeIcon icon={faClipboardList}/> <p>Projects</p></li>
                 <li><FontAwesomeIcon icon={faCodeBranch}/> <p>Technologies</p></li>
             </NavItems>
@@ -84,9 +84,9 @@ const sideNavigation = () => {
             <DynamicContent>
                 <h3>Tasks</h3>
                 <NavItems border='true'>
-                    <li><NavLink to='important-tasks'><FontAwesomeIcon icon={faHeart}/> <p>Important</p></NavLink></li>
-                    <li><NavLink to='upcoming-tasks'><FontAwesomeIcon icon={faStar}/> <p>This week</p></NavLink></li>
-                    <li><NavLink to='completed-tasks'><FontAwesomeIcon icon={faHistory}/> <p>Completed</p></NavLink></li>
+                    <li><NavLink to='/dashboard/important-tasks'><FontAwesomeIcon icon={faHeart}/> <p>Important</p></NavLink></li>
+                    <li><NavLink to='/dashboard/upcoming-tasks'><FontAwesomeIcon icon={faStar}/> <p>This week</p></NavLink></li>
+                    <li><NavLink to='/dashboard/completed-tasks'><FontAwesomeIcon icon={faHistory}/> <p>Completed</p></NavLink></li>
                 </NavItems>
             </DynamicContent>
             <Settings>

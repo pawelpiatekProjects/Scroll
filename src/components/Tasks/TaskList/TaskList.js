@@ -6,7 +6,8 @@ import TaskNav from '../TasksNav/TasksNav';
 import ImportantTask from "../ImportantTasks/ImportantTasks";
 
 const TaskListWrapper = styled.div`
-  width: 80%;
+width: 80%;
+margin: 0 auto;
 
 `;
 
@@ -49,7 +50,7 @@ border-radius: 2rem;
 `;
 
 const Posts = styled.div`
-
+width: 100%;
 `;
 
 const taskList = (props)=>{

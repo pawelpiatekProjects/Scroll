@@ -5,6 +5,7 @@ import ImportantTask from './ImportantTask/ImportantTask';
 
 const TaskListWrapper = styled.div`
   width: 80%;
+  margin: 0 auto;
 
 `;
 

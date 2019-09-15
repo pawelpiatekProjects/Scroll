@@ -7,6 +7,7 @@ import Task from '../Task/Task';
 
 const TaskListWrapper = styled.div`
   width: 80%;
+  margin: 0 auto;
 
 `;
 
@@ -37,8 +38,7 @@ const Posts = styled.div`
 `;
 
 const upcomingTask = (props) =>{
-    //Logic to change
-    //-------------------------
+
     const taskList = props.taskList;
     let upcomingTasks = [];
     for(let i=0;i<taskList.length;i++){
