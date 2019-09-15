@@ -3,7 +3,7 @@ import axios from 'axios';
 import styled, {createGlobalStyle} from 'styled-components';
 import {Route, Switch, withRouter} from "react-router";
 
-import SideNav from '../components/SideNavigation/SideNavigation';
+import SideNav from '../components/Navigation/SideNavigation/SideNavigation';
 import Modal from '../components/Modal/AddTask';
 import Backdrop from '../components/Backdrop/Backdrop';
 import TaskList from '../components/Tasks/TaskList/TaskList';

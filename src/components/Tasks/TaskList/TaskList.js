@@ -21,7 +21,9 @@ const TaskActions = styled.ul`
    margin: 1rem 3rem;
    font-size: 1.6rem;
    
-  &:hover{
+   p{
+   display: inline-block;
+   &:hover{
       color: #8EC06C;
       cursor: pointer;
     }
@@ -30,6 +32,20 @@ const TaskActions = styled.ul`
       color: #8EC06C;
     }
    }
+  
+   }
+`;
+
+const Cloud = styled.span`
+display: inline-block;
+margin-right: 1rem;
+background: #eee;
+color: #8EC06C;
+font-size: 1.2rem;
+padding: .2rem;
+width: 2.75rem;
+text-align: center;
+border-radius: 2rem;
 `;
 
 const Posts = styled.div`
@@ -67,8 +83,13 @@ const taskList = (props)=>{
   return(
       <TaskListWrapper>
           <TaskActions>
-              <li>Tasks</li>
-              <li>Notes</li>
+              <li>
+                  <Cloud>
+                      {tasks.length}
+                  </Cloud>
+                  <p>To Do</p>
+              </li>
+              <li><p>Notes</p></li>
           </TaskActions>
           <TaskNav click={props.click}/>
           <Posts>

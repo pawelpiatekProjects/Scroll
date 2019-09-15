@@ -9,9 +9,9 @@ const Task = styled.div`
 display: grid;
 grid-template-columns: repeat(4,1fr);
 grid-template-rows: 5rem 1fr;
-justify-content: center;
+justify-content: start;
 align-content: center;
-justify-items: center;
+justify-items: start;
 align-items: center;
 opacity: ${props=>props.passed ? '.6' : '1'};
 

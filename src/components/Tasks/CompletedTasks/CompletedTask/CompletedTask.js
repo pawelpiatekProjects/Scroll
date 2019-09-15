@@ -7,7 +7,7 @@ import {faHeart,faCheck,faInfo} from "@fortawesome/free-solid-svg-icons";
 
 const Task = styled.div`
 display: grid;
-grid-template-columns: repeat(4,1fr);
+grid-template-columns: repeat(8,1fr);
 grid-template-rows: 5rem 1fr;
 justify-content: center;
 align-content: center;
@@ -23,7 +23,7 @@ border-radius: .5rem;
 `;
 
 const Title = styled.p`
-grid-column: 1/span 1;
+grid-column: 1/span 3;
 grid-row: 1/ span 1;
 font-size: 1.2rem;
 font-weight: bold;
@@ -31,7 +31,7 @@ text-align: left;
 `;
 
 const Deadline = styled.div`
-grid-column: 2/span 1;
+grid-column: 4/span 3;
 grid-row: 1/ span 1;
 font-size: 1.2rem;
 span{
@@ -41,7 +41,7 @@ font-weight: bold;
 
 
 const Controlls = styled.div`
-grid-column: 4/span 1;
+grid-column: 8/span 1;
 grid-row: 1/span 1;
 position: relative;
 
@@ -49,7 +49,7 @@ position: relative;
 
 const Control = styled.button`
 
-justify-self: end;
+
 
 
   padding: .5rem;
@@ -87,7 +87,7 @@ const completedTask = (props)=>{
     return(
         <Task>
             <Title>{props.title}</Title>
-            <Deadline><span>Completed </span></Deadline>
+            <Deadline><span>Completed Task</span></Deadline>
             <Controlls>
                 <Control color='#FFCC2F'>
                     <FontAwesomeIcon icon={faInfo}/>

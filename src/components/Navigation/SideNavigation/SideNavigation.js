@@ -30,11 +30,13 @@ const NavItems = styled.ul`
       
       p{
       display: inline-block;
+       margin-left: 1rem;
       }
       
       a{
       text-decoration: none;
       color: #000;
+     
       
       &:hover{
       color: #8EC06C;
