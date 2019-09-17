@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import TaskAddForm from '../Forms/TaskAddForm';
+import NotesAddForm from '../Forms/NotesAddForm';
 
 const Modal = styled.div`
 height: 100%;
@@ -31,10 +32,16 @@ margin-bottom: 2rem;
 `;
 
 const modal = (props)=>{
+    let form;
+    if(props.status ==='task'){
+        form = <TaskAddForm submit={props.submit} showModall={props.show}/>
+    }else{
+        form = <NotesAddForm/>
+    }
     return(
         <Modal show={props.show}>
-            <Header>Add Task</Header>
-            <TaskAddForm submit={props.submit} showModall={props.show}/>
+            <Header>Add {props.status}</Header>
+            {form}
         </Modal>
 
     );

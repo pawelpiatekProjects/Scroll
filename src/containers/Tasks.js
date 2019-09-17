@@ -3,10 +3,10 @@ import axios from 'axios';
 import styled, {createGlobalStyle} from 'styled-components';
 import {Route, Switch, withRouter} from "react-router";
 
-import Notes from './Notes';
+import Notes from '../components/Notes/Notes';
 import SideNav from '../components/Navigation/SideNavigation/SideNavigation';
 import TopNav from '../components/Navigation/TopNav/TopNav';
-import Modal from '../components/Modal/AddTask';
+import Modal from '../components/Modal/Add';
 import Backdrop from '../components/Backdrop/Backdrop';
 import TaskList from '../components/Tasks/TaskList/TaskList';
 import ImportantTasks from '../components/Tasks/ImportantTasks/ImportantTasks';
@@ -55,7 +55,8 @@ class Tasks extends Component {
 
     state = {
         tasks: [],
-        showModal: false
+        showTaskModal: false,
+        showNotesModal: false
     };
 
     componentDidMount() {
@@ -71,7 +72,7 @@ class Tasks extends Component {
             .catch(err => console.log(err))
     }
 
-    onPostHandler = (values) => {
+    onPostTaskHandler = (values) => {
 
         axios.post('http://localhost:8080/tasks/createTask', {
             title: values.title,
@@ -82,7 +83,7 @@ class Tasks extends Component {
                 console.log(response);
 
                 this.onGetTaskHandler();
-                this.setState({showModal: false});
+                this.setState({showTaskModal: false});
             })
             .catch(err => console.log(err))
     }
@@ -97,8 +98,12 @@ class Tasks extends Component {
             .catch(err => console.log(err))
     };
 
-    onShowModalHandler = () => {
-        this.setState({showModal: true})
+    onShowTaskModalHandler = () => {
+        this.setState({showTaskModal: true})
+    }
+
+    onShowNotesModalHandler = ()=>{
+        this.setState({showNotesModal:true})
     }
 
     onAddImportantHandler = (taskId) => {
@@ -124,29 +129,17 @@ class Tasks extends Component {
 
 
     render() {
-        // let tasksList;
-        // if (this.state.tasks.length === 0) {
-        //     tasksList = <p>Your tasks list is empty</p>
-        // } else {
-        //     tasksList = this.state.tasks.map(task => (
-        //
-        //         <Task
-        //             id={task._id}
-        //             title={task.title}
-        //             deadline={task.deadline.slice(0, 10)}
-        //             content={task.content}
-        //             important={task.important}
-        //             delete={this.onDeleteHandler}
-        //             importantAdd={this.onAddImportantHandler}
-        //         />
-        //     ))
-        // }
+
         return (
             <TasksList>
-                <Backdrop submit={this.onPostHandler} show={this.state.showModal} hide={() => {
-                    this.setState({showModal: false})
+                <Backdrop submit={this.onPostTaskHandler} show={this.state.showTaskModal} hide={() => {
+                    this.setState({showTaskModal: false})
                 }}/>
-                <Modal submit={this.onPostHandler} show={this.state.showModal}/>
+                <Backdrop submit={this.onShowNotesModalHandler} show={this.state.showNotesModal} hide={() => {
+                    this.setState({showNotesModal: false})
+                }}/>
+                <Modal status='task'submit={this.onPostTaskHandler} show={this.state.showTaskModal}/>
+                <Modal status='notes'submit={this.onPostTaskHandler} show={this.state.showNotesModal}/>
                 <GlobalStyle/>
                 <TasksWrapper>
                     <Topnav>
@@ -162,7 +155,7 @@ class Tasks extends Component {
                                        taskList={this.state.tasks}
                                        delete={this.onDeleteHandler}
                                        importantAdd={this.onAddImportantHandler}
-                                       click={this.onShowModalHandler}/>}
+                                       click={this.onShowTaskModalHandler}/>}
                             />
                             <Route
                                 path="/dashboard/important-tasks"
@@ -184,7 +177,10 @@ class Tasks extends Component {
                                     taskList={this.state.tasks}/>}
                             />
                             <Route path="/dashboard/notes"
-                                   component={()=><Notes/>}
+                                   component={()=><Notes
+                                       taskList = {this.state.tasks}
+                                       click={this.onShowNotesModalHandler}
+                                   />}
                             />
                         </Switch>
                     </TaskListWrapper>

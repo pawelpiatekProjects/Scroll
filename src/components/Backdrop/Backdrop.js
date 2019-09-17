@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Modal from '../Modal/AddTask';
+import Modal from '../Modal/Add';
 
 const Backdrop = styled.div`
 width: 100%;
