@@ -69,7 +69,7 @@ const Logo = styled.div`
     }
 `;
 
-const introPage = () => {
+const introPage = (props) => {
     return (
         <IntroPage>
             <LogoWrapper>
@@ -78,7 +78,7 @@ const introPage = () => {
                     <span>Scroll</span>
                 </Logo>
             </LogoWrapper>
-            <SignIn/>
+            <SignIn {...props}/>
         </IntroPage>
     )
 };
