@@ -59,7 +59,7 @@ const note = (props) => {
         <Note>
             <Title>{props.title}</Title>
             <Controls>
-                <Control>
+                <Control onClick={()=>{props.delete(props.id)}}>
                     <FontAwesomeIcon icon={faTimes}/>
                 </Control>
             </Controls>

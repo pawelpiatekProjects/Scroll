@@ -27,9 +27,15 @@ const notesList = (props)=>{
     const notes = props.notes;
     console.log(notes)
 
-    let notesList = notes.map(note=>(
-        <Note title={note.title} content={note.content}/>
-    ))
+    let notesList;
+
+    if(notes.length>0){
+        notesList = notes.map(note=>(
+            <Note id={note.id} title={note.title} content={note.content} delete={props.delete}/>
+        ))
+    }else{
+        notesList = 'You have no notes';
+    }
 
 
     return(

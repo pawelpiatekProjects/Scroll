@@ -123,6 +123,14 @@ class Tasks extends Component {
             .catch(err => console.log(err))
     };
 
+    onDeleteNoteHandler = (noteId) =>{
+        axios.get('http://localhost:8080/notes/note/delete'+noteId)
+            .then(res=>{
+                this.onGetNotesHandler()
+            })
+            .catch(err=>console.log(err));
+    };
+
     onShowTaskModalHandler = () => {
         this.setState({showTaskModal: true})
     }
@@ -206,6 +214,7 @@ class Tasks extends Component {
                                        taskList = {this.state.tasks}
                                        click={this.onShowNotesModalHandler}
                                        notesList = {this.state.notes}
+                                       delete={this.onDeleteNoteHandler}
                                    />}
                             />
                         </Switch>
