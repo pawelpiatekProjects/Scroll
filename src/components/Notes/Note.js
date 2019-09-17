@@ -7,7 +7,7 @@ const Note = styled.div`
 display: grid;
 grid-template-columns: repeat(4,1fr);
 grid-row-gap: 2rem;
-width: 50%;
+
 margin: .5rem;
 background: #FCFCFC;
 padding: 3rem;

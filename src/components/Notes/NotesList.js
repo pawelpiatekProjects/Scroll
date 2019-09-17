@@ -4,6 +4,9 @@ import Note from './Note';
 
 
 const NotesListWrapper = styled.div`
+display: grid;
+grid-template-columns: repeat(2,1fr);
+grid-gap: 1rem;
 width: 80%;
 margin: 0 auto;
 
@@ -43,6 +46,8 @@ const notesList = (props)=>{
 
     return(
         <NotesListWrapper>
+            <Note/>
+            <Note/>
             <Note/>
         </NotesListWrapper>
     )
