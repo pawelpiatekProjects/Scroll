@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faPlus} from "@fortawesome/free-solid-svg-icons";
+
 
 import TaskActions from '../Navigation/TaskActions/TaskActions';
 import NotesNav from '../Navigation/NotesNav';
+import NotesList from './NotesList';
 
 
 
@@ -25,7 +25,7 @@ const notes =(props)=>{
             <NotesContainer>
                 <TaskActions tasks={tasks}/>
                 <NotesNav click={props.click}/>
-
+                <NotesList/>
             </NotesContainer>
         )
 
