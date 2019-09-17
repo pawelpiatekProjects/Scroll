@@ -3,6 +3,7 @@ import axios from 'axios';
 import styled, {createGlobalStyle} from 'styled-components';
 import {Route, Switch, withRouter} from "react-router";
 
+import Notes from './Notes';
 import SideNav from '../components/Navigation/SideNavigation/SideNavigation';
 import TopNav from '../components/Navigation/TopNav/TopNav';
 import Modal from '../components/Modal/AddTask';
@@ -33,7 +34,7 @@ display: grid;
 grid-template-columns: repeat(6,1fr);
 `;
 
-const Tasks = styled.div`
+const TasksList = styled.div`
 
 `;
 
@@ -50,7 +51,7 @@ grid-column: 1/-1;
 `;
 
 
-class Controlcontainer extends Component {
+class Tasks extends Component {
 
     state = {
         tasks: [],
@@ -141,7 +142,7 @@ class Controlcontainer extends Component {
         //     ))
         // }
         return (
-            <Tasks>
+            <TasksList>
                 <Backdrop submit={this.onPostHandler} show={this.state.showModal} hide={() => {
                     this.setState({showModal: false})
                 }}/>
@@ -182,16 +183,19 @@ class Controlcontainer extends Component {
                                 component={() => <CompletedTask
                                     taskList={this.state.tasks}/>}
                             />
+                            <Route path="/dashboard/notes"
+                                   component={()=><Notes/>}
+                            />
                         </Switch>
                     </TaskListWrapper>
 
                 </TasksWrapper>
 
 
-            </Tasks>
+            </TasksList>
 
         )
     }
 };
 
-export default Controlcontainer;
+export default Tasks;

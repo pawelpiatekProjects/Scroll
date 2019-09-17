@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 import Task from '../Task/Task';
 import TaskNav from '../TasksNav/TasksNav';
-import ImportantTask from "../ImportantTasks/ImportantTasks";
+import TaskActions from '../../Navigation/TaskActions/TaskActions';
+import {NavLink} from "react-router-dom";
 
 const TaskListWrapper = styled.div`
 width: 80%;
@@ -11,43 +12,7 @@ margin: 0 auto;
 
 `;
 
-const TaskActions = styled.ul`
 
-  list-style: none;
-  text-align: left;
-  width: 100%;
-  border-bottom: 1px solid #eee;
-   li{
-   display: inline-block;
-   margin: 1rem 3rem;
-   font-size: 1.6rem;
-   
-   p{
-   display: inline-block;
-   &:hover{
-      color: #8EC06C;
-      cursor: pointer;
-    }
-    &:active,
-    &:focus{
-      color: #8EC06C;
-    }
-   }
-  
-   }
-`;
-
-const Cloud = styled.span`
-display: inline-block;
-margin-right: 1rem;
-background: #eee;
-color: #8EC06C;
-font-size: 1.2rem;
-padding: .2rem;
-width: 2.75rem;
-text-align: center;
-border-radius: 2rem;
-`;
 
 const Posts = styled.div`
 width: 100%;
@@ -83,15 +48,7 @@ const taskList = (props)=>{
 
   return(
       <TaskListWrapper>
-          <TaskActions>
-              <li>
-                  <Cloud>
-                      {tasks.length}
-                  </Cloud>
-                  <p>To Do</p>
-              </li>
-              <li><p>Notes</p></li>
-          </TaskActions>
+          <TaskActions tasks={tasks}/>
           <TaskNav click={props.click}/>
           <Posts>
 
