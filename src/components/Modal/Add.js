@@ -36,7 +36,7 @@ const modal = (props)=>{
     if(props.status ==='task'){
         form = <TaskAddForm submit={props.submit} showModall={props.show}/>
     }else{
-        form = <NotesAddForm/>
+        form = <NotesAddForm submit={props.submit} showModall={props.show}/>
     }
     return(
         <Modal show={props.show}>

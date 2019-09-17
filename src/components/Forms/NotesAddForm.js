@@ -82,8 +82,8 @@ const notesAddForm = (props) => {
             validationSchema={SignupSchema}
 
             onSubmit={(values) => {
-                console.log(values)
-                // props.submit(values)
+                // console.log(values)
+                props.submit(values);
             }}>
             {({errors, touched}) => (
                 <Form>

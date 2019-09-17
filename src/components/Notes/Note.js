@@ -57,17 +57,14 @@ text-align: left;
 const note = (props) => {
     return (
         <Note>
-            <Title>Holidays</Title>
+            <Title>{props.title}</Title>
             <Controls>
                 <Control>
                     <FontAwesomeIcon icon={faTimes}/>
                 </Control>
             </Controls>
             <Content>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor quis neque id cursus. Duis lacinia
-                suscipit ultricies. Nulla commodo velit nisl, ac venenatis enim vehicula at. Mauris vel diam varius,
-                efficitur ante in, tristique dolor. Morbi aliquam vel orci id molestie. Phasellus volutpat vehicula
-                lacus ac aliquet. Phasellus nisl felis, hendrerit non dui vel
+                {props.content}
             </Content>
         </Note>
     )

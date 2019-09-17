@@ -12,6 +12,7 @@ const NotesContainer = styled.div`
 
 `;
 
+
 const notes =(props)=>{
     const taskList = props.taskList;
     let tasks = [];
@@ -25,7 +26,7 @@ const notes =(props)=>{
             <NotesContainer>
                 <TaskActions tasks={tasks}/>
                 <NotesNav click={props.click}/>
-                <NotesList/>
+                <NotesList notes={props.notesList}/>
             </NotesContainer>
         )
 

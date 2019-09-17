@@ -55,12 +55,14 @@ class Tasks extends Component {
 
     state = {
         tasks: [],
+        notes:[],
         showTaskModal: false,
         showNotesModal: false
     };
 
     componentDidMount() {
         this.onGetTaskHandler();
+        this.onGetNotesHandler();
     }
 
     onGetTaskHandler = () => {
@@ -71,6 +73,16 @@ class Tasks extends Component {
             })
             .catch(err => console.log(err))
     }
+
+    onGetNotesHandler =()=>{
+        axios.get('http://localhost:8080/notes/fetchNotes')
+            .then(result=>{
+                const notes = result.data.notes.reverse();
+                console.log(notes);
+                this.setState({notes:notes});
+            })
+            .catch(err=>console.log(err))
+    };
 
     onPostTaskHandler = (values) => {
 
@@ -86,6 +98,19 @@ class Tasks extends Component {
                 this.setState({showTaskModal: false});
             })
             .catch(err => console.log(err))
+    }
+
+    onPostNoteHandler = (values)=>{
+        axios.post('http://localhost:8080/notes/createNote',{
+            title:values.title,
+            content:values.content
+        })
+            .then(response=>{
+                console.log(response)
+                this.onGetNotesHandler();
+                this.setState({showNotesModal:false})
+            })
+            .catch(err=>console.log(err))
     }
 
     onDeleteHandler = (taskId) => {
@@ -139,7 +164,7 @@ class Tasks extends Component {
                     this.setState({showNotesModal: false})
                 }}/>
                 <Modal status='task'submit={this.onPostTaskHandler} show={this.state.showTaskModal}/>
-                <Modal status='notes'submit={this.onPostTaskHandler} show={this.state.showNotesModal}/>
+                <Modal status='notes'submit={this.onPostNoteHandler} show={this.state.showNotesModal}/>
                 <GlobalStyle/>
                 <TasksWrapper>
                     <Topnav>
@@ -180,6 +205,7 @@ class Tasks extends Component {
                                    component={()=><Notes
                                        taskList = {this.state.tasks}
                                        click={this.onShowNotesModalHandler}
+                                       notesList = {this.state.notes}
                                    />}
                             />
                         </Switch>

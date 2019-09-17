@@ -18,37 +18,23 @@ width: 100%;
 
 const notesList = (props)=>{
 
-    // const taskList = props.taskList;
-    // let tasks = [];
-    // for(let i=0;i<taskList.length;i++){
-    //
-    //     if(!taskList[i].completed){
-    //         tasks.push(taskList[i]);
-    //     }
-    // }
-    // let list;
-    //
-    // if(tasks.length <=0){
-    //     list = 'No important tasks';
-    // }else{
-    //     list = tasks.map(task=>(
-    //         <Task
-    //             id={task._id}
-    //             title = {task.title}
-    //             deadline = {task.deadline.slice(0,10)}
-    //             content = {task.content}
-    //             important = {task.important}
-    //             delete={props.delete}
-    //             importantAdd={props.importantAdd}
-    //         />
-    //     ));
-    // }
+    // let notes = props.notes;
+    // notes.map(note=>{
+    //     <Note title={note.title} content={note.content}/>
+    // })
+
+
+    const notes = props.notes;
+    console.log(notes)
+
+    let notesList = notes.map(note=>(
+        <Note title={note.title} content={note.content}/>
+    ))
+
 
     return(
         <NotesListWrapper>
-            <Note/>
-            <Note/>
-            <Note/>
+            {notesList}
         </NotesListWrapper>
     )
 };
