@@ -24,7 +24,7 @@ const notes =(props)=>{
     }
         return(
             <NotesContainer>
-                <TaskActions tasks={tasks}/>
+                <TaskActions tasks={tasks} notes={props.notesList}/>
                 <NotesNav click={props.click}/>
                 <NotesList notes={props.notesList} delete={props.delete}/>
             </NotesContainer>

@@ -14,6 +14,7 @@ import UpcomingTasks from '../components/Tasks/UpcomingTasks/UpcomingTasks';
 import CompletedTask from '../components/Tasks/CompletedTasks/CompletedTasks';
 
 
+
 const GlobalStyle = createGlobalStyle`
 *,
 *::after,
@@ -78,7 +79,7 @@ class Tasks extends Component {
         axios.get('http://localhost:8080/notes/fetchNotes')
             .then(result=>{
                 const notes = result.data.notes.reverse();
-                console.log(notes);
+
                 this.setState({notes:notes});
             })
             .catch(err=>console.log(err))
@@ -186,6 +187,7 @@ class Tasks extends Component {
                             <Route path="/dashboard/tasks"
                                    component={() => <TaskList
                                        taskList={this.state.tasks}
+                                       notesList = {this.state.notes}
                                        delete={this.onDeleteHandler}
                                        importantAdd={this.onAddImportantHandler}
                                        click={this.onShowTaskModalHandler}/>}
@@ -194,6 +196,7 @@ class Tasks extends Component {
                                 path="/dashboard/important-tasks"
                                 component={() => <ImportantTasks
                                     taskList={this.state.tasks}
+                                    notesList = {this.state.notes}
                                     delete={this.onDeleteHandler}
                                     importantRemove={this.onRemoveImportantHandler}/>}
                             />
@@ -202,11 +205,13 @@ class Tasks extends Component {
                                 component={() => <UpcomingTasks
                                     delete={this.onDeleteHandler}
                                     importantAdd={this.onAddImportantHandler}
+                                    notesList = {this.state.notes}
                                     taskList={this.state.tasks}/>}
                             />
                             <Route
                                 path="/dashboard/completed-tasks"
                                 component={() => <CompletedTask
+                                    notesList = {this.state.notes}
                                     taskList={this.state.tasks}/>}
                             />
                             <Route path="/dashboard/notes"

@@ -53,6 +53,9 @@ const taskActions = (props)=>{
                 <NavLink to="/dashboard/tasks">To Do</NavLink>
             </li>
             <li>
+                <Cloud>
+                    {props.notes.length}
+                </Cloud>
                 <NavLink to="/dashboard/notes">Notes</NavLink>
             </li>
         </TaskActions>

@@ -48,10 +48,9 @@ const taskList = (props)=>{
 
   return(
       <TaskListWrapper>
-          <TaskActions tasks={tasks}/>
+          <TaskActions tasks={tasks} notes={props.notesList}/>
           <TaskNav click={props.click}/>
           <Posts>
-
               {list}
           </Posts>
 
