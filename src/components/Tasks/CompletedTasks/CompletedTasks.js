@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import CompletedTask from './CompletedTask/CompletedTask';
-
+import EmptyInfo from '../../EmptyInfo/EmptyInfo';
 
 
 
@@ -50,7 +50,7 @@ const completedTasks = (props) =>{
     let list;
 
     if(completed.length <=0){
-        list = 'No completed tasks';
+        list = <EmptyInfo text='No completed tasks'/>;
     }else{
         list = completed.map(task=>(
             <CompletedTask

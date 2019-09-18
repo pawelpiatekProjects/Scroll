@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import ImportantTask from './ImportantTask/ImportantTask';
+import EmptyInfo from '../../EmptyInfo/EmptyInfo';
 
 const TaskListWrapper = styled.div`
   width: 80%;
@@ -48,7 +49,7 @@ const importantTasks = (props) =>{
     let list;
 
     if(importantTasks.length <=0){
-        list = 'No important tasks';
+        list = <EmptyInfo text='No important tasks'/>;
     }else{
         list = importantTasks.map(task=>(
             <ImportantTask

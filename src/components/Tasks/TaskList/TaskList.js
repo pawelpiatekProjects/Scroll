@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Task from '../Task/Task';
 import TaskNav from '../TasksNav/TasksNav';
 import TaskActions from '../../Navigation/TaskActions/TaskActions';
-import {NavLink} from "react-router-dom";
+import EmptyInfo from '../../EmptyInfo/EmptyInfo';
 
 const TaskListWrapper = styled.div`
 width: 80%;
@@ -31,7 +31,7 @@ const taskList = (props)=>{
     let list;
 
     if(tasks.length <=0){
-        list = 'No important tasks';
+        list = <EmptyInfo text='No important tasks'/>;
     }else{
         list = tasks.map(task=>(
             <Task

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Note from './Note';
+import EmptyInfo from '../EmptyInfo/EmptyInfo';
 
 
 const NotesListWrapper = styled.div`
@@ -34,7 +35,7 @@ const notesList = (props)=>{
             <Note id={note.id} title={note.title} content={note.content} delete={props.delete}/>
         ))
     }else{
-        notesList = 'You have no notes';
+        notesList = <EmptyInfo text='You have no notes'/>;
     }
 
 

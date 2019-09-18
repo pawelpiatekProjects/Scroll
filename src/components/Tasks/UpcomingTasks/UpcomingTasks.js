@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Task from '../Task/Task';
+import EmptyInfo from '../../EmptyInfo/EmptyInfo';
 
 
 
@@ -51,7 +52,7 @@ const upcomingTask = (props) =>{
     let list;
 
     if(upcomingTasks.length <=0){
-        list = 'Nothing to do in this week';
+        list = <EmptyInfo text='Nothing to do in this week'/>;
     }else{
         list = upcomingTasks.map(task=>(
             <Task
