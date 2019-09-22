@@ -58,7 +58,8 @@ class Tasks extends Component {
         tasks: [],
         notes:[],
         showTaskModal: false,
-        showNotesModal: false
+        showNotesModal: false,
+        loading: false
     };
 
     componentDidMount() {
@@ -67,12 +68,21 @@ class Tasks extends Component {
     }
 
     onGetTaskHandler = () => {
+        this.setState({loading:true})
         axios.get('http://localhost:8080/tasks/fetchTasks')
             .then(tasksData => {
                 const tasks = tasksData.data.tasks.reverse();
-                this.setState({tasks: tasks})
+                return this.setState({
+                    tasks: tasks
+                })
             })
-            .catch(err => console.log(err))
+            .then(res=>{
+                this.setState({loading:false});
+            })
+            .catch(err=>{
+                console.log(err);
+                this.setState({loading:false});
+            })
     }
 
     onGetNotesHandler =()=>{
@@ -187,6 +197,7 @@ class Tasks extends Component {
                             <Route path="/dashboard/tasks"
                                    component={() => <TaskList
                                        taskList={this.state.tasks}
+                                       loading={this.state.loading}
                                        notesList = {this.state.notes}
                                        delete={this.onDeleteHandler}
                                        importantAdd={this.onAddImportantHandler}

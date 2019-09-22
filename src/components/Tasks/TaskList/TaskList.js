@@ -5,6 +5,7 @@ import Task from '../Task/Task';
 import TaskNav from '../TasksNav/TasksNav';
 import TaskActions from '../../Navigation/TaskActions/TaskActions';
 import EmptyInfo from '../../EmptyInfo/EmptyInfo';
+import Spinner from '../../UI/Spinner';
 
 const TaskListWrapper = styled.div`
 width: 80%;
@@ -33,17 +34,23 @@ const taskList = (props)=>{
     if(tasks.length <=0){
         list = <EmptyInfo text='No important tasks'/>;
     }else{
-        list = tasks.map(task=>(
-            <Task
-                id={task._id}
-                title = {task.title}
-                deadline = {task.deadline.slice(0,10)}
-                content = {task.content}
-                important = {task.important}
-                delete={props.delete}
-                importantAdd={props.importantAdd}
-            />
-        ));
+        if(props.loading){
+            list = <Spinner/>
+        }
+        else{
+            list = tasks.map(task=>(
+                <Task
+                    id={task._id}
+                    title = {task.title}
+                    deadline = {task.deadline.slice(0,10)}
+                    content = {task.content}
+                    important = {task.important}
+                    delete={props.delete}
+                    importantAdd={props.importantAdd}
+                />
+            ));
+        }
+
     }
 
   return(
@@ -53,6 +60,7 @@ const taskList = (props)=>{
           <Posts>
               {list}
           </Posts>
+
 
       </TaskListWrapper>
   )
