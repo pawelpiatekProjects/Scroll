@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import CompletedTask from './CompletedTask/CompletedTask';
 import EmptyInfo from '../../EmptyInfo/EmptyInfo';
 import TaskActions from '../../Navigation/TaskActions/TaskActions';
+import Spinner from '../../UI/Spinner';
 
 
 

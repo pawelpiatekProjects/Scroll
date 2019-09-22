@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 const Spinner = styled.div`
-color: #521751;
+color: #8EC06C;
   font-size: 11px;
   text-indent: -99999em;
   margin: 55px auto;

@@ -12,7 +12,7 @@ import TaskList from '../components/Tasks/TaskList/TaskList';
 import ImportantTasks from '../components/Tasks/ImportantTasks/ImportantTasks';
 import UpcomingTasks from '../components/Tasks/UpcomingTasks/UpcomingTasks';
 import CompletedTask from '../components/Tasks/CompletedTasks/CompletedTasks';
-
+import Spinner from '../components/UI/Spinner';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -33,6 +33,7 @@ body{
 const TasksWrapper = styled.div`
 display: grid;
 grid-template-columns: repeat(6,1fr);
+
 `;
 
 const TasksList = styled.div`
@@ -51,12 +52,17 @@ const Topnav = styled.div`
 grid-column: 1/-1;
 `;
 
+const SpinnerWrapper = styled.div`
+grid-column: 2/-1;
+margin-top: 8rem;
+`;
+
 
 class Tasks extends Component {
 
     state = {
         tasks: [],
-        notes:[],
+        notes: [],
         showTaskModal: false,
         showNotesModal: false,
         loading: false
@@ -68,7 +74,7 @@ class Tasks extends Component {
     }
 
     onGetTaskHandler = () => {
-        this.setState({loading:true})
+        this.setState({loading: true})
         axios.get('http://localhost:8080/tasks/fetchTasks')
             .then(tasksData => {
                 const tasks = tasksData.data.tasks.reverse();
@@ -76,23 +82,23 @@ class Tasks extends Component {
                     tasks: tasks
                 })
             })
-            .then(res=>{
-                this.setState({loading:false});
+            .then(res => {
+                this.setState({loading: false});
             })
-            .catch(err=>{
+            .catch(err => {
                 console.log(err);
-                this.setState({loading:false});
+                this.setState({loading: false});
             })
     }
 
-    onGetNotesHandler =()=>{
+    onGetNotesHandler = () => {
         axios.get('http://localhost:8080/notes/fetchNotes')
-            .then(result=>{
+            .then(result => {
                 const notes = result.data.notes.reverse();
 
-                this.setState({notes:notes});
+                this.setState({notes: notes});
             })
-            .catch(err=>console.log(err))
+            .catch(err => console.log(err))
     };
 
     onPostTaskHandler = (values) => {
@@ -111,17 +117,17 @@ class Tasks extends Component {
             .catch(err => console.log(err))
     }
 
-    onPostNoteHandler = (values)=>{
-        axios.post('http://localhost:8080/notes/createNote',{
-            title:values.title,
-            content:values.content
+    onPostNoteHandler = (values) => {
+        axios.post('http://localhost:8080/notes/createNote', {
+            title: values.title,
+            content: values.content
         })
-            .then(response=>{
+            .then(response => {
                 console.log(response)
                 this.onGetNotesHandler();
-                this.setState({showNotesModal:false})
+                this.setState({showNotesModal: false})
             })
-            .catch(err=>console.log(err))
+            .catch(err => console.log(err))
     }
 
     onDeleteHandler = (taskId) => {
@@ -134,20 +140,20 @@ class Tasks extends Component {
             .catch(err => console.log(err))
     };
 
-    onDeleteNoteHandler = (noteId) =>{
-        axios.get('http://localhost:8080/notes/note/delete'+noteId)
-            .then(res=>{
+    onDeleteNoteHandler = (noteId) => {
+        axios.get('http://localhost:8080/notes/note/delete' + noteId)
+            .then(res => {
                 this.onGetNotesHandler()
             })
-            .catch(err=>console.log(err));
+            .catch(err => console.log(err));
     };
 
     onShowTaskModalHandler = () => {
         this.setState({showTaskModal: true})
     }
 
-    onShowNotesModalHandler = ()=>{
-        this.setState({showNotesModal:true})
+    onShowNotesModalHandler = () => {
+        this.setState({showNotesModal: true})
     }
 
     onAddImportantHandler = (taskId) => {
@@ -173,7 +179,64 @@ class Tasks extends Component {
 
 
     render() {
-
+        let list;
+        if (this.state.loading) {
+            list = (
+                <SpinnerWrapper>
+                    <Spinner/>
+                </SpinnerWrapper>
+            )
+        } else {
+            list = (
+                <TaskListWrapper>
+                    <Switch>
+                        <Route path="/dashboard/tasks"
+                               component={() => <TaskList
+                                   taskList={this.state.tasks}
+                                   loading={this.state.loading}
+                                   notesList={this.state.notes}
+                                   delete={this.onDeleteHandler}
+                                   importantAdd={this.onAddImportantHandler}
+                                   click={this.onShowTaskModalHandler}/>}
+                        />
+                        <Route
+                            path="/dashboard/important-tasks"
+                            component={() => <ImportantTasks
+                                taskList={this.state.tasks}
+                                loading={this.state.loading}
+                                notesList={this.state.notes}
+                                delete={this.onDeleteHandler}
+                                importantRemove={this.onRemoveImportantHandler}/>}
+                        />
+                        <Route
+                            path="/dashboard/upcoming-tasks"
+                            component={() => <UpcomingTasks
+                                delete={this.onDeleteHandler}
+                                loading={this.state.loading}
+                                importantAdd={this.onAddImportantHandler}
+                                notesList={this.state.notes}
+                                taskList={this.state.tasks}/>}
+                        />
+                        <Route
+                            path="/dashboard/completed-tasks"
+                            component={() => <CompletedTask
+                                notesList={this.state.notes}
+                                loading={this.state.loading}
+                                taskList={this.state.tasks}/>}
+                        />
+                        <Route path="/dashboard/notes"
+                               component={() => <Notes
+                                   taskList={this.state.tasks}
+                                   loading={this.state.loading}
+                                   click={this.onShowNotesModalHandler}
+                                   notesList={this.state.notes}
+                                   delete={this.onDeleteNoteHandler}
+                               />}
+                        />
+                    </Switch>
+                </TaskListWrapper>
+            )
+        }
         return (
             <TasksList>
                 <Backdrop submit={this.onPostTaskHandler} show={this.state.showTaskModal} hide={() => {
@@ -182,8 +245,8 @@ class Tasks extends Component {
                 <Backdrop submit={this.onShowNotesModalHandler} show={this.state.showNotesModal} hide={() => {
                     this.setState({showNotesModal: false})
                 }}/>
-                <Modal status='task'submit={this.onPostTaskHandler} show={this.state.showTaskModal}/>
-                <Modal status='notes'submit={this.onPostNoteHandler} show={this.state.showNotesModal}/>
+                <Modal status='task' submit={this.onPostTaskHandler} show={this.state.showTaskModal}/>
+                <Modal status='notes' submit={this.onPostNoteHandler} show={this.state.showNotesModal}/>
                 <GlobalStyle/>
                 <TasksWrapper>
                     <Topnav>
@@ -192,49 +255,7 @@ class Tasks extends Component {
                     <Sidebar>
                         <SideNav/>
                     </Sidebar>
-                    <TaskListWrapper>
-                        <Switch>
-                            <Route path="/dashboard/tasks"
-                                   component={() => <TaskList
-                                       taskList={this.state.tasks}
-                                       loading={this.state.loading}
-                                       notesList = {this.state.notes}
-                                       delete={this.onDeleteHandler}
-                                       importantAdd={this.onAddImportantHandler}
-                                       click={this.onShowTaskModalHandler}/>}
-                            />
-                            <Route
-                                path="/dashboard/important-tasks"
-                                component={() => <ImportantTasks
-                                    taskList={this.state.tasks}
-                                    notesList = {this.state.notes}
-                                    delete={this.onDeleteHandler}
-                                    importantRemove={this.onRemoveImportantHandler}/>}
-                            />
-                            <Route
-                                path="/dashboard/upcoming-tasks"
-                                component={() => <UpcomingTasks
-                                    delete={this.onDeleteHandler}
-                                    importantAdd={this.onAddImportantHandler}
-                                    notesList = {this.state.notes}
-                                    taskList={this.state.tasks}/>}
-                            />
-                            <Route
-                                path="/dashboard/completed-tasks"
-                                component={() => <CompletedTask
-                                    notesList = {this.state.notes}
-                                    taskList={this.state.tasks}/>}
-                            />
-                            <Route path="/dashboard/notes"
-                                   component={()=><Notes
-                                       taskList = {this.state.tasks}
-                                       click={this.onShowNotesModalHandler}
-                                       notesList = {this.state.notes}
-                                       delete={this.onDeleteNoteHandler}
-                                   />}
-                            />
-                        </Switch>
-                    </TaskListWrapper>
+                    {list}
 
                 </TasksWrapper>
 

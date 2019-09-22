@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import TaskActions from '../../Navigation/TaskActions/TaskActions';
 import ImportantTask from './ImportantTask/ImportantTask';
 import EmptyInfo from '../../EmptyInfo/EmptyInfo';
+import Spinner from '../../UI/Spinner';
 
 const TaskListWrapper = styled.div`
   width: 80%;
