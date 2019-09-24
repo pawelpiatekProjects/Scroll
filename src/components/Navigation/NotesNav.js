@@ -17,7 +17,7 @@ padding-bottom: .5rem;
 `;
 
 const AddButton = styled.button`
-
+  z-index: 1;
   padding: .5rem;
   width: 3rem;
   border: 1px solid #8EC06C;

@@ -4,13 +4,14 @@ import styled from 'styled-components';
 import Modal from '../Modal/Add';
 
 const Backdrop = styled.div`
-width: 100%;
-height: 100vh;
-background: #333;
-position: fixed;
-z-index: 10;
-opacity: 0.8;
-transform: translateX(${props=>props.show ? 0 : -100}%);
+ position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    display: ${props=>props.show ? 'block': 'none'};
 `;
 
 const backdrop = (props)=>{

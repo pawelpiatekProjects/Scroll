@@ -29,7 +29,7 @@ const AddButton = styled.button`
   border-radius: 2rem;
   color: #8EC06C;;
   background: #ffffff;
- 
+ z-index: 1;
   
   justify-self: center;
   
