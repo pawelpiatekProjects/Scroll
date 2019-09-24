@@ -245,8 +245,8 @@ class Tasks extends Component {
                 <Backdrop submit={this.onShowNotesModalHandler} show={this.state.showNotesModal} hide={() => {
                     this.setState({showNotesModal: false})
                 }}/>
-                <Modal status='task' submit={this.onPostTaskHandler} show={this.state.showTaskModal}/>
-                <Modal status='notes' submit={this.onPostNoteHandler} show={this.state.showNotesModal}/>
+                {this.state.showTaskModal ?<Modal status='task' submit={this.onPostTaskHandler} show={this.state.showTaskModal}/> : null}
+                {this.state.showNotesModal ?<Modal status='notes' submit={this.onPostNoteHandler} show={this.state.showNotesModal}/> :null}
                 <GlobalStyle/>
                 <TasksWrapper>
                     <Topnav>

@@ -4,12 +4,13 @@ import {NavLink} from "react-router-dom";
 import task from "../../Tasks/Task/Task";
 
 const TaskActions = styled.ul`
-
+  z-index: 1;
   list-style: none;
   text-align: left;
   width: 100%;
   border-bottom: 1px solid #eee;
    li{
+   z-index: 1;
    display: inline-block;
    margin: 1rem 3rem;
    font-size: 1.6rem;
