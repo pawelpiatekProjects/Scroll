@@ -120,6 +120,7 @@ class IntroPage extends Component{
             name: values.name
         }).then(res=>{
             console.log(res)
+            this.onChangeForm();
         }).catch(err=>console.log(err))
     }
 

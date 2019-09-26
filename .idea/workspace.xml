@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e14ece76-6aa8-4bda-bb70-57ab59ecfae1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Forms/SignUp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/UI/Error/Error.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Forms/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/SignIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/IntroPage/ItroPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/IntroPage/ItroPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Tasks/Task/Task.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tasks/Task/Task.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Tasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Tasks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/WelcomePage/WelcomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/WelcomePage/WelcomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Forms/SignUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/SignUp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/IntroPage/ItroPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/IntroPage/ItroPage.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -107,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Forms/SignUp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="129" column="20" lean-forward="true" selection-start-line="129" selection-start-column="23" selection-end-line="129" selection-end-column="49" />
+            <state relative-caret-position="355">
+              <caret line="123" column="18" lean-forward="true" selection-start-line="123" selection-start-column="18" selection-end-line="123" selection-end-column="18" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -119,11 +112,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/IntroPage/ItroPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="135" column="50" selection-start-line="135" selection-start-column="44" selection-end-line="135" selection-end-column="50" />
+            <state relative-caret-position="275">
+              <caret line="119" column="29" lean-forward="true" selection-start-line="119" selection-start-column="29" selection-end-line="119" selection-end-column="29" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -196,8 +189,8 @@
         <option value="$PROJECT_DIR$/src/components/Tasks/Task/Task.js" />
         <option value="$PROJECT_DIR$/src/components/IntroPage/ItroPage.js" />
         <option value="$PROJECT_DIR$/src/components/Forms/SignIn.js" />
-        <option value="$PROJECT_DIR$/src/containers/IntroPage/ItroPage.js" />
         <option value="$PROJECT_DIR$/src/components/Forms/SignUp.js" />
+        <option value="$PROJECT_DIR$/src/containers/IntroPage/ItroPage.js" />
       </list>
     </option>
   </component>
@@ -355,12 +348,12 @@
       <workItem from="1568820096050" duration="3831000" />
       <workItem from="1569326943075" duration="3834000" />
       <workItem from="1569438942344" duration="1638000" />
-      <workItem from="1569513639976" duration="4606000" />
+      <workItem from="1569513639976" duration="6031000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99466000" />
+    <option name="totallyTimeSpent" value="100891000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -690,22 +683,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/IntroPage/ItroPage.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Forms/SignUp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="135" column="50" selection-start-line="135" selection-start-column="44" selection-end-line="135" selection-end-column="50" />
+        <state relative-caret-position="355">
+          <caret line="123" column="18" lean-forward="true" selection-start-line="123" selection-start-column="18" selection-end-line="123" selection-end-column="18" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Forms/SignUp.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/IntroPage/ItroPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="129" column="20" lean-forward="true" selection-start-line="129" selection-start-column="23" selection-end-line="129" selection-end-column="49" />
+        <state relative-caret-position="275">
+          <caret line="119" column="29" lean-forward="true" selection-start-line="119" selection-start-column="29" selection-end-line="119" selection-end-column="29" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>

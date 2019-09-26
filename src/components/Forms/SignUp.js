@@ -129,6 +129,7 @@ const signUp = (props) => {
                     // props.history.push('/dashboard/tasks');
                     // console.log('added user');
                     props.method(values);
+                    console.log(values)
                 }}>
                 {({errors, touched}) => (
                     <Form>
