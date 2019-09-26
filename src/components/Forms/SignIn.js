@@ -10,14 +10,14 @@ import {faPlus} from "@fortawesome/free-solid-svg-icons";
 const SignInForm = styled.div`
 background: #333;
 opacity: .8;
-border-radius: 2rem;
-width: 25%;
+border-radius: 2rem 0 2rem 2rem ;
+width: 100%;
 height: 27.5rem;
 margin: 0 auto;
 position: absolute;
-top:50%;
+bottom:0;
 left: 50%;
-transform: translate(-50%,-50%);
+transform: translate(-50%);
 padding: 2rem 0;
 form{
 margin-top: 4rem;

@@ -13,6 +13,7 @@ import ImportantTasks from '../components/Tasks/ImportantTasks/ImportantTasks';
 import UpcomingTasks from '../components/Tasks/UpcomingTasks/UpcomingTasks';
 import CompletedTask from '../components/Tasks/CompletedTasks/CompletedTasks';
 import Spinner from '../components/UI/Spinner';
+import Error from '../components/UI/Error/Error';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -65,7 +66,8 @@ class Tasks extends Component {
         notes: [],
         showTaskModal: false,
         showNotesModal: false,
-        loading: false
+        loading: false,
+        error:false
     };
 
     componentDidMount() {
@@ -87,7 +89,10 @@ class Tasks extends Component {
             })
             .catch(err => {
                 console.log(err);
-                this.setState({loading: false});
+                this.setState({
+                    loading: false,
+                    error:true
+                });
             })
     }
 
@@ -186,7 +191,9 @@ class Tasks extends Component {
                     <Spinner/>
                 </SpinnerWrapper>
             )
-        } else {
+        } else if(this.state.error){
+            list=<Error message='Could not connect to database' />
+        } else{
             list = (
                 <TaskListWrapper>
                     <Switch>

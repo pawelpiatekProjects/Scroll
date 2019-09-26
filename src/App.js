@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Switch, withRouter} from "react-router";
 
-import IntroPage from './components/IntroPage/ItroPage';
+import IntroPage from './containers/IntroPage/ItroPage';
 import ControlContainer from './containers/Tasks';
 import WelcomePage from './containers/WelcomePage/WelcomePage';
 

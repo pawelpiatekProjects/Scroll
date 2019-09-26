@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled,{keyframes} from 'styled-components';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHeart,faCheck,faInfo} from "@fortawesome/free-solid-svg-icons";
 
@@ -73,6 +73,10 @@ const Control = styled.button`
   }
 `;
 
+
+
+
+
 const ControlHeart = styled.button`
 padding: .5rem;
   width: 3rem;
@@ -82,6 +86,25 @@ padding: .5rem;
   background: ${props=>props.important ? '#eee' : '#FF6C5F'};
   border: 1px solid #FF6C5F;
   margin: 0 .25rem;
+  animation: ${props=>props.important ? 'heart .3s ease-out' : 'none'};
+  
+  @keyframes heart {
+    0% {
+    background: #FF6C5F ;
+    color: #fff;
+    transform: scale(1);
+    }
+    50%{
+    background: #FF6C5F ;
+    color: #fff;
+    transform: scale(1.5);
+    }
+    100% {
+    background: #fff ;
+    color: #FF6C5F;
+    transform: scale(1);
+    }
+}
   
   &:hover,
   &:focus{
@@ -90,6 +113,10 @@ padding: .5rem;
   border: 1px solid #FF6C5F;
   color: #FF6C5F;
   outline: none;
+  }
+  
+  &:active{
+  
   }
 `;
 
@@ -101,6 +128,7 @@ border-top: 2px solid ${props=>props.important ?'#FF6C5F': '#8EC06C'} ;
 padding: 2rem 0;
 width: 100%;
 `;
+
 
 
 const task = (props)=>{
