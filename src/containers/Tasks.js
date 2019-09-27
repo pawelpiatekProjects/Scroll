@@ -77,11 +77,13 @@ class Tasks extends Component {
 
     onGetTaskHandler = () => {
         this.setState({loading: true})
+        const token = localStorage.getItem('token');
         axios.get('http://localhost:8080/tasks/fetchTasks',{
             headers: {
-                Authorization: 'Bearer ' + this.props.token
+                Authorization: 'Bearer ' + token
             }
-        })
+        }
+        )
             .then(tasksData => {
                 const tasks = tasksData.data.tasks.reverse();
                 return this.setState({

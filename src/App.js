@@ -5,6 +5,7 @@ import IntroPage from './components/IntroPage/ItroPage';
 import ControlContainer from './containers/Tasks';
 import WelcomePage from './containers/WelcomePage/WelcomePage';
 
+
 import './App.css';
 import axios from "axios";
 
@@ -13,7 +14,7 @@ class App extends Component{
     state={
         isSignIn: true,
         isAuth: false,
-        token: '',
+        token: null,
         userId: '',
         error: ''
     }
@@ -53,43 +54,48 @@ class App extends Component{
             email: values.email,
             password: values.password
         })
-            .then(result=>{
-                console.log(result)
-                if(result.status === 422){
+            .then(res=>{
+                if(res.status === 422){
                     console.log('Error 422');
                     this.setState({error: 'Validation failed'})
                 }
-                if(result.status !== 200 && result.status !== 201){
+                if(res.status !== 200 && res.status !== 201){
                     console.log('Error!');
                     this.setState({error: 'Could not authenticate you'});
                 }
-                return result.json();
+                return res
             })
             .then(resData=>{
-                console.log(resData);
+                console.log(resData.data.token);
                 this.setState({
                     isAuth: true,
-                    token: resData.token,
-                    userId: resData.userId
+                    token: resData.data.token,
+                    userId: resData.data.userId
                 });
-                localStorage.setItem('token',resData.token);
-                localStorage.setItem('userId',resData.userId);
+
+                localStorage.setItem('token',resData.data.token);
+                localStorage.setItem('userId',resData.data.userId);
                 const remainingMilliseconds = 60 * 60 * 1000;
                 const expiryDate = new Date(
                     new Date().getTime() + remainingMilliseconds
                 );
                 localStorage.setItem('expiryDate', expiryDate.toISOString());//correct expireDate
                 this.setAutoLogout(remainingMilliseconds);
+                console.log('after')
             })
             .catch(err=>console.log(err))
     }
 
     render(){
+
         return (
+
             <div className="App">
                 {/*<TopNav/>*/}
                 <Switch>
-                    <Route path='/dashboard' component={ControlContainer}/>
+                    <Route path='/dashboard' render={props=> (
+                        <ControlContainer test='test' token={this.state.token}/>
+                    )}/>
                     <Route path='/welcomePage' exact  component={WelcomePage}/>
                     <Route path='/' component={()=><IntroPage
                     signup={this.onSignUpHandler}
