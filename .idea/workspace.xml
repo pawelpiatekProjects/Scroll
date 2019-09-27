@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e14ece76-6aa8-4bda-bb70-57ab59ecfae1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Forms/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Forms/SignIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/IntroPage/ItroPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/IntroPage/ItroPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/IntroPage/ItroPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/IntroPage/ItroPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Tasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Tasks.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,22 +21,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/Tasks.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1650">
-              <caret line="114" column="10" lean-forward="true" selection-start-line="114" selection-start-column="10" selection-end-line="114" selection-end-column="10" />
+            <state relative-caret-position="1025">
+              <caret line="89" column="7" lean-forward="true" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Tasks/TasksNav/TasksNav.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="775">
-              <caret line="34" column="2" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,10 +103,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/containers/IntroPage/ItroPage.js">
+        <entry file="file://$PROJECT_DIR$/src/components/IntroPage/ItroPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="173" column="97" selection-start-line="173" selection-start-column="97" selection-end-line="173" selection-end-column="97" />
+            <state relative-caret-position="523">
+              <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -132,6 +121,18 @@
               <caret line="137" column="56" lean-forward="true" selection-start-line="137" selection-start-column="56" selection-end-line="137" selection-end-column="56" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="723">
+              <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -164,7 +165,6 @@
         <option value="$PROJECT_DIR$/src/components/Navigation/TopNav/TopNav.js" />
         <option value="$PROJECT_DIR$/src/containers/Controlcontainer.js" />
         <option value="$PROJECT_DIR$/src/components/Navigation/SideNavigation/SideNavigation.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/Notes/NotesNav.js" />
         <option value="$PROJECT_DIR$/src/containers/Notes.js" />
         <option value="$PROJECT_DIR$/src/components/Modal/AddTask.js" />
@@ -185,13 +185,14 @@
         <option value="$PROJECT_DIR$/src/components/Navigation/TaskActions/TaskActions.js" />
         <option value="$PROJECT_DIR$/src/containers/WelcomePage/WelcomePage.js" />
         <option value="$PROJECT_DIR$/src/components/Error/Error.js" />
-        <option value="$PROJECT_DIR$/src/containers/Tasks.js" />
         <option value="$PROJECT_DIR$/src/components/UI/Error/Error.js" />
         <option value="$PROJECT_DIR$/src/components/Tasks/Task/Task.js" />
-        <option value="$PROJECT_DIR$/src/components/IntroPage/ItroPage.js" />
         <option value="$PROJECT_DIR$/src/components/Forms/SignUp.js" />
         <option value="$PROJECT_DIR$/src/components/Forms/SignIn.js" />
+        <option value="$PROJECT_DIR$/src/containers/Tasks.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/containers/IntroPage/ItroPage.js" />
+        <option value="$PROJECT_DIR$/src/components/IntroPage/ItroPage.js" />
       </list>
     </option>
   </component>
@@ -277,13 +278,6 @@
               <item name="reminder-v2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
-              <item name="IntroPage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reminder-v2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reminder-v2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
               <item name="WelcomePage" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -304,15 +298,15 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\pawel\Documents\www\react\reminder-v2\src\assets\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\pawel\Documents\www\react\reminder-v2\src\components" />
       <recent name="D:\Users\pawel\Documents\www\react\reminder-v2\src\containers" />
       <recent name="D:\Users\pawel\Documents\www\react\reminder-v2\src\components\UI" />
       <recent name="D:\Users\pawel\Documents\www\react\reminder-v2\src\components\Navigation" />
       <recent name="D:\Users\pawel\Documents\www\react\reminder-v2\src\components\Tasks\ImportantTasks" />
-      <recent name="D:\Users\pawel\Documents\www\react\reminder-v2\src\components\Tasks" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Users\pawel\Documents\www\react\reminder-v2\src\assets\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -350,12 +344,12 @@
       <workItem from="1569326943075" duration="3834000" />
       <workItem from="1569438942344" duration="1638000" />
       <workItem from="1569513639976" duration="6749000" />
-      <workItem from="1569609957211" duration="2507000" />
+      <workItem from="1569609957211" duration="4579000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104116000" />
+    <option name="totallyTimeSpent" value="106188000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -499,16 +493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="548">
           <caret line="26" column="65" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -675,16 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/Tasks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1650">
-          <caret line="114" column="10" lean-forward="true" selection-start-line="114" selection-start-column="10" selection-end-line="114" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Forms/SignIn.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -695,10 +669,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/IntroPage/ItroPage.js">
+    <entry file="file://$PROJECT_DIR$/src/containers/Tasks.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="173" column="97" selection-start-line="173" selection-start-column="97" selection-end-line="173" selection-end-column="97" />
+        <state relative-caret-position="1025">
+          <caret line="89" column="7" lean-forward="true" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="723">
+          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/IntroPage/ItroPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
