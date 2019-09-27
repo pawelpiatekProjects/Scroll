@@ -120,8 +120,9 @@ const signIn = (props) => {
 
                     validationSchema={SignupSchema}
 
-                    onSubmit={() => {
-                        props.history.push('/dashboard/tasks');
+                    onSubmit={(values) => {
+                        props.method(values);
+                        // props.history.push('/dashboard/tasks');
                     }}>
                     {({errors, touched}) => (
                         <Form>

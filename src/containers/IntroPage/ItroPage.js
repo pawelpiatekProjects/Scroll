@@ -110,8 +110,25 @@ const FormButton = styled.button`
 class IntroPage extends Component{
 
     state={
-        isSignIn: true
+        isSignIn: true,
+        isAuth: false,
+        token: '',
+        userId: '',
+        error: ''
     }
+
+    logoutHandler = () => {
+        this.setState({ isAuth: false, token: null });
+        localStorage.removeItem('token');
+        localStorage.removeItem('expiryDate');
+        localStorage.removeItem('userId');
+    };
+
+    setAutoLogout = milliseconds => {
+        setTimeout(() => {
+            this.logoutHandler();
+        }, milliseconds);
+    };
 
     onSignUpHandler = (values)=>{
         axios.post('http://localhost:8080/auth/signup', {
@@ -124,6 +141,42 @@ class IntroPage extends Component{
         }).catch(err=>console.log(err))
     }
 
+    onLoginHandler = (values)=>{
+        axios.post('http://localhost:8080/auth/login',{
+            email: values.email,
+            password: values.password
+        })
+            .then(result=>{
+                console.log(result)
+                if(result.status === 422){
+                    console.log('Error 422');
+                    this.setState({error: 'Validation failed'})
+                }
+                if(result.status !== 200 && result.status !== 201){
+                    console.log('Error!');
+                    this.setState({error: 'Could not authenticate you'});
+                }
+                return result.json();
+            })
+            .then(resData=>{
+                console.log(resData);
+                this.setState({
+                    isAuth: true,
+                    token: resData.token,
+                    userId: resData.userId
+                });
+                localStorage.setItem('token',resData.token);
+                localStorage.setItem('userId',resData.userId);
+                const remainingMilliseconds = 60 * 60 * 1000;
+                const expiryDate = new Date(
+                    new Date().getTime() + remainingMilliseconds
+                );
+                localStorage.setItem('expiryDate', expiryDate.toISOString());//correct expireDate
+                this.setAutoLogout(remainingMilliseconds);
+            })
+            .catch(err=>console.log(err))
+    }
+
     onChangeForm = ()=>{
 
         this.setState(prevState=>({isSignIn: !prevState.isSignIn}));
@@ -132,7 +185,7 @@ class IntroPage extends Component{
     render(){
         let form;
         if(this.state.isSignIn){
-            form = <SignIn {...this.props} />;
+            form = <SignIn {...this.props} method={this.onLoginHandler}/>;
         }else{
             form = <SignUp  {...this.props} method={this.onSignUpHandler} />
         }
