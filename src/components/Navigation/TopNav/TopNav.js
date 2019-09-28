@@ -101,7 +101,7 @@ const Navigation = styled.ul`
   }
 `;
 
-const topNav = ()=>{
+const topNav = (props)=>{
     return(
         <TopNavWrapper>
             <Navigation>
@@ -111,7 +111,7 @@ const topNav = ()=>{
                     <span>Scroll</span>
                 </li>
                 </NavLink>
-                <li>
+                <li onClick={props.logout}>
                     <p>
                         <FontAwesomeIcon icon={faUserAstronaut}/>
                     </p>

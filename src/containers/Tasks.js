@@ -283,7 +283,7 @@ class Tasks extends Component {
                 <GlobalStyle/>
                 <TasksWrapper>
                     <Topnav>
-                        <TopNav/>
+                        <TopNav logout={this.props.logout}/>
                     </Topnav>
                     <Sidebar>
                         <SideNav/>

@@ -30,6 +30,7 @@ class App extends Component{
         localStorage.removeItem('token');
         localStorage.removeItem('expiryDate');
         localStorage.removeItem('userId');
+        this.props.history.replace('/');
     };
 
     setAutoLogout = milliseconds => {
@@ -80,7 +81,7 @@ class App extends Component{
                 );
                 localStorage.setItem('expiryDate', expiryDate.toISOString());//correct expireDate
                 this.setAutoLogout(remainingMilliseconds);
-
+                this.props.history.push('dashboard/tasks');
             })
             .catch(err=>console.log(err))
     }
@@ -93,7 +94,11 @@ class App extends Component{
                 {/*<TopNav/>*/}
                 <Switch>
                     <Route path='/dashboard' render={props=> (
-                        <ControlContainer test='test' token={this.state.token}/>
+                        <ControlContainer
+                            test='test'
+                            token={this.state.token}
+                            logout={this.logoutHandler}
+                        />
                     )}/>
                     <Route path='/welcomePage' exact  component={WelcomePage}/>
                     <Route path='/' component={()=><IntroPage
