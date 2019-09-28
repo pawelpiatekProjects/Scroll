@@ -66,7 +66,6 @@ class App extends Component{
                 return res
             })
             .then(resData=>{
-                console.log(resData.data.token);
                 this.setState({
                     isAuth: true,
                     token: resData.data.token,
@@ -75,13 +74,13 @@ class App extends Component{
 
                 localStorage.setItem('token',resData.data.token);
                 localStorage.setItem('userId',resData.data.userId);
-                const remainingMilliseconds = 60 * 60 * 1000;
+                const remainingMilliseconds = 60 * 60 * 1000 *3;
                 const expiryDate = new Date(
                     new Date().getTime() + remainingMilliseconds
                 );
                 localStorage.setItem('expiryDate', expiryDate.toISOString());//correct expireDate
                 this.setAutoLogout(remainingMilliseconds);
-                console.log('after')
+
             })
             .catch(err=>console.log(err))
     }

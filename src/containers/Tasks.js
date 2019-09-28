@@ -113,12 +113,18 @@ class Tasks extends Component {
     };
 
     onPostTaskHandler = (values) => {
-
+        const token = localStorage.getItem('token');
         axios.post('http://localhost:8080/tasks/createTask', {
             title: values.title,
             deadline: values.deadline,
-            content: values.content
-        })
+            content: values.content,
+
+        },
+            {
+                headers: {
+                    Authorization: 'Bearer ' + token
+                }
+            })
             .then(response => {
                 console.log(response);
 
@@ -142,8 +148,13 @@ class Tasks extends Component {
     }
 
     onDeleteHandler = (taskId) => {
-
-        axios.get('http://localhost:8080/tasks/task/completed/' + taskId)
+        const token = localStorage.getItem('token');
+        axios.get('http://localhost:8080/tasks/task/completed/' + taskId,{
+            headers:{
+                Authorization: 'Bearer ' + token
+            }
+        }
+        )
             .then(res => {
                 console.log(res);
                 this.onGetTaskHandler()
@@ -168,8 +179,12 @@ class Tasks extends Component {
     }
 
     onAddImportantHandler = (taskId) => {
-
-        axios.get('http://localhost:8080/tasks/fetchTask/' + taskId)
+        const token = localStorage.getItem('token');
+        axios.get('http://localhost:8080/tasks/fetchTask/' + taskId,{
+            headers:{
+                Authorization: 'Bearer ' + token
+            }
+        })
             .then(res => {
                 this.onGetTaskHandler();
             })
@@ -179,7 +194,12 @@ class Tasks extends Component {
     }
 
     onRemoveImportantHandler = (taskId) => {
-        axios.get('http://localhost:8080/tasks/task/importantRemove/' + taskId)
+        const token = localStorage.getItem('token');
+        axios.get('http://localhost:8080/tasks/task/importantRemove/' + taskId,{
+            headers:{
+                Authorization: 'Bearer ' + token
+            }
+        })
             .then(res => {
                 this.onGetTaskHandler();
             })
