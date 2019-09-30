@@ -39,7 +39,7 @@ background: ${variables.primaryGreen};
 border: 1px solid ${variables.primaryGreen};
 border-radius: 2rem;
 color: ${variables.white};
-font-size: ${props=>props.fontSize}rem;
+font-size: 1rem;
 transition: all .3s;
 
 &:hover,
