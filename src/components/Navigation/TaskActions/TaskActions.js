@@ -1,31 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
 import {NavLink} from "react-router-dom";
-import task from "../../Tasks/Task/Task";
+import * as variables from '../../../utils/variables';
 
 const TaskActions = styled.ul`
   z-index: 1;
   list-style: none;
   text-align: left;
   width: 100%;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid ${variables.secondaryGrey};
    li{
    z-index: 1;
    display: inline-block;
    margin: 1rem 3rem;
-   font-size: 1.6rem;
+   font-size: 2.5rem;
    
    a{
    text-decoration: none;
-   color: #000;
+   color: ${variables.fontColorFirst};
    display: inline-block;
    &:hover{
-      color: #8EC06C;
+      color: ${variables.primaryGreen};
       cursor: pointer;
     }
     &:active,
     &:focus{
-      color: #8EC06C;
+      color: ${variables.primaryGreen};
     }
    }
   
@@ -35,11 +35,11 @@ const TaskActions = styled.ul`
 const Cloud = styled.span`
 display: inline-block;
 margin-right: 1rem;
-background: #eee;
-color: #8EC06C;
-font-size: 1.2rem;
+background: ${variables.secondaryGrey};
+color: ${variables.primaryGreen};
+font-size: 2rem;
 padding: .2rem;
-width: 2.75rem;
+width: 4.25rem;
 text-align: center;
 border-radius: 2rem;
 `;
