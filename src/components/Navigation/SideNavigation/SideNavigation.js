@@ -2,7 +2,16 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 import styled from 'styled-components';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faTasks, faClipboardList, faCodeBranch, faHeart, faStar, faHistory, faCogs} from "@fortawesome/free-solid-svg-icons";
+import {
+    faTasks,
+    faClipboardList,
+    faCodeBranch,
+    faHeart,
+    faStar,
+    faHistory,
+    faCogs
+} from "@fortawesome/free-solid-svg-icons";
+import * as variables from '../../../utils/variables';
 
 const Nav = styled.nav`
 
@@ -11,21 +20,26 @@ top: 0;
 z-index: 9;
 height: 100vh;
 padding: 0 1rem;
-background: #fcfcfc;
-  border: 1px solid #eee;
+background: ${variables.primaryGrey};
+  border: 1px solid ${variables.secondaryGrey};
 
 `;
 
 const NavItems = styled.ul`
   list-style: none;
   text-align: left;
-  border-bottom: ${props=>props.border ? '1px solid #eee' : 'none' };
+  border-bottom: ${props => props.border ? `1px solid ${variables.secondaryGrey}` : 'none'};
   padding:3rem 2rem;
   
     li{
     margin: 1rem 0;
     transition: all .2s;
-   
+    font-size: 1.6rem;
+    color: ${variables.fontColorFirst};
+    
+    &:active{
+    color: ${variables.primaryGreen};
+    }
     
       
       p{
@@ -35,16 +49,16 @@ const NavItems = styled.ul`
       
       a{
       text-decoration: none;
-      color: #000;
+      color: ${variables.fontColorFirst};
      
       
       &:hover{
-      color: #8EC06C;
+      color: ${variables.primaryGreen};
       cursor: pointer;
     }
     &:active,
     &:focus{
-      color: #8EC06C;
+      color: ${variables.primaryGreen};
     }
       }
     }
@@ -54,9 +68,9 @@ const NavItems = styled.ul`
 const DynamicContent = styled.div`
  h3{
  margin-top: 3rem;
- font-size: 1.6rem;
+ font-size: 2rem;
  font-weight: 400;
- color: #8EC06C;
+ color: ${variables.primaryGreen};
  text-align: left;
  padding: 0 2rem;
  }
@@ -67,8 +81,12 @@ const Settings = styled.div`
 `;
 
 const CopyRight = styled.p`
+position: fixed;
+bottom: 3rem;
+left: 3rem;
+font-size: 1.6rem;
 margin-top: 1rem;
-color: #8EC06C;
+color: ${variables.primaryGreen};
 `;
 
 
@@ -84,9 +102,12 @@ const sideNavigation = () => {
             <DynamicContent>
                 <h3>Tasks</h3>
                 <NavItems border='true'>
-                    <li><NavLink to='/dashboard/important-tasks'><FontAwesomeIcon icon={faHeart}/> <p>Important</p></NavLink></li>
-                    <li><NavLink to='/dashboard/upcoming-tasks'><FontAwesomeIcon icon={faStar}/> <p>This week</p></NavLink></li>
-                    <li><NavLink to='/dashboard/completed-tasks'><FontAwesomeIcon icon={faHistory}/> <p>Completed</p></NavLink></li>
+                    <li><NavLink to='/dashboard/important-tasks'><FontAwesomeIcon icon={faHeart}/> <p>Important</p>
+                    </NavLink></li>
+                    <li><NavLink to='/dashboard/upcoming-tasks'><FontAwesomeIcon icon={faStar}/> <p>This week</p>
+                    </NavLink></li>
+                    <li><NavLink to='/dashboard/completed-tasks'><FontAwesomeIcon icon={faHistory}/> <p>Completed</p>
+                    </NavLink></li>
                 </NavItems>
             </DynamicContent>
             <Settings>
