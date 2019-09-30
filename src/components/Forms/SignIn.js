@@ -1,14 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Redirect} from "react-router-dom";
-import {Formik, Field, Form, ErrorMessage} from "formik";
+import {Formik, Field, Form} from "formik";
 import * as Yup from 'yup';
-import {AddButton} from "../../utils/AddButton";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faPlus} from "@fortawesome/free-solid-svg-icons";
+import * as variables from '../../utils/variables';
 
 const SignInForm = styled.div`
-background: #333;
+background: ${variables.darkGreyPrimary};
 opacity: .8;
 border-radius: 2rem 0 2rem 2rem ;
 width: 100%;
@@ -28,7 +25,7 @@ margin-top: 4rem;
 
 
 const H1 = styled.h1`
-color: #ffffff;
+color: ${variables.white};
 margin-bottom: 3rem;
 `;
 
@@ -38,10 +35,10 @@ right: ${props=>props.right}rem;
 bottom: ${props=>props.bottom}rem;
 width: 30%;
 padding: .5rem;
-background: #8EC06C;
-border: 1px solid #8EC06C;
+background: ${variables.primaryGreen};
+border: 1px solid ${variables.primaryGreen};
 border-radius: 2rem;
-color: #fff;
+color: ${variables.white};
 font-size: ${props=>props.fontSize}rem;
 transition: all .3s;
 
@@ -49,25 +46,26 @@ transition: all .3s;
 &:focus{
 cursor: pointer;
 outline: none;
-background: #fff;
-color: #8EC06C;
+background: ${variables.white};
+color: ${variables.primaryGreen};
 }
 `;
 
 const FieldWrapper = styled.div`
   input{
   border: none;
-  border-bottom: 1px solid #8EC06C;
+  border-bottom: 1px solid ${variables.primaryGreen};
   background:transparent;
-  color: #fff;
+  color: ${variables.white};
   padding: .5rem 0;
   width: 60%;
+  font-size: 1rem;
   
   &:hover,
   &:focus{
   outline: none;
   cursor: pointer;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid ${variables.white};
   }
   }
 `;
@@ -77,13 +75,13 @@ height: 1rem;
 margin: 0 auto 2em auto;
 width: 60%;
 text-align: left;
-color: #FF6C5F;
+color: ${variables.primaryRed};
 
 `;
 
 
 const Forgot = styled.div`
-color: #ffffff;
+color: ${variables.white};
 position: absolute;
 bottom: 3.5rem;
 left: 4rem;
