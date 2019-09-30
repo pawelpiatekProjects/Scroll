@@ -12,28 +12,28 @@ background-image: linear-gradient(to right bottom ,${variables.primaryGreen}, ${
 //background: #8EC06C;
 border-radius: 2rem;
 width: 70%;
-height: 15rem;
-margin: 3rem auto;
+height: 25rem;
+margin: 5rem auto;
 
 
 padding: 3rem;
 
 p{
 display: inline-block;
-margin: 1rem;
+margin: 4rem;
 }
 
 `;
 
 const EmptyText = styled.p`
-background: #FCFCFC ;
+background: ${variables.white} ;
 padding: 3rem;
 border-radius: 1rem;
-color: #000;
-font-size: 1.8rem;
+color: ${variables.black};
+font-size: 2.5rem;
 position: absolute;
 top: 1rem;
-left: 5rem;
+left: 8rem;
 
 &::after{
 content: '';
@@ -46,16 +46,16 @@ right: -.5rem;
   border-top: 1.5rem solid transparent;
   border-bottom: 1.5rem solid transparent; 
   
-  border-left:1.5rem solid #FCFCFC; 
+  border-left:1.5rem solid ${variables.primaryGrey}; 
 }
 `;
 
 const UserIcon = styled.p`
-font-size: 7rem;
+font-size: 12rem;
 position: absolute;
 bottom: .5rem;
 right: 8rem;
-color: #fff;
+color: ${variables.white};
 `;
 
 const emptyInfo = (props) => {
