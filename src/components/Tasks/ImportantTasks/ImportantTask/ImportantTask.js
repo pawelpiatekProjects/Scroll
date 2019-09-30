@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHeart,faCheck,faInfo} from "@fortawesome/free-solid-svg-icons";
-
+import * as variables from '../../../../utils/variables';
 
 
 const Task = styled.div`
@@ -15,8 +15,8 @@ justify-items: start;
 align-items: center;
 opacity: ${props=>props.passed ? '.6' : '1'};
 
-width: 80%;
-background: #FCFCFC;
+width: 100%;
+background: ${variables.primaryGrey};
 margin: 2rem auto;
 padding: 1rem 3rem 3rem 3rem;
 position: relative;
@@ -26,14 +26,14 @@ border-radius: .5rem;
 const Title = styled.div`
 grid-column: 1/span 1;
 grid-row: 1/ span 1;
-font-size: 1.2rem;
+font-size: 1.8rem;
 font-weight: bold;
 `;
 
 const Deadline = styled.div`
 grid-column: 2/span 1;
 grid-row: 1/ span 1;
-font-size: 1.2rem;
+font-size: 1.8rem;
 span{
 font-weight: bold;
 }
@@ -42,8 +42,8 @@ font-weight: bold;
 const Left = styled.div`
 grid-column: 3/ span 1;
 grid-row: 1/ span 1;
-font-size: 1.2rem;
-color: ${props=>props.passed ? '#FF6C5F' : '#000'};
+font-size: 1.8rem;
+color: ${props=>props.passed ? `${variables.primaryRed}` : `${variables.black}`};
 span{
 font-weight: bold;
 }
@@ -56,16 +56,17 @@ grid-row: 1/span 1;
 
 const Control = styled.button`
   padding: .5rem;
-  width: 3rem;
+  width: 4rem;
+  font-size: 1.8rem;
   border: none;
   border-radius: 2rem;
-  color: #fff;;
+  color: ${variables.white};
   background: ${props=>props.color};
   margin: 0 .25rem;
   
   &:hover{
   cursor: pointer;
-  background: #fff;
+  background: ${variables.white};
   border: 1px solid ${props=>props.color};
   color: ${props=>props.color};
   }
@@ -73,20 +74,21 @@ const Control = styled.button`
 
 const ControlHeart = styled.button`
 padding: .5rem;
-  width: 3rem;
+  width: 4rem;
+  font-size: 1.8rem;
   border: none;
   border-radius: 2rem;
-  color: ${props=>props.important ? '#FF6C5F' : '#fff'};
-  background: ${props=>props.important ? '#eee' : '#FF6C5F'};
-  border: 1px solid #FF6C5F;
+  color: ${props=>props.important ? `${variables.primaryRed}` : `${variables.white}`};
+  background: ${props=>props.important ? `${variables.secondaryGrey}` : `${variables.primaryRed}`};
+  border: 1px solid ${variables.primaryRed};
   margin: 0 .25rem;
   
   &:hover,
   &:focus{
   cursor: pointer;
-  background: #FF6C5F;
-  border: 1px solid #FF6C5F;
-  color: #fff;
+  background: ${variables.primaryRed};
+  border: 1px solid ${variables.primaryRed};
+  color: ${variables.white};
   outline: none;
   }
 `;
@@ -95,7 +97,8 @@ const Content = styled.p`
 grid-column: 1/ -1;
 grid-row: 2/span 1;
 text-align: left;
-border-top: 2px solid ${props=>props.important ?'#FF6C5F': '#8EC06C'} ;
+font-size: 1.6rem;
+border-top: 2px solid ${props=>props.important ? `${variables.primaryRed}`: `${variables.primaryGreen}`} ;
 padding: 2rem 0;
 width: 100%;
 `;

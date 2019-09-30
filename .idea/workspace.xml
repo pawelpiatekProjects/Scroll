@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e14ece76-6aa8-4bda-bb70-57ab59ecfae1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/components/Tasks/CompletedTasks/CompletedTask/CompletedTask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tasks/CompletedTasks/CompletedTask/CompletedTask.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTask/ImportantTask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTask/ImportantTask.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTasks.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,30 +21,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
               <caret line="104" column="4" lean-forward="true" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Modal/Add.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Navigation/SideNavigation/SideNavigation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="85" column="10" selection-start-line="85" selection-start-column="10" selection-end-line="85" selection-end-column="10" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -123,11 +100,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Tasks/CompletedTasks/CompletedTask/CompletedTask.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
+            <state relative-caret-position="205">
               <caret line="81" column="33" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTask/ImportantTask.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="99" column="17" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTasks.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -154,7 +155,6 @@
         <option value="$PROJECT_DIR$/src/components/ImportantTasks/ImportantTask/ImportantTask.js" />
         <option value="$PROJECT_DIR$/src/components/ImportantTasks/ImportantTasks.js" />
         <option value="$PROJECT_DIR$/src/components/SideNavigation/SideNavigation.js" />
-        <option value="$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTask/ImportantTask.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/src/containers/Controlcontainer.js" />
         <option value="$PROJECT_DIR$/src/components/Notes/NotesNav.js" />
@@ -164,7 +164,6 @@
         <option value="$PROJECT_DIR$/src/components/Notes/Notes.js" />
         <option value="$PROJECT_DIR$/src/components/UI/Spinner.js" />
         <option value="$PROJECT_DIR$/src/components/Tasks/CompletedTasks/CompletedTasks.js" />
-        <option value="$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTasks.js" />
         <option value="$PROJECT_DIR$/src/components/Tasks/UpcomingTasks/UpcomingTasks.js" />
         <option value="$PROJECT_DIR$/src/components/Backdrop/Backdrop.js" />
         <option value="$PROJECT_DIR$/src/components/Tasks/TasksNav/TasksNav.js" />
@@ -191,6 +190,8 @@
         <option value="$PROJECT_DIR$/src/components/Navigation/NotesNav.js" />
         <option value="$PROJECT_DIR$/src/components/Notes/Note.js" />
         <option value="$PROJECT_DIR$/src/components/Tasks/CompletedTasks/CompletedTask/CompletedTask.js" />
+        <option value="$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTasks.js" />
+        <option value="$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTask/ImportantTask.js" />
       </list>
     </option>
   </component>
@@ -242,7 +243,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Tasks" type="462c0819:PsiDirectoryNode" />
-              <item name="CompletedTasks" type="462c0819:PsiDirectoryNode" />
+              <item name="ImportantTasks" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="reminder-v2" type="b2602c69:ProjectViewProjectNode" />
@@ -250,8 +251,8 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Tasks" type="462c0819:PsiDirectoryNode" />
-              <item name="CompletedTasks" type="462c0819:PsiDirectoryNode" />
-              <item name="CompletedTask" type="462c0819:PsiDirectoryNode" />
+              <item name="ImportantTasks" type="462c0819:PsiDirectoryNode" />
+              <item name="ImportantTask" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="reminder-v2" type="b2602c69:ProjectViewProjectNode" />
@@ -324,12 +325,12 @@
       <workItem from="1569513639976" duration="6749000" />
       <workItem from="1569609957211" duration="7637000" />
       <workItem from="1569672274179" duration="2918000" />
-      <workItem from="1569825166170" duration="10340000" />
+      <workItem from="1569825166170" duration="10679000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122504000" />
+    <option name="totallyTimeSpent" value="122843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -374,16 +375,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Form/Form.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTask/ImportantTask.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -399,16 +390,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Notes.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTasks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="54" column="10" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Tasks/UpcomingTasks/UpcomingTasks.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="775">
@@ -678,8 +659,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Tasks/CompletedTasks/CompletedTask/CompletedTask.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
+        <state relative-caret-position="205">
           <caret line="81" column="33" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTasks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="9" column="10" lean-forward="true" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Tasks/ImportantTasks/ImportantTask/ImportantTask.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="99" column="17" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
