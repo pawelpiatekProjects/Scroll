@@ -6,7 +6,7 @@ import * as variables from '../../../utils/variables';
 
 const Nav = styled.div`
 
-width: 80%;
+width: 100%;
 display: grid;
 grid-template-columns: repeat(6,1fr);
 align-items: center;
