@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {keyframes} from "styled-components";
+import * as variables from '../../utils/variables';
 
 import TaskAddForm from '../Forms/TaskAddForm';
 import NotesAddForm from '../Forms/NotesAddForm';
@@ -8,17 +8,17 @@ import NotesAddForm from '../Forms/NotesAddForm';
 const Modal = styled.div`
 position: fixed;
     z-index: ${props=>props.show ? 11 : 0};
-    border: 1px solid #eee;
+    border: 1px solid ${variables.secondaryGrey};
     border-radius: 2rem;
-    background-color: white;
+    background-color: ${variables.white};
     padding: 10px;
     text-align: center;
     box-sizing: border-box;
     top: 50%;
     left: 50%;
     width: 25%;
-    height: 35rem;
-  padding: 3rem;
+    height: 42.5rem;
+    padding: 3rem;
    transform: translate(-50%,-50%);
 
  opacity: ${props=>props.show ? 1 : 0};
@@ -28,26 +28,14 @@ position: fixed;
  //transition: all .3s ease-out;
 `;
 
-// const modal = keyframes`
-//   0%{
-//   opacity: 0;
-//   transform: translateY(-100%);
-//   }
-//   50%{
-//   opacity: 1;
-//   transform: translateY(20%);
-//   }
-//   100%{
-//   opacity: 1;
-//   transform: translateY(-50%);
-//   }
-// `
+
 
 const Header = styled.h1`
+font-size: 3rem;
 font-weight: bold;
 text-align: left;
-color: #8EC06C;
-margin-bottom: 2rem;
+color: ${variables.primaryGreen};
+margin-bottom: 4rem;
 `;
 
 

@@ -31,7 +31,7 @@ const ErrorTitle = styled.p`
 font-size: 1.5rem;
 margin-bottom: 0;
 text-align: left;
-height: 1.8rem;
+height: 4rem;
 margin-bottom: 1rem;
 
 color: ${variables.primaryRed};
@@ -60,7 +60,7 @@ const ErrorDeadline = styled.p`
 font-size: .8rem;
 margin-bottom: 0;
 text-align: left;
-height: 1rem;
+height: 4rem;
 margin-bottom: 1rem;
 
 `;
