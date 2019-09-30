@@ -2,6 +2,7 @@ import React from 'react';
 import styled,{keyframes} from 'styled-components';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHeart,faCheck,faInfo} from "@fortawesome/free-solid-svg-icons";
+import * as variables from '../../../utils/variables';
 
 
 
@@ -124,7 +125,7 @@ const Content = styled.p`
 grid-column: 1/ -1;
 grid-row: 2/span 1;
 text-align: left;
-border-top: 2px solid ${props=>props.important ?'#FF6C5F': '#8EC06C'} ;
+border-top: 2px solid ${props=>props.important ?'#FF6C5F': variables.primaryGreen} ;
 padding: 2rem 0;
 width: 100%;
 `;

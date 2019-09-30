@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUserAstronaut} from "@fortawesome/free-solid-svg-icons";
+import * as variables from '../../utils/variables';
 
 const Empty = styled.div`
 
 position: relative;
 grid-column: 1/-1;
-background-image: linear-gradient(to right bottom ,#8EC06C, #FFCC2F);
+background-image: linear-gradient(to right bottom ,${variables.primaryGreen}, ${variables.primaryYellow});
 //background: #8EC06C;
 border-radius: 2rem;
 width: 70%;

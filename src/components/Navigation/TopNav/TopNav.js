@@ -2,27 +2,76 @@ import React from 'react';
 import styled from 'styled-components';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faUserAstronaut,faScroll} from "@fortawesome/free-solid-svg-icons";
+import {faUserAstronaut, faScroll} from "@fortawesome/free-solid-svg-icons";
 
-const TopNavWrapper = styled.nav`
-//position: sticky;
-//top: 0;
-//z-index: 10;
+
+const Navigation = styled.div`
 background: #fcfcfc;
 border-bottom: 1px solid #eeeeee;
+display: grid;
+grid-template-columns: 30% 40% 30%;
+grid-template-rows: repeat(2, max-content);
+padding: 1.5rem 3rem;
+  
+
+justify-items: start;
+  
+  
+
 `;
 
-const Navigation = styled.ul`
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  
-  padding: 1.5rem 3rem;
-  
-  li{
-    display: inline-block;
+const LogoWrapper = styled.div`
+grid-column: 1/ span 1;
+
+//@media (max-width: 1000px){
+//    grid-column: 2/ span 1;
+//    }
+
+`
+
+const Logo = styled.p`
     position: relative;
-    &:last-child{
+    color: #8EC06C;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    transition: all .3s;
+    background: #fff;
+    justify-self: start;
+    
+    
+    &:hover{
+    cursor: pointer;
+    transform: translateX(.5rem);
+    }
+    &::before{
+    display: none;
+    }
+    span{
+    
+    position: absolute;
+    top: 0;
+    left: 2.32rem;
+    font-size: 2.5rem;
+    color: #333;
+    
+    &::first-letter{
+    color: #fff;
+    }
+    }
+
+`;
+const ProfileWrapper = styled.div`
+grid-column: 3/-1;
+width: 100%;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+justify-items: end;
+`;
+
+const Profile = styled.button`
+
+    grid-column: 3/-1;
+    border: 1px solid #fff;
     font-size: 2rem;
     background: #8EC06C;
     color: #fff;
@@ -32,7 +81,7 @@ const Navigation = styled.ul`
     position: relative;
     transition: all .3s;
     
-    &::before{
+        &::before{
       content: '';
       display: inline-block;
       position: absolute;
@@ -59,66 +108,29 @@ const Navigation = styled.ul`
     transform: translate(-50%,-50%) scale(1.2);
     cursor: pointer;
     }
-    
-    p{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    }
-    
-    }
-    
-    
-    &:first-child{
-    color: #8EC06C;
-    font-family: 'Dancing Script', cursive;
-    font-size: 3.5rem;
-    transition: all .3s;
-    background: #fff;
-    
-    &:hover{
-    cursor: pointer;
-    transform: translateX(.5rem);
-    }
-    &::before{
-    display: none;
-    }
-    span{
-    
-    position: absolute;
-    top: 0;
-    left: 2.32rem;
-    font-size: 2.5rem;
-    color: #333;
-    
-    &::first-letter{
-    color: #fff;
-    }
-    }
-    }
-    
-  }
 `;
 
-const topNav = (props)=>{
-    return(
-        <TopNavWrapper>
-            <Navigation>
+const topNav = (props) => {
+    return (
+        <Navigation>
+            <LogoWrapper>
                 <NavLink to='/welcomePage'>
-                <li>
-                    <FontAwesomeIcon icon={faScroll}/>
-                    <span>Scroll</span>
-                </li>
+                    <Logo>
+                        <FontAwesomeIcon icon={faScroll}/>
+                        <span>Scroll</span>
+                    </Logo>
                 </NavLink>
-                <li onClick={props.logout}>
+            </LogoWrapper>
+            <ProfileWrapper>
+                <Profile onClick={props.logout}>
                     <p>
                         <FontAwesomeIcon icon={faUserAstronaut}/>
                     </p>
 
-                </li>
-            </Navigation>
-        </TopNavWrapper>
+                </Profile>
+            </ProfileWrapper>
+        </Navigation>
+
     )
 };
 

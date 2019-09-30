@@ -24,9 +24,18 @@ const GlobalStyle = createGlobalStyle`
   padding: 0;
   box-sizing: inherit;
 }
+
+html{
+  font-size: 65.2%;
+}
+
 body{
   box-sizing: border-box;
  font-family: 'Roboto', sans-serif;
+ 
+ @media (max-width: 1300px ){
+ font-size: 1rem;
+ }
 
 }
 `;

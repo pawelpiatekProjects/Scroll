@@ -11,6 +11,10 @@ const TaskListWrapper = styled.div`
 width: 80%;
 margin: 0 auto;
 
+@media (max-width: 1300px){
+width: 100%;
+}
+
 `;
 
 

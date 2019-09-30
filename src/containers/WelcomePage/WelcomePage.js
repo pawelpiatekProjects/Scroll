@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import TopNav from '../../components/Navigation/TopNav/TopNav';
 
 const WelcomePgeWrapper = styled.div`
-position: relative;
+
 `;
 
 class WelcomePage extends Component{
