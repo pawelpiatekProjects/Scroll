@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
+import * as variables from '../../utils/variables';
 
 const Nav = styled.div`
 width: 80%;
@@ -13,17 +14,17 @@ align-items: center;
 padding-bottom: .5rem;
  text-align: left;
  margin: 1rem auto;
- border-bottom: 1px solid #eee;
+ border-bottom: 1px solid ${variables.secondaryGrey};
 `;
 
 const AddButton = styled.button`
   z-index: 1;
   padding: .5rem;
-  width: 3rem;
-  border: 1px solid #8EC06C;
+  width: 4.5rem;
+  border: 1px solid ${variables.primaryGreen};
   border-radius: 2rem;
-  color: #8EC06C;;
-  background: #ffffff;
+  color: ${variables.primaryGreen};
+  background: ${variables.white};
  
   
   justify-self: center;
@@ -33,8 +34,8 @@ const AddButton = styled.button`
   &:focus{
   outline: none;
   cursor: pointer;
-  background: #8EC06C ;
-  color: #fff;
+  background: ${variables.primaryGreen} ;
+  color: ${variables.white};
   }
   
 `;
