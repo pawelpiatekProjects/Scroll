@@ -27,15 +27,20 @@ const GlobalStyle = createGlobalStyle`
 
 html{
   font-size: 65.2%;
+  @media (max-width: 1300px ){
+ font-size: 56.25%;
+ }
+ 
+  @media (max-width: 700px ){
+ font-size: 50%;
+ }
 }
 
 body{
   box-sizing: border-box;
  font-family: 'Roboto', sans-serif;
  
- @media (max-width: 1300px ){
- font-size: 1rem;
- }
+ 
 
 }
 `;
@@ -52,6 +57,18 @@ const TasksList = styled.div`
 
 const TaskListWrapper = styled.div`
 grid-column: 2/-1;
+
+@media(max-width: 1000px){
+  grid-column: 1/-1;
+  width: 80%;
+  margin: 0 auto;
+  }
+  
+  @media(max-width: 900px){
+  grid-column: 1/-1;
+  width: 100%;
+  margin: 0 auto;
+  }
 `;
 
 const Sidebar = styled.div`

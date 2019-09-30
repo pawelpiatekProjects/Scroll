@@ -23,6 +23,10 @@ justify-items: start;
 const LogoWrapper = styled.div`
 grid-column: 1/ span 1;
 
+@media(max-width: 1000px){
+  grid-column: 2/span 1;
+  }
+
 //@media (max-width: 1000px){
 //    grid-column: 2/ span 1;
 //    }
@@ -60,8 +64,22 @@ const Logo = styled.p`
     }
 
 `;
+
+const Hamburger = styled.div`
+grid-column: 2/span 1;
+grid-row: 1/span 1;
+width: 1rem;
+height: 1rem;
+background: orangered;
+
+@media(max-width: 1000px){
+  grid-column: 1/span 1;
+  }
+`;
+
 const ProfileWrapper = styled.div`
 grid-column: 3/-1;
+grid-row: 1/span 1;
 width: 100%;
 display: grid;
 grid-template-columns: repeat(3, 1fr);
@@ -121,6 +139,8 @@ const topNav = (props) => {
                     </Logo>
                 </NavLink>
             </LogoWrapper>
+            <Hamburger>
+            </Hamburger>
             <ProfileWrapper>
                 <Profile onClick={props.logout}>
                     <p>

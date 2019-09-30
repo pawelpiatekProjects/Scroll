@@ -22,6 +22,10 @@ height: 100vh;
 padding: 0 1rem;
 background: ${variables.primaryGrey};
   border: 1px solid ${variables.secondaryGrey};
+  
+  @media(max-width: 1000px){
+  display: none;
+  }
 
 `;
 
