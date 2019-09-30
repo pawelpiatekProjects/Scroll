@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUserAstronaut, faScroll} from "@fortawesome/free-solid-svg-icons";
-
+import * as variables from '../../../utils/variables';
 
 const Navigation = styled.div`
-background: #fcfcfc;
-border-bottom: 1px solid #eeeeee;
+background: ${variables.primaryGrey};
+border-bottom: 1px solid ${variables.secondaryGrey};
 display: grid;
 grid-template-columns: 30% 40% 30%;
 grid-template-rows: repeat(2, max-content);
@@ -31,11 +31,11 @@ grid-column: 1/ span 1;
 
 const Logo = styled.p`
     position: relative;
-    color: #8EC06C;
+    color: ${variables.primaryGreen};
     font-family: 'Dancing Script', cursive;
-    font-size: 3.5rem;
+    font-size: 6rem;
     transition: all .3s;
-    background: #fff;
+    background: ${variables.white};
     justify-self: start;
     
     
@@ -50,12 +50,12 @@ const Logo = styled.p`
     
     position: absolute;
     top: 0;
-    left: 2.32rem;
-    font-size: 2.5rem;
+    left: 4rem;
+    font-size:4.3rem;
     color: #333;
     
     &::first-letter{
-    color: #fff;
+    color: ${variables.white};
     }
     }
 
@@ -71,13 +71,13 @@ justify-items: end;
 const Profile = styled.button`
 
     grid-column: 3/-1;
-    border: 1px solid #fff;
-    font-size: 2rem;
-    background: #8EC06C;
-    color: #fff;
+    border: 1px solid ${variables.white};
+    font-size: 3rem;
+    background: ${variables.primaryGreen};
+    color: ${variables.white};
     border-radius: 50%;
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 5rem;
+    height: 5rem;
     position: relative;
     transition: all .3s;
     
@@ -85,10 +85,10 @@ const Profile = styled.button`
       content: '';
       display: inline-block;
       position: absolute;
-      width: 3.25rem;
-      height: 3.25rem;
+      width: 5.25rem;
+      height: 5.25rem;
       border-radius: 50%;
-      border: 2px solid #8EC06C;
+      border: 2px solid ${variables.primaryGreen};
       top: 50%;
       left: 50%;
       opacity: 0;
@@ -99,8 +99,8 @@ const Profile = styled.button`
     
     &:hover{
     cursor: pointer;
-    background: #ffffff;
-    color: #8EC06C;
+    background: ${variables.white};
+    color: ${variables.primaryGreen};
     }
     
     &:hover::before{
