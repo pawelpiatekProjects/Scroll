@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTimes} from "@fortawesome/free-solid-svg-icons";
+import * as variables from '../../utils/variables';
 
 const Note = styled.div`
 display: grid;
@@ -9,7 +10,7 @@ grid-template-columns: repeat(4,1fr);
 grid-row-gap: 2rem;
 
 margin: .5rem;
-background: #FCFCFC;
+background: ${variables.primaryGrey};
 padding: 3rem;
 border-radius: .5rem;
 
@@ -19,6 +20,8 @@ border-radius: .5rem;
 const Title = styled.h1`
 grid-column: 1/ 4;
 text-align: left;
+font-size: 3rem;
+color: ${variables.fontColorFirst};
 `;
 
 const Controls = styled.div`
@@ -32,18 +35,19 @@ grid-column: 4/ 5;
 
 
 padding: .5rem;
-  width: 3rem;
+  width: 4rem;
   border: none;
+  font-size: 1.8rem;
   border-radius: 2rem;
-  color: #fff;;
-  background: #FF6C5F;
+  color: ${variables.white};
+  background: ${variables.primaryRed};
   margin: 0 .25rem;
   
   &:hover{
   cursor: pointer;
-  background: #fff;
-  border: 1px solid #FF6C5F;
-  color: #FF6C5F;
+  background: ${variables.white};
+  border: 1px solid ${variables.primaryRed};
+  color: ${variables.primaryRed};
   }
 `;
 
@@ -52,6 +56,8 @@ padding: .5rem;
 const Content = styled.p`
 grid-column: 1/-1;
 text-align: left;
+font-size: 1.8rem;
+color: ${variables.fontColorFirst};
 `;
 
 const note = (props) => {
