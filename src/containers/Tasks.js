@@ -6,6 +6,7 @@ import {Route, Switch, withRouter} from "react-router";
 import Notes from '../components/Notes/Notes';
 import SideNav from '../components/Navigation/SideNavigation/SideNavigation';
 import TopNav from '../components/Navigation/TopNav/TopNav';
+import MobileNav from '../components/Navigation/MobileNav/MobileNav'
 import Modal from '../components/Modal/Add';
 import Backdrop from '../components/Backdrop/Backdrop';
 import TaskList from '../components/Tasks/TaskList/TaskList';
@@ -66,7 +67,7 @@ grid-column: 2/-1;
   
   @media(max-width: 900px){
   grid-column: 1/-1;
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
   }
 `;
@@ -93,7 +94,8 @@ class Tasks extends Component {
         showTaskModal: false,
         showNotesModal: false,
         loading: false,
-        error: false
+        error: false,
+        mobile:false
     };
 
     componentDidMount() {
@@ -250,6 +252,10 @@ class Tasks extends Component {
             });
     };
 
+    onOpenMobileNavHandler = ()=>{
+        this.setState({mobile:true})
+    }
+
 
     render() {
         let list;
@@ -314,12 +320,14 @@ class Tasks extends Component {
         }
         return (
             <TasksList>
+                <MobileNav show={this.state.mobile}/>
                 <Backdrop submit={this.onPostTaskHandler} show={this.state.showTaskModal} hide={() => {
                     this.setState({showTaskModal: false})
                 }}/>
                 <Backdrop submit={this.onShowNotesModalHandler} show={this.state.showNotesModal} hide={() => {
                     this.setState({showNotesModal: false})
                 }}/>
+                <Backdrop show={this.state.mobile} hide={()=>{this.setState({mobile:false})}}/>
                 {this.state.showTaskModal ?
                     <Modal status='task' submit={this.onPostTaskHandler} show={this.state.showTaskModal}/> : null}
                 {this.state.showNotesModal ?
@@ -327,7 +335,7 @@ class Tasks extends Component {
                 <GlobalStyle/>
                 <TasksWrapper>
                     <Topnav>
-                        <TopNav logout={this.props.logout}/>
+                        <TopNav logout={this.props.logout} showMobile={this.onOpenMobileNavHandler}/>
                     </Topnav>
                     <Sidebar>
                         <SideNav/>

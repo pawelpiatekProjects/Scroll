@@ -13,7 +13,7 @@ grid-template-columns: 30% 40% 30%;
 grid-template-rows: repeat(2, max-content);
 padding: 1.5rem 3rem;
   
-
+align-items: center;
 justify-items: start;
   
   
@@ -66,14 +66,55 @@ const Logo = styled.p`
 `;
 
 const Hamburger = styled.div`
+display: none;
+
 grid-column: 2/span 1;
 grid-row: 1/span 1;
-width: 1rem;
-height: 1rem;
-background: orangered;
+height: 3.5rem;
+
+&:hover button,
+&:hover button::after,
+&:hover button::before,
+&:focus button,
+&:focus button::after,
+&:focus button::before{
+background: ${variables.primaryGreen};
+cursor: pointer;
+}
+
+button{
+width: 4rem;
+height: .35rem;
+background: ${variables.fontColorFirst};
+border: none;
+position: relative;
+
+
+
+&::before,
+&::after{
+width: 4rem;
+height: .35rem;
+position: absolute;
+content: '';
+display: block;
+background: ${variables.fontColorFirst};
+}
+
+&::before{
+top: -1rem;
+left: 0;
+}
+&::after{
+top: 1rem;
+left: 0;
+
+}
+}
 
 @media(max-width: 1000px){
   grid-column: 1/span 1;
+  display: block;
   }
 `;
 
@@ -139,7 +180,8 @@ const topNav = (props) => {
                     </Logo>
                 </NavLink>
             </LogoWrapper>
-            <Hamburger>
+            <Hamburger >
+                <button onClick={props.showMobile}></button>
             </Hamburger>
             <ProfileWrapper>
                 <Profile onClick={props.logout}>
