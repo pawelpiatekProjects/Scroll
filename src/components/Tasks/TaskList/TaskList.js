@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Task from '../Task/Task';
-import TaskNav from '../TasksNav/TasksNav';
+import TaskNav from '../../Navigation/TasksNav/TasksNav';
 import TaskActions from '../../Navigation/TaskActions/TaskActions';
 import EmptyInfo from '../../EmptyInfo/EmptyInfo';
 import Spinner from '../../UI/Spinner';

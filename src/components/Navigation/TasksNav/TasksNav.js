@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlus, faCaretDown} from "@fortawesome/free-solid-svg-icons";
+import * as variables from '../../../utils/variables';
 
 const Nav = styled.div`
 
@@ -14,7 +15,7 @@ align-items: center;
 padding-bottom: .5rem;
  text-align: left;
  margin: 1rem auto;
- border-bottom: 1px solid #eee;
+ border-bottom: 1px solid ${variables.secondaryGrey};
 
  
 
@@ -24,11 +25,12 @@ padding-bottom: .5rem;
 const AddButton = styled.button`
 
   padding: .5rem;
-  width: 3rem;
-  border: 1px solid #8EC06C;
+  width: 4rem;
+ 
+  border: 1px solid ${variables.primaryGreen};
   border-radius: 2rem;
-  color: #8EC06C;;
-  background: #ffffff;
+  color: ${variables.primaryGreen};
+  background: ${variables.white};
  z-index: 1;
   
   justify-self: center;
@@ -38,16 +40,16 @@ const AddButton = styled.button`
   &:focus{
   outline: none;
   cursor: pointer;
-  background: #8EC06C ;
-  color: #fff;
+  background: ${variables.primaryGreen} ;
+  color: ${variables.white};
   }
   
 `;
 
 const SortButton = styled.button`
   border: none;
-  background: #fff;
-  font-size: 1.4rem;
+  background: ${variables.white};
+  font-size: 1.8rem;
   padding: .5rem;
   position: relative;
   justify-self: center;
@@ -57,7 +59,7 @@ const SortButton = styled.button`
   &:focus{
   outline: none;
   cursor: pointer;
-  color: #8EC06C ;
+  color: ${variables.primaryGreen} ;
   
   }
   
@@ -65,25 +67,7 @@ const SortButton = styled.button`
   display: inline-block;
   margin-right: .5rem;
   }
-  
-  //&:hover:before{
-  //cursor: pointer;
-  //border-top: 10px solid #8EC06C;
-  //}
-  
-  
-  //&::before{
-  //content: '';
-  //display: inline-block;
-  //position: absolute;
-  //top: 1rem;
-  //left: 3.5rem;
-  //width: 0; 
-  //height: 0; 
-  //border-left: 10px solid transparent;
-  //border-right: 10px solid transparent;
-  //border-top: 10px solid #000;
-  //}
+ 
 `
 
 const taskNav = (props)=>{
