@@ -7,5 +7,6 @@ export const black = '#000';
 export const primaryGrey = '#FCFCFC';
 export const secondaryGrey = '#eee';
 export const darkGreyPrimary = '#333';
+export const darkGreySecondary = '#222';
 
 export const fontColorFirst = '#707070';

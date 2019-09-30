@@ -4,6 +4,7 @@ import SignIn from '../Forms/SignIn';
 import SignUp from '../Forms/SignUp';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faScroll} from "@fortawesome/free-solid-svg-icons";
+import * as variables from '../../utils/variables';
 
 import img from '../../assets/images/cristina-gottardi-R4y_E5ZQDPg-unsplash.jpg';
 import axios from "axios";
@@ -46,7 +47,7 @@ const Logo = styled.div`
     
     
     &:first-child{
-    color: #8EC06C;
+    color: ${variables.primaryGreen};
     font-family: 'Dancing Script', cursive;
     font-size: 6rem;
     transition: all .3s;
@@ -62,17 +63,17 @@ const Logo = styled.div`
     top: 0;
     left: 10rem;
     font-size: 4rem;
-    color: #000;
+    color: ${variables.black};
     
     &::first-letter{
-    color: #fff;
+    color: ${variables.white};
     }
     }
     }
 `;
 
 const FormWrapper = styled.div`
-background-color: #222;
+background-color: ${variables.darkGreySecondary};
 clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
 border-radius: 2rem;
 display: block;
@@ -91,7 +92,7 @@ const FormButton = styled.button`
   position: absolute;
   top: 1.5rem;
   left: 1.5rem;
-  color: #8EC06C;
+  color: ${variables.primaryGreen};
   background: transparent;
   border: none;font-size: 1.2rem;
   
@@ -99,7 +100,7 @@ const FormButton = styled.button`
   
   &:hover{
   outline: none;
-  color: #fff;
+  color: ${variables.white};
   cursor: pointer;
   }
   &:focus{
