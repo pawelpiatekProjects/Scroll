@@ -29,7 +29,7 @@ const EmptyText = styled.p`
 background: ${variables.white} ;
 padding: 3rem;
 border-radius: 1rem;
-color: ${variables.black};
+color: ${variables.fontColorFirst};
 font-size: 2.5rem;
 position: absolute;
 top: 1rem;

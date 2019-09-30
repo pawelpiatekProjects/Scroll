@@ -12,6 +12,7 @@ const FieldWrapperTitle = styled.div`
 width: 100%;
 
   input{
+  color: ${variables.fontColorFirst}
   font-size: 1.5rem;
   width: 100%;
   border: none;
@@ -40,6 +41,7 @@ const FieldWrapperContent = styled.div`
 width: 100%;
 
   textarea{
+  color: ${variables.fontColorFirst}
   font-size: 2rem;
   width: 100%;
   height: 8rem;
