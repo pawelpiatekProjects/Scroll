@@ -67,7 +67,7 @@ class Tasks extends Component {
         showTaskModal: false,
         showNotesModal: false,
         loading: false,
-        error:false
+        error: false
     };
 
     componentDidMount() {
@@ -78,11 +78,11 @@ class Tasks extends Component {
     onGetTaskHandler = () => {
         this.setState({loading: true})
         const token = localStorage.getItem('token');
-        axios.get('http://localhost:8080/tasks/fetchTasks',{
-            headers: {
-                Authorization: 'Bearer ' + token
+        axios.get('http://localhost:8080/tasks/fetchTasks', {
+                headers: {
+                    Authorization: 'Bearer ' + token
+                }
             }
-        }
         )
             .then(tasksData => {
                 const tasks = tasksData.data.tasks.reverse();
@@ -97,13 +97,18 @@ class Tasks extends Component {
                 console.log(err);
                 this.setState({
                     loading: false,
-                    error:true
+                    error: true
                 });
             })
     }
 
     onGetNotesHandler = () => {
-        axios.get('http://localhost:8080/notes/fetchNotes')
+        const token = localStorage.getItem('token');
+        axios.get('http://localhost:8080/notes/fetchNotes', {
+            headers: {
+                Authorization: 'Bearer ' + token
+            }
+        })
             .then(result => {
                 const notes = result.data.notes.reverse();
 
@@ -115,11 +120,11 @@ class Tasks extends Component {
     onPostTaskHandler = (values) => {
         const token = localStorage.getItem('token');
         axios.post('http://localhost:8080/tasks/createTask', {
-            title: values.title,
-            deadline: values.deadline,
-            content: values.content,
+                title: values.title,
+                deadline: values.deadline,
+                content: values.content,
 
-        },
+            },
             {
                 headers: {
                     Authorization: 'Bearer ' + token
@@ -135,10 +140,16 @@ class Tasks extends Component {
     }
 
     onPostNoteHandler = (values) => {
+        const token = localStorage.getItem('token');
         axios.post('http://localhost:8080/notes/createNote', {
-            title: values.title,
-            content: values.content
-        })
+                title: values.title,
+                content: values.content
+            },
+            {
+                headers: {
+                    Authorization: 'Bearer ' + token
+                }
+            })
             .then(response => {
                 console.log(response)
                 this.onGetNotesHandler();
@@ -149,11 +160,11 @@ class Tasks extends Component {
 
     onDeleteHandler = (taskId) => {
         const token = localStorage.getItem('token');
-        axios.get('http://localhost:8080/tasks/task/completed/' + taskId,{
-            headers:{
-                Authorization: 'Bearer ' + token
+        axios.get('http://localhost:8080/tasks/task/completed/' + taskId, {
+                headers: {
+                    Authorization: 'Bearer ' + token
+                }
             }
-        }
         )
             .then(res => {
                 console.log(res);
@@ -163,7 +174,12 @@ class Tasks extends Component {
     };
 
     onDeleteNoteHandler = (noteId) => {
-        axios.get('http://localhost:8080/notes/note/delete' + noteId)
+        const token = localStorage.getItem('token');
+        axios.get('http://localhost:8080/notes/note/delete' + noteId, {
+            headers: {
+                Authorization: 'Bearer ' + token
+            }
+        })
             .then(res => {
                 this.onGetNotesHandler()
             })
@@ -180,8 +196,8 @@ class Tasks extends Component {
 
     onAddImportantHandler = (taskId) => {
         const token = localStorage.getItem('token');
-        axios.get('http://localhost:8080/tasks/fetchTask/' + taskId,{
-            headers:{
+        axios.get('http://localhost:8080/tasks/fetchTask/' + taskId, {
+            headers: {
                 Authorization: 'Bearer ' + token
             }
         })
@@ -195,8 +211,8 @@ class Tasks extends Component {
 
     onRemoveImportantHandler = (taskId) => {
         const token = localStorage.getItem('token');
-        axios.get('http://localhost:8080/tasks/task/importantRemove/' + taskId,{
-            headers:{
+        axios.get('http://localhost:8080/tasks/task/importantRemove/' + taskId, {
+            headers: {
                 Authorization: 'Bearer ' + token
             }
         })
@@ -217,9 +233,9 @@ class Tasks extends Component {
                     <Spinner/>
                 </SpinnerWrapper>
             )
-        } else if(this.state.error){
-            list=<Error message='Could not connect to database' />
-        } else{
+        } else if (this.state.error) {
+            list = <Error message='Could not connect to database'/>
+        } else {
             list = (
                 <TaskListWrapper>
                     <Switch>
@@ -278,8 +294,10 @@ class Tasks extends Component {
                 <Backdrop submit={this.onShowNotesModalHandler} show={this.state.showNotesModal} hide={() => {
                     this.setState({showNotesModal: false})
                 }}/>
-                {this.state.showTaskModal ?<Modal status='task' submit={this.onPostTaskHandler} show={this.state.showTaskModal}/> : null}
-                {this.state.showNotesModal ?<Modal status='notes' submit={this.onPostNoteHandler} show={this.state.showNotesModal}/> :null}
+                {this.state.showTaskModal ?
+                    <Modal status='task' submit={this.onPostTaskHandler} show={this.state.showTaskModal}/> : null}
+                {this.state.showNotesModal ?
+                    <Modal status='notes' submit={this.onPostNoteHandler} show={this.state.showNotesModal}/> : null}
                 <GlobalStyle/>
                 <TasksWrapper>
                     <Topnav>
