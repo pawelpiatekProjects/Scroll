@@ -5,3 +5,4 @@ export const primaryYellow = '#FFCC2F';
 export const white = '#fff';
 export const black = '#000';
 export const primaryGrey = '#FCFCFC';
+export const secondaryGrey = '#eee';
