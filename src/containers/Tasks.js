@@ -17,34 +17,34 @@ import Spinner from '../components/UI/Spinner';
 import Error from '../components/UI/Error/Error';
 
 
-const GlobalStyle = createGlobalStyle`
-*,
-*::after,
-*::before{
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
-
-html{
-  font-size: 65.2%;
-  @media (max-width: 1300px ){
- font-size: 56.25%;
- }
- 
-  @media (max-width: 700px ){
- font-size: 50%;
- }
-}
-
-body{
-  box-sizing: border-box;
- font-family: 'Roboto', sans-serif;
- 
- 
-
-}
-`;
+// const GlobalStyle = createGlobalStyle`
+// *,
+// *::after,
+// *::before{
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: inherit;
+// }
+//
+// html{
+//   font-size: 65.2%;
+//   @media (max-width: 1300px ){
+//  font-size: 56.25%;
+//  }
+//
+//   @media (max-width: 700px ){
+//  font-size: 50%;
+//  }
+// }
+//
+// body{
+//   box-sizing: border-box;
+//  font-family: 'Roboto', sans-serif;
+//
+//
+//
+// }
+// `;
 
 const TasksWrapper = styled.div`
 display: grid;
@@ -332,7 +332,7 @@ class Tasks extends Component {
                     <Modal status='task' submit={this.onPostTaskHandler} show={this.state.showTaskModal}/> : null}
                 {this.state.showNotesModal ?
                     <Modal status='notes' submit={this.onPostNoteHandler} show={this.state.showNotesModal}/> : null}
-                <GlobalStyle/>
+                {/*<GlobalStyle/>*/}
                 <TasksWrapper>
                     <Topnav>
                         <TopNav logout={this.props.logout} showMobile={this.onOpenMobileNavHandler}/>

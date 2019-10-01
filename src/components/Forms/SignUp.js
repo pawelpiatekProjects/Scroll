@@ -10,7 +10,7 @@ background: ${variables.darkGreyPrimary};
 opacity: .8;
 border-radius: 2rem 0 2rem 2rem ;
 width: 100%;
-height: 35rem;
+height: 54rem;
 margin: 0 auto;
 position: absolute;
 bottom:0;
@@ -21,6 +21,10 @@ form{
 margin-top: 4rem;
 }
 
+@media(max-width: 700px){
+height: 45rem ;
+}
+
 `;
 
 
@@ -28,6 +32,11 @@ margin-top: 4rem;
 const H1 = styled.h1`
 color: ${variables.white};
 margin-bottom: 3rem;
+font-size: 3.5rem;
+
+@media(max-width: 700px){
+font-size: 2.5rem;
+}
 `;
 
 const Button = styled.button`
@@ -40,7 +49,7 @@ background: ${variables.primaryGreen};
 border: 1px solid ${variables.primaryGreen};
 border-radius: 2rem;
 color: ${variables.white};
-font-size: 1rem;
+font-size: 1.6rem;
 transition: all .3s;
 
 &:hover,
@@ -50,17 +59,28 @@ outline: none;
 background: ${variables.white};
 color: ${variables.primaryGreen};
 }
+
+@media(max-width: 800px){
+width: 40%;
+}
+
+@media(max-width: 700px){
+width: 50%;
+font-size: 1.4rem;
+}
+
+
 `;
 
 const FieldWrapper = styled.div`
   input{
-  font-size: 1rem;
+  font-size: 1.6rem;
   border: none;
   border-bottom: 1px solid ${variables.primaryGreen};
   background:transparent;
   color: ${variables.white};
   padding: .5rem 0;
-  width: 60%;
+  width: 80%;
   
   &:hover,
   &:focus{
@@ -69,14 +89,23 @@ const FieldWrapper = styled.div`
   border-bottom: 1px solid ${variables.white};
   }
   }
+  
+  @media(max-width: 700px){
+font-size: 1.4rem;
+}
 `;
 
 const Error = styled.p`
 height: 1rem;
+font-size: 1.4rem;
 margin: 0 auto 2em auto;
 width: 60%;
 text-align: left;
 color: ${variables.primaryRed};
+
+  @media(max-width: 700px){
+font-size: 1rem;
+}
 
 `;
 

@@ -8,6 +8,40 @@ import WelcomePage from './containers/WelcomePage/WelcomePage';
 
 import './App.css';
 import axios from "axios";
+import {createGlobalStyle} from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html{
+  font-size: 65.2%;
+  @media (max-width: 1300px ){
+ font-size: 56.25%;
+ }
+ 
+  @media (max-width: 1000px ){
+ font-size: 50%;
+ }
+ 
+ @media (max-width: 700px ){
+ font-size: 50%;
+ }
+}
+
+body{
+  box-sizing: border-box;
+ font-family: 'Roboto', sans-serif;
+ 
+ 
+
+}
+`;
 
 class App extends Component{
 
@@ -91,6 +125,7 @@ class App extends Component{
         return (
 
             <div className="App">
+                <GlobalStyle/>
                 {/*<TopNav/>*/}
                 <Switch>
                     <Route path='/dashboard' render={props=> (

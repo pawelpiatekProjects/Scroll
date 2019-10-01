@@ -61,14 +61,26 @@ const Logo = styled.div`
     
     position: absolute;
     top: 0;
-    left: 10rem;
+    left: 14.5rem;
     font-size: 4rem;
     color: ${variables.black};
+    
+    @media(max-width: 1500px){
+    left: 14rem;
+    }
+    
+    @media(max-width: 800px){
+    left: 13.5rem;
+    }
     
     &::first-letter{
     color: ${variables.white};
     }
     }
+    }
+    
+    @media(max-width: 700px){
+    left: 9rem;
     }
 `;
 
@@ -77,7 +89,7 @@ background-color: ${variables.darkGreySecondary};
 clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
 border-radius: 2rem;
 display: block;
-height: ${props=>props.height ? 35 : 42.5}rem;
+height: ${props=>props.height ? 50: 60}rem;
 width: 25%;
 margin: 0 auto;
 position: absolute;
@@ -86,16 +98,30 @@ left: 50%;
 transform: translate(-50%,-50%);
 
 opacity: .9;
+
+    @media(max-width: 1300px){
+width: 40%;
+}
+
+    @media(max-width: 700px){
+height: ${props=>props.height ? 40: 50}rem;
+width: 60%;
+}
+
+   @media(max-width: 500px){
+
+width: 80%;
+}
 `;
 
 const FormButton = styled.button`
   position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
+  top: 2rem;
+  left: 2rem;
   color: ${variables.primaryGreen};
   background: transparent;
   border: none;font-size: 1.2rem;
-  
+  font-size: 1.8rem;
   transition: all .3s;
   
   &:hover{
@@ -106,6 +132,12 @@ const FormButton = styled.button`
   &:focus{
   outline: none;
   }
+  
+    @media(max-width: 700px){
+font-size: 1.2rem;
+top: 1.5rem;
+  left: 1.5rem;
+}
 `;
 
 const introPage =(props)=>{
