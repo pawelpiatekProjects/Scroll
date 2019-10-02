@@ -90,7 +90,7 @@ const completedTask = (props)=>{
 
 
     return(
-        <Task>
+        <Task key={props.id}>
             <Title>{props.title}</Title>
             <Deadline><span>Completed Task</span></Deadline>
             <Controlls>

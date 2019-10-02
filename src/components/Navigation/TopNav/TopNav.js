@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import UserMenu from '../UserMenu/UserMenu';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUserAstronaut, faScroll} from "@fortawesome/free-solid-svg-icons";
 import * as variables from '../../../utils/variables';
+import TopNav from "../../../containers/Tasks";
 
 const Navigation = styled.div`
 background: ${variables.primaryGrey};
@@ -124,50 +126,10 @@ grid-row: 1/span 1;
 width: 100%;
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-justify-items: end;
+justify-items: center;
 `;
 
-const Profile = styled.button`
 
-    grid-column: 3/-1;
-    border: 1px solid ${variables.white};
-    font-size: 3rem;
-    background: ${variables.primaryGreen};
-    color: ${variables.white};
-    border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
-    position: relative;
-    transition: all .3s;
-    
-        &::before{
-      content: '';
-      display: inline-block;
-      position: absolute;
-      width: 5.25rem;
-      height: 5.25rem;
-      border-radius: 50%;
-      border: 2px solid ${variables.primaryGreen};
-      top: 50%;
-      left: 50%;
-      opacity: 0;
-      transform: translate(-50%,-50%) scale(1);
-      transition: all .3s;
-    
-    }
-    
-    &:hover{
-    cursor: pointer;
-    background: ${variables.white};
-    color: ${variables.primaryGreen};
-    }
-    
-    &:hover::before{
-    opacity: 1;
-    transform: translate(-50%,-50%) scale(1.2);
-    cursor: pointer;
-    }
-`;
 
 const topNav = (props) => {
     return (
@@ -184,12 +146,13 @@ const topNav = (props) => {
                 <button onClick={props.showMobile}></button>
             </Hamburger>
             <ProfileWrapper>
-                <Profile onClick={props.logout}>
-                    <p>
-                        <FontAwesomeIcon icon={faUserAstronaut}/>
-                    </p>
-
-                </Profile>
+                <UserMenu
+                    userMenu={props.userMenu}
+                    logout={props.logout}
+                    showUserMenu = {props.showUserMenu}
+                    toggleDarkMode = {props.toggleDarkMode}
+                    darkMode = {props.darkMode}
+                />
             </ProfileWrapper>
         </Navigation>
 

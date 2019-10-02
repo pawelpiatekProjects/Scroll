@@ -210,7 +210,7 @@ if(Math.round((  new Date(props.deadline)- new Date())/86400000) > 0){
     passed = true;
 }
     return(
-        <Task passed={passed}>
+        <Task passed={passed} key={props.id}>
             <Title>{props.title}</Title>
             <Deadline><span>{}Deadline: </span>{props.deadline}</Deadline>
             <Left passed={passed}><span>{passed ? '' : 'Left: '}</span> {left}</Left>

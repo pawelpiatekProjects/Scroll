@@ -118,7 +118,7 @@ const importantTask = (props)=>{
     }
 
     return(
-        <Task passed={passed}>
+        <Task passed={passed} key={props.id}>
             <Title>{props.title}</Title>
             <Deadline><span>Deadline: </span>{props.deadline}</Deadline>
             <Left passed={passed}><span>{passed ? '' : 'Left: '}</span> {left}</Left>
@@ -126,10 +126,10 @@ const importantTask = (props)=>{
                 <ControlHeart  important={props.important} onClick={()=>{props.importantRemove(props.id)}}>
                     <FontAwesomeIcon icon={faHeart}/>
                 </ControlHeart>
-                <Control color='#8EC06C' onClick={()=>{props.delete(props.id)}} important={props.important}>
+                <Control color={variables.primaryGreen} onClick={()=>{props.delete(props.id)}} important={props.important}>
                     <FontAwesomeIcon icon={faCheck}/>
                 </Control>
-                <Control color='#FFCC2F'>
+                <Control color={variables.primaryYellow}>
                     <FontAwesomeIcon icon={faInfo}/>
                 </Control>
             </Controlls>

@@ -95,7 +95,9 @@ class Tasks extends Component {
         showNotesModal: false,
         loading: false,
         error: false,
-        mobile:false
+        mobile:false,
+        showUserMenu: false,
+        darkMode: false
     };
 
     componentDidMount() {
@@ -254,6 +256,14 @@ class Tasks extends Component {
 
     onOpenMobileNavHandler = ()=>{
         this.setState({mobile:true})
+    };
+
+    onShowUserMenu = ()=>{
+        this.setState(prevState=>({showUserMenu: !prevState.showUserMenu}))
+    }
+
+    toggleDarkMode = ()=>{
+        this.setState(prevState=>({darkMode: !prevState.darkMode}))
     }
 
 
@@ -335,7 +345,14 @@ class Tasks extends Component {
                 {/*<GlobalStyle/>*/}
                 <TasksWrapper>
                     <Topnav>
-                        <TopNav logout={this.props.logout} showMobile={this.onOpenMobileNavHandler}/>
+                        <TopNav
+                            logout={this.props.logout}
+                            showMobile={this.onOpenMobileNavHandler}
+                            showUserMenu ={this.onShowUserMenu}
+                            userMenu = {this.state.showUserMenu}
+                            toggleDarkMode = {this.toggleDarkMode}
+                            darkMode = {this.state.darkMode}
+                        />
                     </Topnav>
                     <Sidebar>
                         <SideNav/>
