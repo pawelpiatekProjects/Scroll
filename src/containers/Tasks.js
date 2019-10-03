@@ -262,6 +262,8 @@ class Tasks extends Component {
         this.setState(prevState=>({showUserMenu: !prevState.showUserMenu}))
     }
 
+
+
     toggleDarkMode = ()=>{
         this.setState(prevState=>({darkMode: !prevState.darkMode}))
     }
@@ -329,8 +331,15 @@ class Tasks extends Component {
             )
         }
         return (
-            <TasksList>
-                <MobileNav show={this.state.mobile}/>
+            <TasksList >
+                <MobileNav
+                    show={this.state.mobile}
+                    logout={this.props.logout}
+                    showUserMenu ={this.onShowUserMenu}
+                    userMenu = {this.state.showUserMenu}
+                    toggleDarkMode = {this.toggleDarkMode}
+                    darkMode = {this.state.darkMode}
+                />
                 <Backdrop submit={this.onPostTaskHandler} show={this.state.showTaskModal} hide={() => {
                     this.setState({showTaskModal: false})
                 }}/>

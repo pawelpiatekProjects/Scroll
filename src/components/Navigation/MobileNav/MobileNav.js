@@ -9,7 +9,7 @@ import {
     faHeart,
     faStar,
     faHistory,
-    faCogs
+    faCogs, faCloudMoon, faToggleOn, faToggleOff, faSignOutAlt
 } from "@fortawesome/free-solid-svg-icons";
 import * as variables from '../../../utils/variables';
 
@@ -93,6 +93,28 @@ margin-top: 1rem;
 color: ${variables.primaryGreen};
 `;
 
+const Accordin = styled.div`
+
+`;
+
+const ToggleButton = styled.button`
+background:transparent;
+border: none;
+font-size: 2rem;
+margin-top: .5rem;
+margin-left: .5rem;
+color: ${props=>props.darkMode ? variables.fontColorFirst : variables.white};
+transition: all .3s;
+
+&:hover{
+color: ${props=>props.darkMode ? variables.white : variables.fontColorFirst};
+cursor: pointer;
+}
+
+&:focus{
+outline: none;
+}
+`;
 
 const mobileNav = (props) => {
     return (
@@ -114,6 +136,20 @@ const mobileNav = (props) => {
                     </NavLink></li>
                 </NavItems>
             </DynamicContent>
+            <Accordin>
+                <li>
+                    <span><FontAwesomeIcon icon={faCloudMoon}/></span>
+                    <span>Dark Mode</span>
+                    <ToggleButton
+                        onClick={props.toggleDarkMode}
+                        darkMode={props.darkMode}>
+                        <FontAwesomeIcon icon={props.darkMode ? faToggleOn : faToggleOff}/>
+                    </ToggleButton>
+                </li>
+                <li><span><FontAwesomeIcon icon={faCogs}/></span><span>Settings</span></li>
+
+                <li onClick={props.logout}><span><FontAwesomeIcon icon={faSignOutAlt}/></span><span>Sign Out</span></li>
+            </Accordin>
             <Settings>
                 <NavItems border='true'>
                     <li><FontAwesomeIcon icon={faCogs}/> <p>Settings</p></li>
