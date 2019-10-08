@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e14ece76-6aa8-4bda-bb70-57ab59ecfae1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Projects/ProjectsList.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/containers/Projects/projects.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
@@ -62,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/Projects/projects.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
-              <caret line="56" column="33" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
+            <state relative-caret-position="592">
+              <caret line="54" column="32" lean-forward="true" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -79,18 +80,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="92">
               <caret line="63" column="16" lean-forward="true" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Tasks/Task/Task.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="592">
-              <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -146,6 +135,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Projects/ProjectsList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="24" selection-start-column="24" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -166,7 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/utils/AddButton.js" />
         <option value="$PROJECT_DIR$/src/components/TasksNav/TasksNav.js" />
         <option value="$PROJECT_DIR$/src/components/TaskList/TaskList.js" />
         <option value="$PROJECT_DIR$/src/components/Task/Task.js" />
@@ -217,6 +214,7 @@
         <option value="$PROJECT_DIR$/src/components/Navigation/TasksNav/TasksNav.js" />
         <option value="$PROJECT_DIR$/src/components/Navigation/TopNav/TopNav.js" />
         <option value="$PROJECT_DIR$/src/containers/Projects/projects.js" />
+        <option value="$PROJECT_DIR$/src/components/Projects/ProjectsList.js" />
       </list>
     </option>
   </component>
@@ -260,39 +258,7 @@
               <item name="reminder-v2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Navigation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reminder-v2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reminder-v2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="MobileNav" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reminder-v2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reminder-v2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="TasksNav" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reminder-v2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reminder-v2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="TopNav" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reminder-v2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reminder-v2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="UserMenu" type="462c0819:PsiDirectoryNode" />
+              <item name="Projects" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="reminder-v2" type="b2602c69:ProjectViewProjectNode" />
@@ -382,18 +348,17 @@
       <workItem from="1570134192562" duration="617000" />
       <workItem from="1570530206852" duration="1934000" />
       <workItem from="1570555950356" duration="565000" />
-      <workItem from="1570556525300" duration="2792000" />
+      <workItem from="1570556525300" duration="3451000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147138000" />
+    <option name="totallyTimeSpent" value="147797000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19872814" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19872814" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -407,7 +372,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.24913494" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.24913494" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -777,11 +742,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Projects/projects.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="56" column="33" selection-start-line="56" selection-start-column="33" selection-end-line="56" selection-end-column="33" />
+        <state relative-caret-position="592">
+          <caret line="54" column="32" lean-forward="true" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Projects/ProjectsList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
         </state>
       </provider>
     </entry>
