@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e14ece76-6aa8-4bda-bb70-57ab59ecfae1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/components/Projects/Project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Projects/Project.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Projects/ProjectsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Projects/ProjectsList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Projects/projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Projects/projects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tasks/Task/Task.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tasks/Task/Task.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -77,30 +78,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Forms/TaskAddForm.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1600">
-              <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Modal/Add.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Navigation/TaskActions/TaskActions.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="325">
@@ -124,14 +101,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Projects/ProjectsList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+            <state relative-caret-position="250">
+              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Projects/Project.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Tasks/Task/Task.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25">
+              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -156,7 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/TasksNav/TasksNav.js" />
         <option value="$PROJECT_DIR$/src/components/TaskList/TaskList.js" />
         <option value="$PROJECT_DIR$/src/components/Task/Task.js" />
         <option value="$PROJECT_DIR$/src/components/ImportantTasks/ImportantTask/ImportantTask.js" />
@@ -198,7 +195,6 @@
         <option value="$PROJECT_DIR$/src/components/Navigation/SideNavigation/SideNavigation.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/components/Tasks/TaskList/TaskList.js" />
-        <option value="$PROJECT_DIR$/src/components/Tasks/Task/Task.js" />
         <option value="$PROJECT_DIR$/src/components/Modal/Add.js" />
         <option value="$PROJECT_DIR$/src/containers/Tasks.js" />
         <option value="$PROJECT_DIR$/src/components/Navigation/MobileNav/MobileNav.js" />
@@ -207,6 +203,8 @@
         <option value="$PROJECT_DIR$/src/components/Navigation/TopNav/TopNav.js" />
         <option value="$PROJECT_DIR$/src/containers/Projects/projects.js" />
         <option value="$PROJECT_DIR$/src/components/Projects/ProjectsList.js" />
+        <option value="$PROJECT_DIR$/src/components/Tasks/Task/Task.js" />
+        <option value="$PROJECT_DIR$/src/components/Projects/Project.js" />
       </list>
     </option>
   </component>
@@ -251,6 +249,21 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Projects" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="reminder-v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reminder-v2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="reminder-v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="reminder-v2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Tasks" type="462c0819:PsiDirectoryNode" />
+              <item name="Task" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="reminder-v2" type="b2602c69:ProjectViewProjectNode" />
@@ -345,7 +358,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147889000" />
+    <option name="totallyTimeSpent" value="149292000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1296" height="1000" extended-state="6" />
@@ -643,16 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Tasks/Task/Task.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Forms/TaskAddForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1600">
@@ -745,8 +748,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Projects/ProjectsList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        <state relative-caret-position="250">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Tasks/Task/Task.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Projects/Project.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="31" column="16" lean-forward="true" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="45" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled,{keyframes} from 'styled-components';
+import styled from 'styled-components';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHeart,faCheck,faInfo} from "@fortawesome/free-solid-svg-icons";
 import * as variables from '../../../utils/variables';
