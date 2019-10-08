@@ -26,6 +26,26 @@ background: ${variables.primaryGrey};
   transform: ${props=>props.show ? `translateX(0)`: `translateX(-100%)`};
   
  transition: all .5s;
+ 
+ @media(max-width: 1000px){
+ width: 25%;
+ }
+ 
+ @media(max-width: 700px){
+ width: 30%;
+ }
+ 
+ @media(max-width: 600px){
+ width: 35%;
+ }
+ 
+ @media(max-width: 500px){
+ width: 45%;
+ }
+ 
+ @media(max-width: 400px){
+ width: 50%;
+ }
 
 `;
 

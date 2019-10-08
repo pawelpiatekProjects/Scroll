@@ -54,6 +54,10 @@ const SortButton = styled.button`
   position: relative;
   justify-self: center;
   
+  @media(max-width: 400px){
+    grid-column: 3/span 2;
+  }
+  
   
   &:hover,
   &:focus{

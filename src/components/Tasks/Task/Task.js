@@ -24,13 +24,13 @@ border-radius: .5rem;
 
 @media(max-width: 700px){
 grid-template-rows: repeat(4,max-content) 1fr;
-width: 80%;
+
 justify-items: center;
 }
 
 @media(max-width: 500px){
 grid-template-rows: repeat(4,max-content) 1fr;
-width: 70%;
+
 justify-items: center;
 }
 `;

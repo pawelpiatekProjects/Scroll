@@ -100,7 +100,7 @@ transform: translate(-50%,-50%);
 opacity: .9;
 
     @media(max-width: 1300px){
-width: 40%;
+//width: 40%;
 }
 
     @media(max-width: 700px){

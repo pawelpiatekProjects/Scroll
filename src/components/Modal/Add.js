@@ -24,8 +24,35 @@ position: fixed;
  opacity: ${props=>props.show ? 1 : 0};
 
 
- // transform-origin: left center;
- //transition: all .3s ease-out;
+
+@media(max-width: 1100px){
+width: 50%;
+}
+
+@media(max-width: 900px){
+width: 55%;
+}
+
+@media(max-width: 800px){
+width: 55%;
+}
+
+@media(max-width: 700px){
+width: 40%;
+}
+
+@media(max-width: 600px){
+width: 70%;
+}
+
+@media(max-width: 500px){
+width: 75%;
+}
+
+@media(max-width: 400px){
+width: 80%;
+}
+
 `;
 
 

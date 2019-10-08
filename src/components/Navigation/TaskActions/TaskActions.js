@@ -9,6 +9,10 @@ const TaskActions = styled.ul`
   text-align: left;
   width: 100%;
   border-bottom: 1px solid ${variables.secondaryGrey};
+  
+  @media(max-width: 500px){
+  text-align: center;
+  }
    li{
    z-index: 1;
    display: inline-block;

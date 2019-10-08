@@ -4,6 +4,7 @@ import {Route, Switch, withRouter} from "react-router";
 import IntroPage from './components/IntroPage/ItroPage';
 import ControlContainer from './containers/Tasks';
 import WelcomePage from './containers/WelcomePage/WelcomePage';
+import Projects from './containers/Projects/projects';
 
 
 import './App.css';
@@ -135,6 +136,16 @@ class App extends Component{
                             logout={this.logoutHandler}
                         />
                     )}/>
+                    <Route
+                        path='/projects'
+                        render={props=>(
+                            <Projects
+                                test='projects'
+                                token={this.state.token}
+                                logout={this.logoutHandler}
+                            />
+                        )}
+                    />
                     <Route path='/welcomePage' exact  component={WelcomePage}/>
                     <Route path='/' component={()=><IntroPage
                     signup={this.onSignUpHandler}

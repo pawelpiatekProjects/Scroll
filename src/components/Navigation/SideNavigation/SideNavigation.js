@@ -99,7 +99,7 @@ const sideNavigation = () => {
         <Nav>
             <NavItems border='true'>
                 <li><NavLink to='/dashboard/tasks'><FontAwesomeIcon icon={faTasks}/><p>Tasks</p></NavLink></li>
-                <li><FontAwesomeIcon icon={faClipboardList}/> <p>Projects</p></li>
+                <li><NavLink to='/projects'><FontAwesomeIcon icon={faClipboardList}/> <p>Projects</p></NavLink></li>
                 <li><FontAwesomeIcon icon={faCodeBranch}/> <p>Technologies</p></li>
             </NavItems>
             {/*Dynamic render Component with functionalities to each nav item  */}
