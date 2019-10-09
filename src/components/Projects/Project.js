@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import * as variables from '../../utils/variables';
-import jsLogo from '../../assets/images/jsIcon.png';
+import jsLogo from '../../assets/images/jsLogo.png';
 import reactLogo from '../../assets/images/reactIcon.png';
+import gameLogo from '../../assets/images/gameLogo.png';
+import studyLogo from '../../assets/images/studyLogo.png';
 
 const ProjectWrapper = styled.div`
 background-image: linear-gradient(to bottom right, ${props=>props.colorFirst}, ${props=>props.colorSecond});
@@ -34,9 +36,21 @@ grid-column: 2/span 1;
 width: 10rem;
 height: 10rem;
 border-radius: 50%;
-background-image: url(${reactLogo});
+background-image: url(${props=>props.logo});
 background-size: cover;
 margin: 2rem;
+
+position: relative;
+
+&::after{
+position: absolute;
+content: '';
+display: block;
+width: 10rem;
+height: 10rem;
+border-radius: 50%;
+border: 4px solid ${variables.white};
+}
 
 
 
@@ -53,30 +67,30 @@ const project = (props)=>{
     const type = props.type;
     let colorFirst;
     let colorSecond;
-    // if(type==='react'){
-    //     colorFirst = variables.reactColor;
-    //     colorSecond = variables.darkBlue;
-    // }
-    // if(type==='')
+    let logo;
     switch(type){
         case 'react':{
                 colorFirst = variables.reactColor;
                 colorSecond = variables.darkBlue;
+                logo=reactLogo;
                 break;
         }
         case 'js':{
             colorFirst = variables.jsColor;
             colorSecond = variables.darkYellow;
+            logo=jsLogo
             break;
         }
         case 'gamedev':{
             colorFirst = variables.gameDev;
             colorSecond = variables.gameDev2;
+            logo=gameLogo
             break;
         }
         case 'school':{
             colorFirst = variables.school;
             colorSecond = variables.school2;
+            logo = studyLogo;
             break;
         }
         default:{
@@ -91,7 +105,7 @@ const project = (props)=>{
         colorFirst={colorFirst}
         colorSecond={colorSecond}
         >
-            <ProjectIcon/>
+            <ProjectIcon logo={logo}/>
             <ProjectTitle>
                 Title
             </ProjectTitle>
