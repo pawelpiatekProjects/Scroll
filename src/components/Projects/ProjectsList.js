@@ -14,10 +14,10 @@ justify-items: center;
 const projectsList = (props)=>{
     return(
         <ProjectsListWrapper>
-            <Project/>
-            <Project/>
-            <Project/>
-            <Project/>
+            <Project type='react'/>
+            <Project type='js'/>
+            <Project type='gamedev'/>
+            <Project type='school'/>
         </ProjectsListWrapper>
     )
 };
