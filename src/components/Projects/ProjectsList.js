@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import AddNav from '../../components/Navigation/AddNav/AddNav';
 import Project from './Project';
 
 const ProjectsListWrapper = styled.div`
@@ -11,9 +12,17 @@ grid-gap: 6rem;
 justify-items: center;
 `;
 
-const projectsList = (props)=>{
-    return(
+const AddNavWrapper = styled.div`
+grid-column: 1/-1;
+width: 100%;
+`
+
+const projectsList = (props) => {
+    return (
         <ProjectsListWrapper>
+            <AddNavWrapper>
+                <AddNav/>
+            </AddNavWrapper>
             <Project type='react'/>
             <Project type='js'/>
             <Project type='gamedev'/>

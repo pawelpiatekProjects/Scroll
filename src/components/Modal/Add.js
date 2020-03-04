@@ -4,6 +4,7 @@ import * as variables from '../../utils/variables';
 
 import TaskAddForm from '../Forms/TaskAddForm';
 import NotesAddForm from '../Forms/NotesAddForm';
+import TaskEditForm from '../Forms/TaskEditForm';
 
 const Modal = styled.div`
 position: fixed;
@@ -67,18 +68,26 @@ margin-bottom: 4rem;
 
 
 const modal = (props)=>{
+
     let form;
+    let header;
     if(props.status ==='task'){
         form = <TaskAddForm submit={props.submit} showModall={props.show}/>
-    }else{
+        header = 'Add task';
+    }
+    if(props.status ==='note'){
         form = <NotesAddForm submit={props.submit} showModall={props.show}/>
+        header = 'Add note';
+    }
+    if(props.status=== 'taskEdit'){
+        form =<TaskEditForm id={props.id} submit={props.submit} showModall={props.show}/>
+        header = 'Edit task';
     }
     return(
         <Modal show={props.show}>
-            <Header>Add {props.status}</Header>
+            <Header>{header}</Header>
             {form}
         </Modal>
-
     );
 };
 

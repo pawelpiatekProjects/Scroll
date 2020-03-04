@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Task from '../Task/Task';
-import TaskNav from '../../Navigation/TasksNav/TasksNav';
+import TaskNav from '../../Navigation/AddNav/AddNav';
 import TaskActions from '../../Navigation/TaskActions/TaskActions';
 import EmptyInfo from '../../EmptyInfo/EmptyInfo';
 import Spinner from '../../UI/Spinner';
@@ -64,6 +64,9 @@ const taskList = (props)=>{
             list = tasks.map(task=>(
                 <Task
                     id={task._id}
+                    edit={props.toggleEdit}
+                    showEdit={props.showEdit}
+                    editMethod={props.editMethod}
                     title = {task.title}
                     deadline = {task.deadline.slice(0,10)}
                     content = {task.content}
