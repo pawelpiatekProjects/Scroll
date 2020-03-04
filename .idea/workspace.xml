@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e14ece76-6aa8-4bda-bb70-57ab59ecfae1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/readme/sc1.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/readme/sc2.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/readme/sc3.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/readme/sc4.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/readme/sc5.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/readme/sc6.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/readme/sc7.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Forms/TaskEditForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Modal/Add.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Add.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/TasksNav/TasksNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/AddNav/AddNav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Projects/ProjectsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Projects/ProjectsList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Tasks/Task/Task.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tasks/Task/Task.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Tasks/TaskList/TaskList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tasks/TaskList/TaskList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Tasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Tasks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-    </list>
+    <list default="true" id="e14ece76-6aa8-4bda-bb70-57ab59ecfae1" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -128,8 +110,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="550">
-                <caret line="94" column="2" selection-start-line="94" selection-start-column="2" selection-end-line="94" selection-end-column="2" />
+              <first_editor relative-caret-position="325">
+                <caret line="13" column="57" lean-forward="true" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
               </first_editor>
               <second_editor />
             </state>
@@ -325,12 +307,12 @@
       <workItem from="1582564380863" duration="605000" />
       <workItem from="1582625208584" duration="36000" />
       <workItem from="1583353350585" duration="671000" />
-      <workItem from="1583354044896" duration="1090000" />
+      <workItem from="1583354044896" duration="1271000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181726000" />
+    <option name="totallyTimeSpent" value="181907000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -769,8 +751,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="550">
-            <caret line="94" column="2" selection-start-line="94" selection-start-column="2" selection-end-line="94" selection-end-column="2" />
+          <first_editor relative-caret-position="325">
+            <caret line="13" column="57" lean-forward="true" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
           </first_editor>
           <second_editor />
         </state>
