@@ -17,6 +17,7 @@ finish this task before deadline style of this task will change.
 
 We can also create and delete notes in separate tab.
 
+
 This app works with express rest api [Scroll backend](https://github.com/pawelpiatekProjects/ScrollBackend)
 which has to be running.
 ***
