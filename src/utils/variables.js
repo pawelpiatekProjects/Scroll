@@ -10,3 +10,13 @@ export const darkGreyPrimary = '#333';
 export const darkGreySecondary = '#222';
 
 export const fontColorFirst = '#707070';
+
+//Projects type colors
+export const reactColor = '#00d8ff';
+export const darkBlue = '#00205b';
+export const jsColor = '#f7df1e';
+export const darkYellow ='#ffb310';
+export const gameDev = '#6e5494';
+export const gameDev2 = '#003369';
+export const school = '#bd2c00';
+export const school2 = '#fc6d26';

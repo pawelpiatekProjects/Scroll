@@ -16,7 +16,7 @@ import CompletedTask from '../components/Tasks/CompletedTasks/CompletedTasks';
 import Spinner from '../components/UI/Spinner';
 import Error from '../components/UI/Error/Error';
 
-
+//todo : Base url
 
 
 const TasksWrapper = styled.div`
@@ -58,6 +58,7 @@ grid-column: 2/-1;
 margin-top: 8rem;
 `;
 
+const baseUrl = 'http://localhost:8080';
 
 class Tasks extends Component {
 
@@ -66,6 +67,7 @@ class Tasks extends Component {
         notes: [],
         showTaskModal: false,
         showNotesModal: false,
+        showEditTasksModal: false,
         loading: false,
         error: false,
         mobile:false,
@@ -81,7 +83,7 @@ class Tasks extends Component {
     onGetTaskHandler = () => {
         this.setState({loading: true})
         const token = localStorage.getItem('token');
-        axios.get('http://localhost:8080/tasks/fetchTasks', {
+        axios.get(`${baseUrl}/tasks/fetchTasks`, {
                 headers: {
                     Authorization: 'Bearer ' + token
                 }
@@ -107,7 +109,7 @@ class Tasks extends Component {
 
     onGetNotesHandler = () => {
         const token = localStorage.getItem('token');
-        axios.get('http://localhost:8080/notes/fetchNotes', {
+        axios.get(`${baseUrl}/notes/fetchNotes`, {
             headers: {
                 Authorization: 'Bearer ' + token
             }
@@ -122,7 +124,7 @@ class Tasks extends Component {
 
     onPostTaskHandler = (values) => {
         const token = localStorage.getItem('token');
-        axios.post('http://localhost:8080/tasks/createTask', {
+        axios.post(`${baseUrl}/tasks/createTask`, {
                 title: values.title,
                 deadline: values.deadline,
                 content: values.content,
@@ -144,7 +146,7 @@ class Tasks extends Component {
 
     onPostNoteHandler = (values) => {
         const token = localStorage.getItem('token');
-        axios.post('http://localhost:8080/notes/createNote', {
+        axios.post(`${baseUrl}/notes/createNote`, {
                 title: values.title,
                 content: values.content
             },
@@ -161,9 +163,30 @@ class Tasks extends Component {
             .catch(err => console.log(err))
     }
 
+    onUpdateTaskHandler = (values,taskId)=>{
+
+        const token = localStorage.getItem('token');
+        axios.post(`${baseUrl}/tasks/update/${taskId}`,{
+            title: values.title,
+            deadline: values.deadline,
+            content: values.content
+        },
+            {
+                headers:{
+                    Authorization: 'Bearer ' + token
+                }
+            })
+            .then(response=>{
+                console.log(response);
+                this.onGetTaskHandler();
+                this.setState({showEditTasksModal:false})
+            })
+            .catch(err=>console.log(err));
+    }
+
     onDeleteHandler = (taskId) => {
         const token = localStorage.getItem('token');
-        axios.get('http://localhost:8080/tasks/task/completed/' + taskId, {
+        axios.get(`${baseUrl}/tasks/task/completed/${taskId}`, {
                 headers: {
                     Authorization: 'Bearer ' + token
                 }
@@ -178,7 +201,7 @@ class Tasks extends Component {
 
     onDeleteNoteHandler = (noteId) => {
         const token = localStorage.getItem('token');
-        axios.get('http://localhost:8080/notes/note/delete' + noteId, {
+        axios.get(`${baseUrl}/notes/note/delete/` + noteId, {
             headers: {
                 Authorization: 'Bearer ' + token
             }
@@ -197,9 +220,13 @@ class Tasks extends Component {
         this.setState({showNotesModal: true})
     }
 
+    onshowEditTasksModalHandler =()=>{
+        this.setState({showEditTasksModal:true})
+    }
+
     onAddImportantHandler = (taskId) => {
         const token = localStorage.getItem('token');
-        axios.get('http://localhost:8080/tasks/fetchTask/' + taskId, {
+        axios.get(`${baseUrl}/tasks/fetchTask/` + taskId, {
             headers: {
                 Authorization: 'Bearer ' + token
             }
@@ -214,7 +241,7 @@ class Tasks extends Component {
 
     onRemoveImportantHandler = (taskId) => {
         const token = localStorage.getItem('token');
-        axios.get('http://localhost:8080/tasks/task/importantRemove/' + taskId, {
+        axios.get(`${baseUrl}/tasks/task/importantRemove/` + taskId, {
             headers: {
                 Authorization: 'Bearer ' + token
             }
@@ -258,6 +285,9 @@ class Tasks extends Component {
                     <Switch>
                         <Route path="/dashboard/tasks"
                                component={() => <TaskList
+                                   toggleEdit={this.onshowEditTasksModalHandler}
+                                   showEdit={this.state.showEditTasksModal}
+                                   editMethod={this.onUpdateTaskHandler}
                                    taskList={this.state.tasks}
                                    loading={this.state.loading}
                                    notesList={this.state.notes}
@@ -319,12 +349,18 @@ class Tasks extends Component {
                 <Backdrop submit={this.onShowNotesModalHandler} show={this.state.showNotesModal} hide={() => {
                     this.setState({showNotesModal: false})
                 }}/>
+                <Backdrop show={this.state.showEditTasksModal} hide={()=>{
+                    this.setState({showEditTasksModal:false})
+                }}/>
                 <Backdrop show={this.state.mobile} hide={()=>{this.setState({mobile:false})}}/>
                 {this.state.showTaskModal ?
                     <Modal status='task' submit={this.onPostTaskHandler} show={this.state.showTaskModal}/> : null}
                 {this.state.showNotesModal ?
-                    <Modal status='notes' submit={this.onPostNoteHandler} show={this.state.showNotesModal}/> : null}
-                {/*<GlobalStyle/>*/}
+                    <Modal status='note' submit={this.onPostNoteHandler} show={this.state.showNotesModal}/> : null}
+                {/*{this.state.showEditTasksModal ?*/}
+                    {/*<Modal status='taskEdit' submit={this.onUpdateTaskHandler} show={this.state.showEditTasksModal}/>*/}
+                    {/*:null*/}
+                {/*}*/}
                 <TasksWrapper>
                     <Topnav>
                         <TopNav

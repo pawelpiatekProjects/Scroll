@@ -1,8 +1,9 @@
 import React from 'react';
-import styled,{keyframes} from 'styled-components';
+import styled from 'styled-components';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHeart,faCheck,faInfo} from "@fortawesome/free-solid-svg-icons";
 import * as variables from '../../../utils/variables';
+import Modal from '../../Modal/Add';
 
 
 
@@ -211,6 +212,8 @@ if(Math.round((  new Date(props.deadline)- new Date())/86400000) > 0){
 }
     return(
         <Task passed={passed} key={props.id}>
+
+            {props.showEdit ? <Modal id={props.id} submit={props.editMethod} show={true} status='taskEdit'/>:null}
             <Title>{props.title}</Title>
             <Deadline><span>{}Deadline: </span>{props.deadline}</Deadline>
             <Left passed={passed}><span>{passed ? '' : 'Left: '}</span> {left}</Left>
@@ -221,7 +224,7 @@ if(Math.round((  new Date(props.deadline)- new Date())/86400000) > 0){
                 <Control color={variables.primaryGreen} onClick={()=>{props.delete(props.id)}} important={props.important}>
                     <FontAwesomeIcon icon={faCheck}/>
                 </Control>
-                <Control color={variables.primaryYellow}>
+                <Control onClick={props.edit} color={variables.primaryYellow}>
                     <FontAwesomeIcon icon={faInfo}/>
                 </Control>
             </Controlls>

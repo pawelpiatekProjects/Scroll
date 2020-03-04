@@ -5,6 +5,7 @@ import MobileNav from '../../components/Navigation/MobileNav/MobileNav';
 import Backdrop from '../../components/Backdrop/Backdrop';
 import TopNav from '../../components/Navigation/TopNav/TopNav';
 import SideNav from '../../components/Navigation/SideNavigation/SideNavigation';
+import ProjectsList from '../../components/Projects/ProjectsList';
 
 const ProjectsWrapper = styled.div`
 display: grid;
@@ -19,13 +20,13 @@ const SideNavWrapper = styled.div`
 grid-column: 1/ span 1;
 `;
 
+const ProjectsListWrapper = styled.div`
+grid-column: 2/-1;
+`;
+
 class Projects extends Component {
 
     state = {
-        tasks: [],
-        notes: [],
-        showTaskModal: false,
-        showNotesModal: false,
         loading: false,
         error: false,
         mobile: false,
@@ -55,6 +56,9 @@ class Projects extends Component {
                 <SideNavWrapper>
                     <SideNav/>
                 </SideNavWrapper>
+                <ProjectsListWrapper>
+                    <ProjectsList/>
+                </ProjectsListWrapper>
             </ProjectsWrapper>
         )
     }

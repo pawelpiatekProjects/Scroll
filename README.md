@@ -1,68 +1,99 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+ 
+</p>
+<h1 align="center">
+  Scroll App
+</h1>
 
-## Available Scripts
 
-In the project directory, you can run:
+***"Scroll App"*** is a React app rest api written in express.js.
 
-### `npm start`
+This application isn't finished yet. It has one of 3 core features - managing tasks and notes.
+We can create our own account in this app and add our tasks and notes. 
+After adding new task we can change its status to: important or finished. After 
+changing status our task is seen in appropriate tab (favourites task or finished tasks).
+When we are creating new task we specify the deadline of this task and if we won't 
+finish this task before deadline style of this task will change.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+We can also create and delete notes in separate tab.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+This app works with express rest api [Scroll backend](https://github.com/pawelpiatekProjects/ScrollBackend)
+which has to be running.
+***
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+###Demo screenshots
+![Image description](./src/assets/images/readme/sc6.PNG)
 
-### `npm run build`
+![Image description](./src/assets/images/readme/sc7.PNG)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Image description](./src/assets/images/readme/sc1.PNG)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+![Image description](./src/assets/images/readme/sc2.PNG)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Image description](./src/assets/images/readme/sc3.PNG)
 
-### `npm run eject`
+![Image description](./src/assets/images/readme/sc4.PNG)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Image description](./src/assets/images/readme/sc5.PNG)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+***
+###Technologies
+1. ReactJS
+1. Rest Api
+***
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+###Opening project
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+1.  **Start developing.**
 
-### Making a Progressive Web App
+    Navigate into your new site’s directory and start it up.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+    ```shell
+    cd reminder-v2
+    npm start
+    ```
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+    
+  ***
 
-### Deployment
+###Project structure
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+A quick look at the top-level files and directories you'll see in a Gatsby project.
 
-### `npm run build` fails to minify
+    .
+    ├── node_modules
+    ├── public
+    ├── src
+        ├── assets
+        ├── components
+        ├── containers
+        ├── utils
+        ├── App.js
+        ├── index.css
+        ├── index.js
+        ├── serviceWorker.js
+    ├── package.json
+    ├── package-lock.json
+    ├── README.md
+    └── .gitignore
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+  **`/assets`**: This directory contains images and font awesome
+  
+  **`/components`**: This directory contains stateless components
+  
+  **`/containers`**: This directory contains statefull components
+  
+  **`/utils`**: This directory contains reusable components
+  
+  
+ 
+    
