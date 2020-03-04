@@ -2,7 +2,7 @@
  
 </p>
 <h1 align="center">
-  Scroll
+  Scroll App
 </h1>
 
 
